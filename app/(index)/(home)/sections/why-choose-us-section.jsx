@@ -85,7 +85,7 @@ export default function WhyChooseUsSection() {
               <div className="mt-10 space-y-4">
                 {WHY_CHOOSE_ITEMS.map((item, i) => (
                   <Reveal key={item.title} delay={200 + i * 90}>
-                    <div className="group flex items-start gap-5 rounded-2xl p-3 transition-all duration-300 hover:translate-x-1.5 hover:bg-white/10 backdrop-blur-sm">
+                    <div className="group flex items-start gap-5 rounded-2xl p-3 transition-all duration-300 hover:translate-x-1.5 hover:bg-white/10">
                       <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
                         <img
                           src={item.img}
