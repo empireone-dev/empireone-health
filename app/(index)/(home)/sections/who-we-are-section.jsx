@@ -1,45 +1,29 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { motion } from "motion/react";
 import { Activity, ArrowUpRight, Stethoscope } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
-function Reveal({ children, className = "", delay = 0, as: Tag = "div" }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
+function Reveal({ children, className = "", delay = 0, as = "div" }) {
+  const MotionTag = motion[as] || motion.div;
   return (
-    <Tag
-      ref={ref}
-      className={`reveal ${visible ? "reveal-visible" : ""} ${className}`}
-      style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}
+    <MotionTag
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.7, delay: delay / 1000, ease: "easeOut" }}
+      className={className}
     >
       {children}
-    </Tag>
+    </MotionTag>
   );
 }
 
 export default function WhoWeAreSection() {
   return (
-    <>
     <section className="relative flex items-center overflow-hidden py-20 sm:py-24 lg:min-h-[calc(100vh-124px)] lg:py-0">
       <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-teal-100/50 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-red-100/40 blur-3xl" />
@@ -56,9 +40,17 @@ export default function WhoWeAreSection() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
           </div>
 
-          <div className="float-slow absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:-bottom-8 sm:left-8">
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:-bottom-8 sm:left-8"
+          >
             <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-teal-50">
-              <span className="pulse-ring absolute h-10 w-10 rounded-full bg-teal-300/60" />
+              <motion.span
+                animate={{ scale: [0.7, 2.4], opacity: [0.55, 0] }}
+                transition={{ duration: 2.6, repeat: Infinity, ease: "easeOut" }}
+                className="absolute h-10 w-10 rounded-full bg-teal-300/60"
+              />
               <Activity className="relative h-5 w-5 text-teal-600" />
             </span>
             <div>
@@ -67,7 +59,7 @@ export default function WhoWeAreSection() {
               </p>
               <p className="text-xs text-gray-500">Care behind every claim</p>
             </div>
-          </div>
+          </motion.div>
         </Reveal>
 
         <div className="order-1 lg:order-2">
@@ -106,61 +98,5 @@ export default function WhoWeAreSection() {
         </div>
       </div>
     </section>
-
-    <style jsx global>{`
-      @keyframes pulseRing {
-        0% {
-          transform: scale(0.7);
-          opacity: 0.55;
-        }
-        100% {
-          transform: scale(2.4);
-          opacity: 0;
-        }
-      }
-      @keyframes floatSlow {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-      }
-
-      .pulse-ring {
-        animation: pulseRing 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-      }
-      .float-slow {
-        animation: floatSlow 5s ease-in-out infinite;
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-        will-change: opacity, transform;
-      }
-      .reveal-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .reveal {
-          opacity: 1;
-          transform: none;
-          animation: none;
-          transition: none;
-        }
-        .pulse-ring,
-        .float-slow {
-          animation: none;
-        }
-      }
-    `}</style>
-    </>
   );
 }

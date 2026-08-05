@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { motion } from "motion/react";
 import { Activity, ArrowUpRight, Building, UserCheck } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
 
@@ -29,34 +30,18 @@ const FOUNDATION_CARDS = [
   },
 ];
 
-function Reveal({ children, className = "", delay = 0, as: Tag = "div" }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
+function Reveal({ children, className = "", delay = 0, as = "div" }) {
+  const MotionTag = motion[as] || motion.div;
   return (
-    <Tag
-      ref={ref}
-      className={`reveal ${visible ? "reveal-visible" : ""} ${className}`}
-      style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}
+    <MotionTag
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.7, delay: delay / 1000, ease: "easeOut" }}
+      className={className}
     >
       {children}
-    </Tag>
+    </MotionTag>
   );
 }
 
@@ -89,7 +74,6 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
 export default function FoundationServicesSection() {
   return (
-    <>
     <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-12">
       <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
         <Reveal>
@@ -139,30 +123,5 @@ export default function FoundationServicesSection() {
         ))}
       </div>
     </section>
-
-    <style jsx global>{`
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-        will-change: opacity, transform;
-      }
-      .reveal-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .reveal {
-          opacity: 1;
-          transform: none;
-          animation: none;
-          transition: none;
-        }
-      }
-    `}</style>
-    </>
   );
 }

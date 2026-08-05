@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -67,12 +68,14 @@ export default function AppointmentBooking() {
   const [selectedTime, setSelectedTime] = useState("10:00 am");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [monthDirection, setMonthDirection] = useState(0);
 
   const cells = buildCalendar(cursor.year, cursor.month);
   const isCurrentMonth =
     cursor.year === today.getFullYear() && cursor.month === today.getMonth();
 
   const goPrevMonth = () => {
+    setMonthDirection(-1);
     setCursor((prev) => {
       const month = prev.month === 0 ? 11 : prev.month - 1;
       const year = prev.month === 0 ? prev.year - 1 : prev.year;
@@ -81,6 +84,7 @@ export default function AppointmentBooking() {
   };
 
   const goNextMonth = () => {
+    setMonthDirection(1);
     setCursor((prev) => {
       const month = prev.month === 11 ? 0 : prev.month + 1;
       const year = prev.month === 11 ? prev.year + 1 : prev.year;
@@ -122,14 +126,21 @@ export default function AppointmentBooking() {
     >
       <div className="w-full max-w-[1200px] mt-4">
         <div className="relative">
-          <div
+          <motion.div
             aria-hidden="true"
-            className="pointer-events-none absolute -left-6 -top-14 z-20 hidden w-44 -rotate-[10deg] rounded-3xl border border-slate-200/80 bg-white p-5 shadow-[0_18px_40px_-12px_rgba(30,41,59,0.35)] lg:-left-10 lg:-top-16 lg:block lg:w-56"
+            initial={{ opacity: 0, y: 16, rotate: 0 }}
+            animate={{ opacity: 1, y: 0, rotate: -10 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="pointer-events-none absolute -left-6 -top-14 z-20 hidden w-44 rounded-3xl border border-slate-200/80 bg-white p-5 shadow-[0_18px_40px_-12px_rgba(30,41,59,0.35)] lg:-left-10 lg:-top-16 lg:block lg:w-56"
           >
             <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-white">
+              <motion.span
+                animate={{ rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.5 }}
+                className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-white"
+              >
                 <PartyPopper className="h-5 w-5" />
-              </span>
+              </motion.span>
               <Heart className="h-3.5 w-3.5 fill-rose-300 text-rose-300" />
               <Sparkles className="h-3.5 w-3.5 text-amber-300" />
             </div>
@@ -145,9 +156,14 @@ export default function AppointmentBooking() {
               <div className="h-1.5 w-4/5 rounded-full bg-slate-100" />
               <div className="h-1.5 w-3/5 rounded-full bg-slate-100" />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative z-10 mt-6 overflow-hidden rounded-[24px] border border-slate-200/80 bg-white shadow-[0_25px_70px_-15px_rgba(30,41,59,0.3)] sm:mt-8 sm:rounded-[32px] lg:mt-10">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="relative z-10 mt-6 overflow-hidden rounded-[24px] border border-slate-200/80 bg-white shadow-[0_25px_70px_-15px_rgba(30,41,59,0.3)] sm:mt-8 sm:rounded-[32px] lg:mt-10"
+          >
             {/* Accent bar */}
             <div className="h-2 w-full" />
 
@@ -177,27 +193,40 @@ export default function AppointmentBooking() {
                   <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-3 sm:p-4">
                     {/* Month navigation */}
                     <div className="flex items-center justify-between rounded-xl bg-white px-3 py-2 shadow-sm ring-1 ring-slate-100 sm:px-4 sm:py-2.5">
-                      <button
+                      <motion.button
                         type="button"
                         onClick={goPrevMonth}
                         aria-label="Previous month"
+                        whileTap={{ scale: 0.85 }}
                         className="flex h-7 w-7 items-center justify-center rounded-md text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 sm:h-8 sm:w-8"
                       >
                         <ChevronLeft className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
-                      </button>
+                      </motion.button>
 
-                      <span className="text-sm font-bold text-slate-800 sm:text-base">
-                        {MONTHS[cursor.month]} {cursor.year}
+                      <span className="relative overflow-hidden text-sm font-bold text-slate-800 sm:text-base">
+                        <AnimatePresence mode="wait" initial={false}>
+                          <motion.span
+                            key={`${cursor.year}-${cursor.month}`}
+                            initial={{ opacity: 0, x: monthDirection * 16 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -monthDirection * 16 }}
+                            transition={{ duration: 0.2 }}
+                            className="inline-block"
+                          >
+                            {MONTHS[cursor.month]} {cursor.year}
+                          </motion.span>
+                        </AnimatePresence>
                       </span>
 
-                      <button
+                      <motion.button
                         type="button"
                         onClick={goNextMonth}
                         aria-label="Next month"
+                        whileTap={{ scale: 0.85 }}
                         className="flex h-7 w-7 items-center justify-center rounded-md text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 sm:h-8 sm:w-8"
                       >
                         <ChevronRight className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
-                      </button>
+                      </motion.button>
                     </div>
 
                     {/* Day labels */}
@@ -208,49 +237,61 @@ export default function AppointmentBooking() {
                     </div>
 
                     {/* Days grid */}
-                    <div className="mt-1 grid grid-cols-7 gap-y-1 text-center">
-                      {cells.map((day, idx) => {
-                        const isSelected = day === selectedDate;
-                        const isToday =
-                          isCurrentMonth && day === today.getDate();
-                        const formattedDay = day
-                          ? String(day).padStart(2, "0")
-                          : "";
+                    <AnimatePresence mode="wait" initial={false}>
+                      <motion.div
+                        key={`${cursor.year}-${cursor.month}`}
+                        initial={{ opacity: 0, x: monthDirection * 24 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -monthDirection * 24 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        className="mt-1 grid grid-cols-7 gap-y-1 text-center"
+                      >
+                        {cells.map((day, idx) => {
+                          const isSelected = day === selectedDate;
+                          const isToday =
+                            isCurrentMonth && day === today.getDate();
+                          const formattedDay = day
+                            ? String(day).padStart(2, "0")
+                            : "";
 
-                        return (
-                          <div
-                            key={idx}
-                            className="flex items-center justify-center py-0.5"
-                          >
-                            {day ? (
-                              <button
-                                type="button"
-                                onClick={() => setSelectedDate(day)}
-                                className={`relative flex h-8 w-8 flex-col items-center justify-center rounded-lg text-xs font-semibold transition-all duration-150 sm:h-9 sm:w-9 sm:text-sm ${
-                                  isSelected
-                                    ? "bg-indigo-600 text-white shadow-md shadow-indigo-200"
-                                    : "text-slate-600 hover:bg-white hover:shadow-sm"
-                                }`}
-                              >
-                                <span className={isSelected ? "font-bold" : ""}>
-                                  {formattedDay}
-                                </span>
-                                {isSelected && (
-                                  <span className="text-[8px] font-semibold uppercase leading-none tracking-wide text-indigo-100">
-                                    {selectedWeekday}
+                          return (
+                            <div
+                              key={idx}
+                              className="flex items-center justify-center py-0.5"
+                            >
+                              {day ? (
+                                <motion.button
+                                  type="button"
+                                  onClick={() => setSelectedDate(day)}
+                                  whileTap={{ scale: 0.88 }}
+                                  animate={{ scale: isSelected ? 1.05 : 1 }}
+                                  transition={{ duration: 0.15 }}
+                                  className={`relative flex h-8 w-8 flex-col items-center justify-center rounded-lg text-xs font-semibold sm:h-9 sm:w-9 sm:text-sm ${
+                                    isSelected
+                                      ? "bg-indigo-600 text-white shadow-md shadow-indigo-200"
+                                      : "text-slate-600 hover:bg-white hover:shadow-sm"
+                                  }`}
+                                >
+                                  <span className={isSelected ? "font-bold" : ""}>
+                                    {formattedDay}
                                   </span>
-                                )}
-                                {isToday && !isSelected && (
-                                  <span className="absolute bottom-1 h-1.5 w-1.5 rounded-full bg-indigo-400" />
-                                )}
-                              </button>
-                            ) : (
-                              <div className="h-8 w-8 sm:h-9 sm:w-9" />
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
+                                  {isSelected && (
+                                    <span className="text-[8px] font-semibold uppercase leading-none tracking-wide text-indigo-100">
+                                      {selectedWeekday}
+                                    </span>
+                                  )}
+                                  {isToday && !isSelected && (
+                                    <span className="absolute bottom-1 h-1.5 w-1.5 rounded-full bg-indigo-400" />
+                                  )}
+                                </motion.button>
+                              ) : (
+                                <div className="h-8 w-8 sm:h-9 sm:w-9" />
+                              )}
+                            </div>
+                          );
+                        })}
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
 
@@ -280,49 +321,73 @@ export default function AppointmentBooking() {
                     {TIME_SLOTS.map((slot) => {
                       const isSelected = slot === selectedTime;
                       return (
-                        <button
+                        <motion.button
                           type="button"
                           key={slot}
                           onClick={() => setSelectedTime(slot)}
-                          className={`rounded-xl border py-2 text-xs font-semibold transition-all duration-150 sm:py-2.5 sm:text-sm ${
+                          whileHover={{ scale: 1.04 }}
+                          whileTap={{ scale: 0.92 }}
+                          className={`rounded-xl border py-2 text-xs font-semibold transition-colors duration-150 sm:py-2.5 sm:text-sm ${
                             isSelected
                               ? "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-200"
                               : "border-slate-200 bg-slate-50/70 text-slate-600 hover:border-indigo-200 hover:bg-white"
                           }`}
                         >
                           {slot}
-                        </button>
+                        </motion.button>
                       );
                     })}
                   </div>
 
-                  {selectedDate != null && (
-                    <p className="mt-4 text-sm font-medium text-slate-500">
-                      You're booking{" "}
-                      <span className="font-bold text-slate-800">
-                        {selectedDateLabel}
-                      </span>{" "}
-                      at{" "}
-                      <span className="font-bold text-slate-800">
-                        {selectedTime}
-                      </span>
-                      .
-                    </p>
-                  )}
+                  <AnimatePresence>
+                    {selectedDate != null && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.2 }}
+                        className="mt-4 text-sm font-medium text-slate-500"
+                      >
+                        You're booking{" "}
+                        <span className="font-bold text-slate-800">
+                          {selectedDateLabel}
+                        </span>{" "}
+                        at{" "}
+                        <span className="font-bold text-slate-800">
+                          {selectedTime}
+                        </span>
+                        .
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Submit */}
                 <div className="md:col-span-2">
-                  <button
+                  <motion.button
                     type="submit"
-                    className="mx-auto flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-8 py-2.5 text-sm font-bold text-white shadow-lg shadow-indigo-200 transition-all duration-150 hover:bg-indigo-700 hover:shadow-indigo-300 active:scale-[0.99] sm:w-auto sm:px-10 sm:py-3 sm:text-base"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    animate={submitted ? { scale: [1, 1.06, 1] } : { scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                    className="mx-auto flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-8 py-2.5 text-sm font-bold text-white shadow-lg shadow-indigo-200 transition-colors duration-150 hover:bg-indigo-700 hover:shadow-indigo-300 sm:w-auto sm:px-10 sm:py-3 sm:text-base"
                   >
-                    {submitted ? "Appointment booked ✓" : "Get Appointment"}
-                  </button>
+                    <AnimatePresence mode="wait" initial={false}>
+                      <motion.span
+                        key={submitted ? "booked" : "book"}
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {submitted ? "Appointment booked ✓" : "Get Appointment"}
+                      </motion.span>
+                    </AnimatePresence>
+                  </motion.button>
                 </div>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
