@@ -13,6 +13,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import CardSection from "./sections/card-section";
+import BookACallSection from "../_sections/book-a-call-section";
 
 const highlights = [
   { icon: UserRoundPlus, label: "Reduce Administrative Burden" },
@@ -231,43 +232,7 @@ export default function AboutSection() {
           </div>
         </div>
       </section>
-      <section className="px-4 py-8 sm:px-6 lg:px-8">
-        <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#6366f1] via-[#5b5bd6] to-[#4f46e5] px-6 py-16 text-center shadow-lg sm:px-12 sm:py-20 lg:px-16 lg:py-24">
-          {/* Background Network Pattern Overlay */}
-          <div
-            className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20"
-            style={{ backgroundImage: "url('/images/network-pattern.png')" }}
-          />
-
-          {/* Heading Container */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
-            className="relative z-10 max-w-3xl"
-          >
-            <h2 className="text-4xl font-bold tracking-tight text-white ">
-              Smarter Healthcare Operations.
-              <br />
-              Better Patient Experiences.
-            </h2>
-          </motion.div>
-
-          {/* CTA Button */}
-          <motion.a
-            href="#book-call"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.55, ease: "easeOut", delay: 0.15 }}
-            whileHover={{ y: -2 }}
-            className="group relative z-10 mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0f2d9e] shadow-md hover:bg-slate-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5b5bd6]"
-          >
-            <span>Book a 30 Minute Call</span>
-          </motion.a>
-        </div>
-      </section>
+      <BookACallSection />
     </div>
   );
 }

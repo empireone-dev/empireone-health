@@ -1,15 +1,12 @@
 "use client";
+
+import { BadgeCheck, ArrowUpRight, HeartHandshake } from "lucide-react";
 import React from "react";
-
 import { motion } from "framer-motion";
-import { ArrowUpRight, HeartHandshake, BadgeCheck } from "lucide-react";
-import BookACallSection from "../_sections/book-a-call-section";
-import ProviderFoundationServiceSection from "../provider/sections/provider-foundation-service-section";
-import ProviderHowWeWorkSection from "../provider/sections/provider-how-we-work-section";
 
-export default function Provider() {
+export default function PayerServicesSection() {
   return (
-    <div className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe]">
+    <div>
       <section className="relative overflow-hidden px-8 py-16 sm:px-16 md:px-24 lg:px-28 lg:py-24">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
@@ -28,17 +25,17 @@ export default function Provider() {
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 border border-indigo-200  ">
               <BadgeCheck className="h-3.5 w-3.5" />
-              Provider Services
+              Payer Services
             </span>
 
             <h1 className="text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px]">
-              Provider operations support built for access, authorization, and
-              revenue.
+              Payer operations support for member experience and provider data
+              accuracy.
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg">
-              Focused healthcare BPO support for core provider workflows ready
-              for outsourcing.
+              Focused payer BPO support for core workflows ready for
+              outsourcing.
             </p>
 
             <a
@@ -59,7 +56,7 @@ export default function Provider() {
           >
             <div className="relative w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
               <img
-                src="/images/02.webp"
+                src="/images/03.webp"
                 alt="EmpireOne Team"
                 className="h-auto w-full rounded-2xl object-cover"
               />
@@ -71,20 +68,16 @@ export default function Provider() {
               </span>
               <div>
                 <p className="text-sm font-semibold text-blue-950">
-                  Provider Excellence
+                  Operational Excellence
                 </p>
                 <p className="text-xs text-gray-500">
-                  Empowering seamless access, authorization, and care
-                  coordination.
+               Empowering efficient provider operations.
                 </p>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
-    <ProviderFoundationServiceSection />
-    <ProviderHowWeWorkSection />
-      <BookACallSection/> 
     </div>
   );
 }

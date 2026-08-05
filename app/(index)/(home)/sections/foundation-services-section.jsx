@@ -11,22 +11,22 @@ const FOUNDATION_CARDS = [
   {
     title: "Eligibility & Benefits",
     desc: "Accurate and timely verification of patient eligibility and benefits, reducing billing errors and ensuring smooth patient onboarding.",
-    href: "#eligibility",
+    href: "eligibility-benefits-verification",
   },
   {
     title: "Prior Authorization",
     desc: "Streamlined prior authorization management to accelerate approvals, minimize delays, and enhance patient access to care.",
-    href: "#prior-authorization",
+    href: "prior-authorization-management",
   },
   {
     title: "Denial Management",
     desc: "Proactive denial management strategies to maximize reimbursement, reduce appeals, and resolve issues swiftly.",
-    href: "#denial-management",
+    href: "denial-management",
   },
   {
     title: "Patient Collections",
     desc: "Patient-friendly collections approach that improves account resolution while preserving patient relationships and satisfaction.",
-    href: "#patient-collections",
+    href: "patient-self-pay-collections",
   },
 ];
 
@@ -97,14 +97,14 @@ export default function FoundationServicesSection() {
             icon={UserCheck}
             title="Provider Services"
             desc="Comprehensive support for providers, improving patient care coordination and operational efficiency through specialized teams, advanced QA, and full transparency."
-            href="#provider-services"
+            href="provider"
             delay={80}
           />
           <ServiceCard
             icon={Activity}
             title="Payer Services"
             desc="Tailored solutions for payers, enhancing claim accuracy, turnaround times, and compliance with expert teams and transparent performance metrics."
-            href="#payer-services"
+            href="payer"
             delay={160}
           />
         </div>
