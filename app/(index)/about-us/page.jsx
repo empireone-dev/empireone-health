@@ -21,43 +21,43 @@ const highlights = [
   { icon: Users, label: "Elevate Member & Patient Experience" },
 ];
 const cards = [
-    {
-      title: "Dedicated Team Design",
-      bgColor: "bg-[#e9e3ff]", // soft purple tint
-      icon: Users,
-      image: "/images/empireonecx-team.webp",
-      imageAlt: "Dedicated Team",
-      points: [
-        "Workflow volume planning",
-        "Systems access planning",
-        "Clear daily responsibilities"
-      ]
-    },
-    {
-      title: "Quality Visibility",
-      bgColor: "bg-[#dbeafe]", 
-      icon: LineChart,
-      image: "/images/quality-assuarance.webp", 
-      imageAlt: "Quality Visibility Dashboard",
-      points: [
-        "QA expectations",
-        "Sampling and escalation paths",
-        "KPI reporting"
-      ]
-    },
-    {
-      title: "Compliance-Conscious",
-      bgColor: "bg-[#e8e5ff]", 
-      icon: ShieldCheck,
-      image: "/images/complaince-logos.webp", 
-      imageAlt: "Compliance Badges",
-      points: [
-        "Role-based access",
-        "Sensitive data handling expectations",
-        "Documented controls"
-      ]
-    }
-  ];
+  {
+    title: "Dedicated Team Design",
+    bgColor: "bg-[#e9e3ff]", // soft purple tint
+    icon: Users,
+    image: "/images/empireonecx-team.webp",
+    imageAlt: "Dedicated Team",
+    points: [
+      "Workflow volume planning",
+      "Systems access planning",
+      "Clear daily responsibilities",
+    ],
+  },
+  {
+    title: "Quality Visibility",
+    bgColor: "bg-[#dbeafe]",
+    icon: LineChart,
+    image: "/images/quality-assuarance.webp",
+    imageAlt: "Quality Visibility Dashboard",
+    points: [
+      "QA expectations",
+      "Sampling and escalation paths",
+      "KPI reporting",
+    ],
+  },
+  {
+    title: "Compliance-Conscious",
+    bgColor: "bg-[#e8e5ff]",
+    icon: ShieldCheck,
+    image: "/images/complaince-logos.webp",
+    imageAlt: "Compliance Badges",
+    points: [
+      "Role-based access",
+      "Sensitive data handling expectations",
+      "Documented controls",
+    ],
+  },
+];
 
 export default function AboutSection() {
   return (
@@ -160,79 +160,114 @@ export default function AboutSection() {
         <CardSection />
       </div>
 
-
       <section className="w-full bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe] py-16 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        {/* Section Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px] mb-12"
-        >
-          Human-led delivery with practical AI-assisted visibility.
-        </motion.h1>
+        <div className="mx-auto max-w-7xl">
+          {/* Section Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-center text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px] mb-12"
+          >
+            Human-led delivery with practical AI-assisted visibility.
+          </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {cards.map((card, idx) => (
-            <motion.div
-              key={idx}
-              role="group"
-              aria-labelledby={`card-title-${idx}`}
-              tabIndex={0}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.12 }}
-              transition={{ duration: 0.55, delay: idx * 0.1, ease: "easeOut" }}
-              whileHover={{ y: -6 }}
-              className={`${card.bgColor} rounded-2xl p-6 lg:p-8 flex flex-col shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f2d9e]`}
-            >
-              {/* Card Header (icon + title) */}
-              <div className="mb-6 flex items-center gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/60 text-[#0f2d9e] ring-1 ring-white/60">
-                  {card.icon ? <card.icon className="h-5 w-5" /> : null}
-                </span>
-                <h2 id={`card-title-${idx}`} className="text-xl font-bold text-slate-900">
-                  {card.title}
-                </h2>
-              </div>
-
-              <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-slate-200 border border-slate-300/40">
-                <img
-                  src={card.image}
-                  alt={card.imageAlt}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover border border-blue-500 rounded-md"
-                />
-              </div>
-
-              <ul className="mt-auto space-y-4">
-                {card.points.map((point, pointIdx) => (
-                  <li key={pointIdx} className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-4 w-4 text-[#0f2d9e]" />
-                    <span className="text-slate-800 font-medium text-sm sm:text-base leading-snug">
-                      {point}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href="#contact"
-                className="mt-6 inline-flex items-center justify-center gap-2 self-start rounded-full bg-[#0f2d9e] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f2d9e]"
-                aria-label={`Learn more about ${card.title}`}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {cards.map((card, idx) => (
+              <motion.div
+                key={idx}
+                role="group"
+                aria-labelledby={`card-title-${idx}`}
+                tabIndex={0}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{
+                  duration: 0.55,
+                  delay: idx * 0.1,
+                  ease: "easeOut",
+                }}
+                whileHover={{ y: -6 }}
+                className={`${card.bgColor} rounded-2xl p-6 lg:p-8 flex flex-col shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f2d9e]`}
               >
-                Learn more
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
-            </motion.div>
-          ))}
+                {/* Card Header (icon + title) */}
+                <div className="mb-6 flex items-center gap-4">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/60 text-[#0f2d9e] ring-1 ring-white/60">
+                    {card.icon ? <card.icon className="h-5 w-5" /> : null}
+                  </span>
+                  <h2
+                    id={`card-title-${idx}`}
+                    className="text-xl font-bold text-slate-900"
+                  >
+                    {card.title}
+                  </h2>
+                </div>
+
+                <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-slate-200 border border-slate-300/40">
+                  <img
+                    src={card.image}
+                    alt={card.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover border border-blue-500 rounded-md"
+                  />
+                </div>
+
+                <ul className="mt-auto space-y-4">
+                  {card.points.map((point, pointIdx) => (
+                    <li key={pointIdx} className="flex items-start gap-3">
+                      <CheckCircle className="mt-1 h-4 w-4 text-[#0f2d9e]" />
+                      <span className="text-slate-800 font-medium text-sm sm:text-base leading-snug">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="px-4 py-8 sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#6366f1] via-[#5b5bd6] to-[#4f46e5] px-6 py-16 text-center shadow-lg sm:px-12 sm:py-20 lg:px-16 lg:py-24">
+          {/* Background Network Pattern Overlay */}
+          <div
+            className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: "url('/images/network-pattern.png')" }}
+          />
+
+          {/* Heading Container */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+            className="relative z-10 max-w-3xl"
+          >
+            <h2 className="text-4xl font-bold tracking-tight text-white ">
+              Smarter Healthcare Operations.
+              <br />
+              Better Patient Experiences.
+            </h2>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.a
+            href="#book-call"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.15 }}
+            whileHover={{ y: -2 }}
+            className="group relative z-10 mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0f2d9e] shadow-md hover:bg-slate-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5b5bd6]"
+          >
+            <span>Book a 30 Minute Call</span>
+          </motion.a>
+        </div>
+      </section>
     </div>
   );
 }
