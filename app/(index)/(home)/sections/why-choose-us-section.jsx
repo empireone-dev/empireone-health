@@ -113,16 +113,12 @@ export default function WhyChooseUsSection() {
               delay={120}
               className="relative flex justify-center lg:justify-end lg:items-stretch"
             >
-              <div className="relative min-h-[300px] w-full max-w-[650px] sm:min-h-[500px] lg:h-full">
+              <div className="relative min-h-[440px] w-full max-w-[650px] sm:min-h-[500px] lg:h-full">
                 <div className="absolute inset-0 overflow-hidden rounded-[26px] bg-gradient-to-br from-indigo-600/90 to-indigo-500/90 shadow-2xl backdrop-blur-md sm:rounded-[30px]">
-                  <motion.span
-                    animate={{ scale: [0.7, 2.4], opacity: [0.55, 0] }}
-                    transition={{ duration: 2.6, repeat: Infinity, ease: "easeOut" }}
-                    className="absolute bottom-16 left-10 h-16 w-16 rounded-full bg-white/20"
-                  />
+                  
                 </div>
 
-                <div className="relative flex h-full min-h-[300px] flex-col rounded-[26px] p-6 text-white sm:min-h-[500px] sm:rounded-[30px] sm:p-10">
+                <div className="relative z-10 flex h-full min-h-[440px] flex-col rounded-[26px] p-6 text-white sm:min-h-[500px] sm:rounded-[30px] sm:p-10">
                   <h3 className="text-3xl font-bold sm:text-5xl">Ready?</h3>
                   <div className="mt-6 flex items-center gap-4">
                     <div className="flex h-14 w-14 flex-col items-center justify-center sm:h-16 sm:w-16">
@@ -149,7 +145,7 @@ export default function WhyChooseUsSection() {
                 <img
                   src="/images/doctor-1.webp"
                   alt="Doctor"
-                  className="pointer-events-none absolute bottom-0 right-0 hidden h-full w-auto select-none object-contain sm:block"
+                  className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom sm:max-w-none"
                 />
               </div>
             </Reveal>

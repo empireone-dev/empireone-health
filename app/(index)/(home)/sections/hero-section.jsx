@@ -119,8 +119,7 @@ export default function HeroSection() {
                   >
                     <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-teal-50 sm:h-9 sm:w-9">
                       <motion.span
-                        animate={{ scale: [0.7, 2.4], opacity: [0.55, 0] }}
-                        transition={{ duration: 2.6, repeat: Infinity, ease: "easeOut" }}
+                        animate={{ scale: [0.7, 2.4], opacity: [0.55, 0] }} 
                         className="absolute h-7 w-7 rounded-full bg-teal-300/60 sm:h-9 sm:w-9"
                       />
                       <ShieldCheck className="relative h-3.5 w-3.5 text-teal-600 sm:h-5 sm:w-5" />

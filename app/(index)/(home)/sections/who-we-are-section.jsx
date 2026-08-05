@@ -46,11 +46,7 @@ export default function WhoWeAreSection() {
             className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:-bottom-8 sm:left-8"
           >
             <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-teal-50">
-              <motion.span
-                animate={{ scale: [0.7, 2.4], opacity: [0.55, 0] }}
-                transition={{ duration: 2.6, repeat: Infinity, ease: "easeOut" }}
-                className="absolute h-10 w-10 rounded-full bg-teal-300/60"
-              />
+              <motion.span className="absolute h-10 w-10 rounded-full bg-teal-300/60" />
               <Activity className="relative h-5 w-5 text-teal-600" />
             </span>
             <div>
@@ -81,8 +77,8 @@ export default function WhoWeAreSection() {
               className={`${spaceGrotesk.className} mt-5 max-w-lg text-base leading-relaxed text-gray-600`}
             >
               EmpireOne Health empowers providers and payers with reliable,
-              AI-enhanced healthcare operations and revenue cycle management
-              for measurable, accountable results.
+              AI-enhanced healthcare operations and revenue cycle management for
+              measurable, accountable results.
             </p>
           </Reveal>
 
