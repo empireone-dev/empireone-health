@@ -112,8 +112,11 @@ export default function HeaderSection() {
                     options={[
                       { value: "", label: "Source" },
                       { value: "google", label: "Google Search" },
+                      { value: "chatgpt", label: "ChatGPT" },
+                      { value: "linkedIn", label: "LinkedIn" },
                       { value: "referral", label: "Referral" },
-                      { value: "social", label: "Social Media" },
+                      { value: "website", label: "Website" },
+                      { value: "other", label: "Other" },
                     ]}
                     className="rounded-full border-white/40 bg-white/10 text-xs text-white"
                   />
@@ -123,12 +126,18 @@ export default function HeaderSection() {
                 <div className="relative">
                   <Select
                     label="Need Help With?"
-                    name="need_help"
-                    options={[
+                    name="need_help"s
+                     options={[
                       { value: "", label: "Need Help With?" },
                       { value: "eligibility", label: "Eligibility & Benefits" },
                       { value: "prior-auth", label: "Prior Authorization" },
-                      { value: "claims", label: "Claims Management" },
+                      { value: "scheduling_referrals", label: "Scheduling & Referrals" },
+                      { value: "denial_management", label: "Denial Management" },
+                      { value: "patient_collections", label: "Patient Collections" },
+                      { value: "member_services", label: "Member Services" },
+                      { value: "enrollment_support", label: "Enrollment Support" },
+                      { value: "provide_data", label: "Provide Data" },
+                      { value: "other", label: "Other" },
                     ]}
                     className="rounded-full border-white/40 bg-white/10 text-xs text-white"
                   />

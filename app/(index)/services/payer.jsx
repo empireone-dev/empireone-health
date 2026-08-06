@@ -10,7 +10,7 @@ export default function Payer() {
       <PayerServicesSection />
       <PayerFoundationServiceSection />
       <PayerHowWeWorkSection />
-      <BookACallSection />
+      <BookACallSection />  
     </div>
   );
 }

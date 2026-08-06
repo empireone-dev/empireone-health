@@ -113,7 +113,7 @@ export default function AboutSection() {
           >
             <div className="relative w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
               <img
-                src="/images/empireone-background.jpg"
+                src="/images/empireone-background.webp"
                 alt="EmpireOne Team"
                 className="h-auto w-full rounded-2xl object-cover"
               />

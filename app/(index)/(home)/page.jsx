@@ -2,17 +2,15 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { HeartPlus, ShieldCheck, UserCheck } from "lucide-react";
-import { Syne } from "next/font/google";
-import BookFormSection from "../_sections/book-form-section";
 import WhoWeAreSection from "./sections/who-we-are-section";
 import FoundationServicesSection from "./sections/foundation-services-section";
 import WhyChooseUsSection from "./sections/why-choose-us-section";
 import HeroSection from "./sections/hero-section";
+import BookFormSection from "../_sections/book-form-section";
 
 function HeartbeatDivider() {
   return (
-    <div className="mx-auto max-w-7xl px-6 py-2 lg:px-12">
+    <div className="mx-auto max-w-screen-2xl px-6 py-2 lg:px-12">
       <svg
         viewBox="0 0 1200 60"
         className="h-8 w-full text-teal-400 sm:h-10"
@@ -42,22 +40,24 @@ export default function Page() {
 
       <HeartbeatDivider />
 
-      <FoundationServicesSection />
+      <section className="relative min-h-[420px] overflow-hidden flex items-center sm:min-h-[500px]">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat mask-[linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]"
+          style={{
+            backgroundImage: "url('/images/empireone-background.webp')",
+          }}
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-white via-white/75 to-white" />
 
-      <WhyChooseUsSection />
-
-      <section
-        className="relative min-h-[420px] overflow-hidden bg-cover bg-center bg-no-repeat flex items-center sm:min-h-[500px]"
-        style={{
-          backgroundImage: "url('/images/medbg.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-white/70" />
-
-        <div className="relative mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-0 lg:px-8">
-          <BookFormSection />
+        <div className="relative mx-auto w-full px-4 py-10 sm:px-6 sm:py-0 lg:px-8">
+          <FoundationServicesSection />
         </div>
       </section>
+      <div className="mt-10">
+        <WhyChooseUsSection />
+      </div>
+
+      <BookFormSection />
     </div>
   );
 }

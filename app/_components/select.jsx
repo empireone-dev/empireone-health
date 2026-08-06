@@ -95,7 +95,7 @@ const Select = forwardRef(
           <label
             htmlFor={name}
             className={`absolute left-3  px-1 text-sm transition-all duration-200 ease-out pointer-events-none
-              ${search || isOpen ? "-top-2 text-xs text-white" : "top-2.5 text-white"}`}
+              ${search || isOpen ? "-top-2 text-xs text-black bg-white  rounded-full" : "top-2.5 text-white"}`}
           >
             {label}
           </label>
