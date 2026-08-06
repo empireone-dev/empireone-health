@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Input from '../../_components/input';
 import Select from '../../_components/select';
 
@@ -120,11 +121,10 @@ export default function BookFormSection() {
               required
             />
             <label htmlFor="privacy" className="text-white text-sm">
-              By ticking this box I agree that I have read the <a href="#" className="underline hover:text-white/80">privacy policy</a>.
+              By ticking this box I agree that I have read the <Link href="/privacy-policy" className="underline hover:text-white/80">privacy policy</Link>.
             </label>
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-center mt-8">
             <button
               type="submit"

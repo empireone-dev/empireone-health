@@ -3,7 +3,7 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import Input from "../../../_components/input";
 import Select from "../../../_components/select";
-
+import Link from "next/link";
 export default function HeaderSection() {
   return (
     <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-20">
@@ -160,9 +160,9 @@ export default function HeaderSection() {
                   />
                   <label htmlFor="privacy" className="cursor-pointer">
                     By ticking this box I agree that I have read the{" "}
-                    <a href="#" className="underline hover:text-white">
+                    <Link href="privacy-policy" className="underline hover:text-white">
                       privacy policy
-                    </a>
+                    </Link>
                     .
                   </label>
                 </div>

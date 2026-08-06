@@ -3,7 +3,7 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import Input from "../../../_components/input";
 import Select from "../../../_components/select";
-
+import Link from "next/link";
 export default function HeaderSection() {
   return (
     <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-20">
@@ -20,7 +20,7 @@ export default function HeaderSection() {
           <div className="flex flex-col items-start lg:col-span-6 xl:col-span-7">
             {/* Breadcrumb Navigation */}
             <nav className="flex items-center gap-2 text-xs font-semibold text-slate-700 sm:text-sm">
-              <a href="#" className="text-[#0f2d9e] hover:underline">
+              <a href="/" className="text-[#0f2d9e] hover:underline">
                 Home
               </a>
               <span className="text-slate-400">/</span>
@@ -63,7 +63,10 @@ export default function HeaderSection() {
                 Get a Free Consultation
               </h2>
 
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-3.5">
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="space-y-3.5"
+              >
                 {/* Name & Company */}
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <Input
@@ -81,7 +84,7 @@ export default function HeaderSection() {
 
                 {/* Email & Phone */}
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <Input  
+                  <Input
                     label="Email address"
                     name="email"
                     type="email"
@@ -126,16 +129,29 @@ export default function HeaderSection() {
                 <div className="relative">
                   <Select
                     label="Need Help With?"
-                    name="need_help"s
-                     options={[
+                    name="need_help"
+                    s
+                    options={[
                       { value: "", label: "Need Help With?" },
                       { value: "eligibility", label: "Eligibility & Benefits" },
                       { value: "prior-auth", label: "Prior Authorization" },
-                      { value: "scheduling_referrals", label: "Scheduling & Referrals" },
-                      { value: "denial_management", label: "Denial Management" },
-                      { value: "patient_collections", label: "Patient Collections" },
+                      {
+                        value: "scheduling_referrals",
+                        label: "Scheduling & Referrals",
+                      },
+                      {
+                        value: "denial_management",
+                        label: "Denial Management",
+                      },
+                      {
+                        value: "patient_collections",
+                        label: "Patient Collections",
+                      },
                       { value: "member_services", label: "Member Services" },
-                      { value: "enrollment_support", label: "Enrollment Support" },
+                      {
+                        value: "enrollment_support",
+                        label: "Enrollment Support",
+                      },
                       { value: "provide_data", label: "Provide Data" },
                       { value: "other", label: "Other" },
                     ]}
@@ -161,9 +177,9 @@ export default function HeaderSection() {
                   />
                   <label htmlFor="privacy" className="cursor-pointer">
                     By ticking this box I agree that I have read the{" "}
-                    <a href="#" className="underline hover:text-white">
+                    <Link href="privacy-policy" className="underline hover:text-white">
                       privacy policy
-                    </a>
+                    </Link>
                     .
                   </label>
                 </div>

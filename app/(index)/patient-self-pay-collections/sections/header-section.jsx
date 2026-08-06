@@ -3,6 +3,7 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import Input from "../../../_components/input";
 import Select from "../../../_components/select";
+import Link from "next/link";
 
 export default function HeaderSection() {
   return (
@@ -20,7 +21,7 @@ export default function HeaderSection() {
           <div className="flex flex-col items-start lg:col-span-6 xl:col-span-7">
             {/* Breadcrumb Navigation */}
             <nav className="flex items-center gap-2 text-xs font-semibold text-slate-700 sm:text-sm">
-              <a href="#" className="text-[#0f2d9e] hover:underline">
+              <a href="/" className="text-[#0f2d9e] hover:underline">
                 Home
               </a>
               <span className="text-slate-400">/</span>
@@ -163,9 +164,9 @@ export default function HeaderSection() {
                   />
                   <label htmlFor="privacy" className="cursor-pointer">
                     By ticking this box I agree that I have read the{" "}
-                    <a href="#" className="underline hover:text-white">
+                    <Link href="privacy-policy" className="underline hover:text-white">
                       privacy policy
-                    </a>
+                    </Link>
                     .
                   </label>
                 </div>
