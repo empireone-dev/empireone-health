@@ -36,6 +36,7 @@ export default function Page() {
   return (
     <div className="w-full bg-slate-50 text-slate-800">
       <HeroSection />
+
       <WhoWeAreSection />
 
       <HeartbeatDivider />
@@ -53,7 +54,7 @@ export default function Page() {
           <FoundationServicesSection />
         </div>
       </section>
-      <div className="mt-10">
+      <div className=" bg-blue-100 p-6">
         <WhyChooseUsSection />
       </div>
 

@@ -41,7 +41,7 @@ export default function HeroSection() {
         />
 
         <img
-          src="/images/Caduceus .png"
+          src="/images/Caduceus.webp"
           alt=""
           className="pointer-events-none absolute bottom-0 h-44 w-auto select-none opacity-[0.15] sm:h-72 sm:opacity-[0.2] 2xl:h-96"
         />
