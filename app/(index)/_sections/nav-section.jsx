@@ -64,7 +64,7 @@ export default function NavSection() {
         </div>
 
         <Link
-          href="/contact"
+          href="appointment"
           className="hidden lg:inline-flex items-center gap-2 rounded-full bg-[#12379D] px-6 py-2.5 text-sm text-white font-semibold transition-all duration-200 hover:bg-[#0f2f87] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 xl:px-7 xl:py-3 xl:text-base"
         >
           <span>Get in touch</span>

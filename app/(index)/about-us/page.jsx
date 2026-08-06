@@ -71,8 +71,7 @@ export default function AboutSection() {
         <div className="absolute inset-0 bg-white/70" />
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
-          {/* Left copy */}
-          <motion.div
+          {/* Left copy */}   <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -95,7 +94,7 @@ export default function AboutSection() {
             </p>
 
             <a
-              href="#book-call"
+              href="appointment"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#0f2d9e] px-7 py-3.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#0b2278] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0f2d9e] focus:ring-offset-2 focus:ring-offset-white"
             >
               <span>Book a 30-Min Call</span>
@@ -103,7 +102,6 @@ export default function AboutSection() {
             </a>
           </motion.div>
 
-          {/* Right image */}
           <motion.div
             initial={{ opacity: 0, x: 28 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -163,7 +161,7 @@ export default function AboutSection() {
 
       <section className="w-full bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe] py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          {/* Section Heading */}
+       
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

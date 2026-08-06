@@ -133,7 +133,7 @@ export default function CardSection() {
                   </div>
 
                   <a
-                    href="#contact"
+                    href="appointment"
                     className="group relative z-10 mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-indigo-700 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-500 hover:text-white sm:mt-8"
                   >
                     <PhoneCall className="h-4 w-4" />

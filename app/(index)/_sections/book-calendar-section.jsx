@@ -11,6 +11,7 @@ import {
   PartyPopper,
   Heart,
   Sparkles,
+  MailIcon,
 } from "lucide-react";
 import { Syne, Space_Grotesk } from "next/font/google";
 
@@ -136,21 +137,23 @@ export default function BookCalendarSection() {
             <div className="flex items-center gap-2">
               <motion.span
                 animate={{ rotate: [0, -10, 10, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.5 }}
+                transition={{
+                  duration: 1.6,
+                  repeat: Infinity,
+                  repeatDelay: 1.5,
+                }}
                 className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-white"
               >
-                <PartyPopper className="h-5 w-5" />
+                <MailIcon className="h-5 w-5" />
               </motion.span>
               <Heart className="h-3.5 w-3.5 fill-rose-300 text-rose-300" />
               <Sparkles className="h-3.5 w-3.5 text-amber-300" />
             </div>
-            <p
-              className="mt-3 text-xs font-extrabold leading-tight text-slate-900"
-            >
-              Congratulations!
+            <p className="mt-3 text-xs font-extrabold leading-tight text-slate-900">
+              You're One Step Away
             </p>
             <p className="text-xs font-medium leading-snug text-slate-400">
-              You have an appointment
+              Select a time that works best for you.
             </p>
             <div className="mt-3 space-y-1.5">
               <div className="h-1.5 w-4/5 rounded-full bg-slate-100" />
@@ -170,9 +173,7 @@ export default function BookCalendarSection() {
             <div className="px-4 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-8">
               {/* Header */}
               <div className="mb-5 text-center sm:mb-6">
-                <h1
-                  className="text-2xl font-bold text-slate-900 sm:text-3xl lg:text-4xl"
-                >
+                <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl lg:text-4xl">
                   Book Your 30 Minute Call
                 </h1>
                 <p className="mt-2 text-sm text-slate-500 sm:text-base">
@@ -272,7 +273,9 @@ export default function BookCalendarSection() {
                                       : "text-slate-600 hover:bg-white hover:shadow-sm"
                                   }`}
                                 >
-                                  <span className={isSelected ? "font-bold" : ""}>
+                                  <span
+                                    className={isSelected ? "font-bold" : ""}
+                                  >
                                     {formattedDay}
                                   </span>
                                   {isSelected && (

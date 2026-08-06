@@ -130,7 +130,6 @@ export default function HeaderSection() {
                   <Select
                     label="Need Help With?"
                     name="need_help"
-                    s
                     options={[
                       { value: "", label: "Need Help With?" },
                       { value: "eligibility", label: "Eligibility & Benefits" },
@@ -177,7 +176,7 @@ export default function HeaderSection() {
                   />
                   <label htmlFor="privacy" className="cursor-pointer">
                     By ticking this box I agree that I have read the{" "}
-                    <Link href="privacy-policy" className="underline hover:text-white">
+                    <Link href="#" className="underline hover:text-white">
                       privacy policy
                     </Link>
                     .

@@ -84,7 +84,7 @@ export default function WhoWeAreSection() {
 
           <Reveal delay={240}>
             <a
-              href="#about"
+              href="about-us"
               className="group mt-8 inline-flex items-center gap-2 rounded-full bg-blue-900 px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-600 hover:shadow-lg hover:shadow-teal-500/30"
             >
               About Us

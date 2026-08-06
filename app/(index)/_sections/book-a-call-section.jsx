@@ -9,9 +9,8 @@ export default function BookACallSection() {
 
   return (
     <div>
-      <section className="p-8"> 
+      <section className="p-8">
         <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-r from-[#6366f1] via-[#5b5bd6] to-[#4f46e5] p-10 text-center shadow-2xl">
-        
           <div
             className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20"
             style={{ backgroundImage: "url('/images/network-pattern.webp')" }}
@@ -36,7 +35,7 @@ export default function BookACallSection() {
 
           {/* CTA Button */}
           <motion.a
-            href="#book-call"
+            href="appointment"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}

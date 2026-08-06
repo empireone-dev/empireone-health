@@ -20,7 +20,7 @@ export default function HeaderSection() {
           <div className="flex flex-col items-start lg:col-span-6 xl:col-span-7">
             {/* Breadcrumb Navigation */}
             <nav className="flex items-center gap-2 text-xs font-semibold text-slate-700 sm:text-sm">
-              <a href="#" className="text-[#0f2d9e] hover:underline">
+              <a href="/" className="text-[#0f2d9e] hover:underline">
                 Home
               </a>
               <span className="text-slate-400">/</span>

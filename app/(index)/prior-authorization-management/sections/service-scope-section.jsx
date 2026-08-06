@@ -1,10 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
+
+const TOP_CARDS = [
+  {
+    badge: "Rules",
+    title: "Payer Requirement Review",
+    desc: "Identify authorization requirements, referral needs, medical policy criteria, plan rules, and service-specific documentation expectations.",
+  },
+  {
+    badge: "Docs",
+    title: "Documentation Readiness",
+    desc: "Check orders, clinical notes, diagnosis and procedure information, supporting records, and missing-item queues before submission.",
+  },
+];
 
 const FOUNDATION_CARDS = [
   {
@@ -12,7 +24,7 @@ const FOUNDATION_CARDS = [
     title: "Authorization Submission",
     desc: "Submit requests through payer portals, phone, fax, or other client-approved workflows while documenting confirmation details.",
   },
-   {
+  {
     badge: "Track",
     title: "Status Follow-Up",
     desc: "Monitor pending authorizations, request updates, reference numbers, expected turnarounds, and payer response notes.",
@@ -31,7 +43,7 @@ function Reveal({ children, className = "", delay = 0, as = "div" }) {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.7, delay: delay / 1000, ease: "easeOut" }}
+      transition={{ duration: 0.6, delay: delay / 1000, ease: "easeOut" }}
       className={className}
     >
       {children}
@@ -41,17 +53,26 @@ function Reveal({ children, className = "", delay = 0, as = "div" }) {
 
 function ServiceCard({ badge, title, desc, delay = 0 }) {
   return (
-    <Reveal delay={delay}>
-      <div className="group flex h-full flex-col justify-between rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10">
+    <Reveal delay={delay} className="h-full">
+      <div className="group relative flex h-full flex-col justify-between rounded-3xl border-2 border-slate-200/80 bg-white p-8 lg:p-10 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-indigo-400 hover:shadow-2xl hover:shadow-indigo-500/15 focus-within:ring-4 focus-within:ring-indigo-500/20">
         <div>
+          {/* Badge Header */}
           {badge && (
-            <span className="mb-3 inline-block rounded-full bg-indigo-50 px-3 py-1 text-[11px] font-semibold text-indigo-700 border border-indigo-100">
-              {badge}
-            </span>
+            <div className="mb-6">
+              <span className="inline-flex items-center rounded-lg bg-indigo-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-indigo-700 border border-indigo-100/80 lg:text-sm">
+                {badge}
+              </span>
+            </div>
           )}
-          <h3 className="text-base font-bold text-slate-900">{title}</h3>
+
+          {/* Large Title */}
+          <h3 className="text-2xl font-bold tracking-tight text-slate-900 leading-tight lg:text-3xl">
+            {title}
+          </h3>
+
+          {/* Expanded Clear Text */}
           <p
-            className={`${spaceGrotesk.className} mt-2 text-xs leading-relaxed text-gray-600`}
+            className={`${inter.className} mt-4 text-base lg:text-lg leading-relaxed text-slate-600 font-normal`}
           >
             {desc}
           </p>
@@ -63,52 +84,57 @@ function ServiceCard({ badge, title, desc, delay = 0 }) {
 
 export default function ServiceScopeSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-12">
-      <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
-        <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700">
-            <Briefcase className="h-3.5 w-3.5" />
-            Service Scope
-          </span>
-          <h2 className="mt-3 text-4xl font-bold text-slate-900 sm:text-3xl lg:text-4xl">
-            What the workflow covers.
-          </h2>
-          <p
-            className={`${spaceGrotesk.className} mt-5 max-w-md text-md leading-relaxed text-gray-600`}
-          >
-            Prior authorization can slow access to care when requirements,
-            documentation, and payer follow-up are not owned clearly.
-            EmpireOneHealth helps structure the work so requests move with fewer
-            blind spots.
-          </p>
-        </Reveal>
+    <section className="min-h-screen w-full bg-slate-50/60 py-12 lg:py-20 flex flex-col justify-center items-center">
+      <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-12 flex flex-col justify-between h-full">
+        
+        {/* Header and Top Grid */}
+        <div className="mb-8 lg:mb-12 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-stretch">
+          
+          {/* Section Header */}
+          <Reveal className="lg:col-span-5 flex flex-col justify-center pr-0 lg:pr-6">
+            <span className="inline-flex w-fit items-center rounded-full border border-indigo-200 bg-indigo-50 px-5 py-2 text-sm font-bold text-indigo-700">
+              Service Scope
+            </span>
+            <h2 className="mt-6 text-4xl font-extrabold text-slate-900 sm:text-5xl lg:text-6xl tracking-tight leading-tight">
+              What the workflow covers.
+            </h2>
+            <p
+              className={`${inter.className} mt-6 text-lg lg:text-xl leading-relaxed text-slate-600 font-normal max-w-2xl`}
+            >
+              Prior authorization can slow access to care when requirements,
+              documentation, and payer follow-up are not owned clearly.
+              EmpireOneHealth helps structure the work so requests move with fewer
+              blind spots.
+            </p>
+          </Reveal>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <ServiceCard
-            badge="Rules"
-            title="Payer Requirement Review"
-            desc="Identify authorization requirements, referral needs, medical policy criteria, plan rules, and service-specific documentation expectations."
-            delay={80}
-          />
-          <ServiceCard
-            badge="Docs"
-            title="Documentation Readiness"
-            desc="Check orders, clinical notes, diagnosis and procedure information, supporting records, and missing-item queues before submission."
-            delay={160}
-          />
+          {/* Top Cards */}
+          <div className="lg:col-span-7 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {TOP_CARDS.map((card, i) => (
+              <ServiceCard
+                key={card.title}
+                badge={card.badge}
+                title={card.title}
+                desc={card.desc}
+                delay={(i + 1) * 80}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {FOUNDATION_CARDS.map((card, i) => (
-          <ServiceCard
-            key={card.title}
-            badge={card.badge}
-            title={card.title}
-            desc={card.desc}
-            delay={i * 90}
-          />
-        ))}
+        {/* Foundation Cards Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {FOUNDATION_CARDS.map((card, i) => (
+            <ServiceCard
+              key={card.title}
+              badge={card.badge}
+              title={card.title}
+              desc={card.desc}
+              delay={(i + 3) * 80}
+            />
+          ))}
+        </div>
+
       </div>
     </section>
   );

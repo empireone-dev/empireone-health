@@ -138,7 +138,7 @@ export default function Page() {
               </span>
             </motion.div>
 
-            <h1 className="mb-6 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="mb-4 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
               Privacy Policy
             </h1>
 
@@ -175,7 +175,6 @@ export default function Page() {
       </nav>
 
       <div className="mx-auto flex max-w-360 flex-col gap-12 px-6 py-14 sm:px-10 sm:py-16 md:flex-row md:gap-20 lg:px-16 lg:py-24 xl:px-24">
-        {/* Sidebar index (desktop) */}
         <aside className="hidden flex-shrink-0 md:sticky md:top-10 md:block md:w-64 md:self-start">
           <p className="mb-6 text-xs uppercase text-slate-400">On this page</p>
           <div className="relative pl-6">

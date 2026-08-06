@@ -6,32 +6,64 @@ import Select from '../../_components/select';
 const fieldClassName =
   "!rounded-full !border-white/40 !bg-white/10 !text-white placeholder:!text-white/60 focus:!ring-white/70 focus:!border-white";
 
-export default function BookFormSection() {
+export default function BookFormSection({ compact = false }) {
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 font-sans">
+    <div
+      className={
+        compact
+          ? "flex h-full w-full flex-col font-sans"
+          : "min-h-screen flex items-center justify-center p-6 font-sans"
+      }
+    >
       <div
-        className="bg-linear-to-br from-[#6a69f7] to-[#5150e0] w-full max-w-7xl rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl ring-1 ring-white/10 bg-cover bg-center"
+        className={
+          compact
+            ? "relative flex h-full w-full flex-col overflow-hidden rounded-2xl bg-[#615eff] bg-cover bg-center p-6 shadow-lg sm:p-8"
+            : "bg-linear-to-br from-[#6a69f7] to-[#5150e0] w-full max-w-7xl rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl ring-1 ring-white/10 bg-cover bg-center"
+        }
         style={{ backgroundImage: "url('/images/book-bg.webp')" }}
       >
-        {/* Color overlay to keep form content readable over the background image */}
-        <div className="absolute inset-0 bg-linear-to-br from-[#6a69f7]/90 to-[#5150e0]/90 pointer-events-none"></div>
+        {compact && (
+          <div className="absolute inset-0 bg-[#615eff]/90 pointer-events-none"></div>
+        )}
+        {!compact && (
+          <>
+            {/* Color overlay to keep form content readable over the background image */}
+            <div className="absolute inset-0 bg-linear-to-br from-[#6a69f7]/90 to-[#5150e0]/90 pointer-events-none"></div>
 
-        {/* Faint Background graphics placeholder */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-20 left-1/4 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-        </div>
+            {/* Faint Background graphics placeholder */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+              <div className="absolute top-20 left-1/4 w-32 h-32 bg-white rounded-full blur-3xl"></div>
+              <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+            </div>
+          </>
+        )}
 
-        <h2 className="text-white text-3xl sm:text-4xl font-bold text-center mb-2 relative z-10">
+        <h2
+          className={
+            compact
+              ? "relative z-10 mb-1.5 text-center text-xl font-bold text-white sm:text-2xl"
+              : "text-white text-3xl sm:text-4xl font-bold text-center mb-2 relative z-10"
+          }
+        >
           Book Your 30 Minute Call
         </h2>
-        <p className="text-white/70 text-center mb-10 relative z-10">
+        <p
+          className={
+            compact
+              ? "relative z-10 mb-5 text-center text-sm text-white/70"
+              : "text-white/70 text-center mb-10 relative z-10"
+          }
+        >
           Tell us a bit about you and we&apos;ll get back to you shortly.
         </p>
 
-        <form className="relative z-10 space-y-6" onSubmit={(e) => e.preventDefault()}>
+        <form
+          className={compact ? "relative z-10 space-y-3.5" : "relative z-10 space-y-6"}
+          onSubmit={(e) => e.preventDefault()}
+        >
           {/* Top Grid: 3 columns on large screens, 1 on small */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className={compact ? "grid grid-cols-1 gap-3 md:grid-cols-3" : "grid grid-cols-1 md:grid-cols-3 gap-5"}>
             <Input
               label="Full Name *"
               name="fullName"
@@ -104,11 +136,11 @@ export default function BookFormSection() {
 
           {/* Message Textarea */}
           <div className="flex flex-col">
-            <label className="text-white text-sm font-medium mb-2">Message</label>
+            <label className="mb-1.5 text-sm font-medium text-white">Message</label>
             <textarea
-              rows={5}
+              rows={compact ? 3 : 5}
               placeholder="Tell us about your workflow goals. Do not include sensitive healthcare information."
-              className="w-full bg-white/10 border border-white/40 rounded-2xl px-5 py-4 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-white transition-all resize-none"
+              className="w-full resize-none rounded-2xl border border-white/40 bg-white/10 px-5 py-3 text-white placeholder-white/60 transition-all focus:border-white focus:ring-2 focus:ring-white/70 focus:outline-none"
             ></textarea>
           </div>
 
@@ -125,10 +157,14 @@ export default function BookFormSection() {
             </label>
           </div>
 
-          <div className="flex justify-center mt-8">
+          <div className={compact ? "flex justify-center pt-2" : "flex justify-center mt-8"}>
             <button
               type="submit"
-              className="bg-white text-[#5c5bf4] font-bold text-lg px-12 py-3 rounded-full hover:bg-gray-100 hover:scale-[1.02] active:scale-100 transition-all shadow-md"
+              className={
+                compact
+                  ? "rounded-full bg-white px-10 py-2.5 text-base font-bold text-[#5c5bf4] shadow-md transition-all hover:scale-[1.02] hover:bg-gray-100 active:scale-100"
+                  : "bg-white text-[#5c5bf4] font-bold text-lg px-12 py-3 rounded-full hover:bg-gray-100 hover:scale-[1.02] active:scale-100 transition-all shadow-md"
+              }
             >
               Send
             </button>

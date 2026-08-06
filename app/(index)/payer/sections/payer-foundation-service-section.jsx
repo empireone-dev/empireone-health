@@ -11,17 +11,17 @@ const FOUNDATION_CARDS = [
   {
     title: "Member Services",
     desc: "Support member inquiries, coverage questions, benefit navigation, routing, service requests, and consistent member communication.",
-    href: "#member-services",
+    href: "member-services",
   },
   {
     title: "Enrollment Support",
     desc: "Assist enrollment workflows, application review, member updates, status tracking, documentation routing, and administrative queue support.",
-    href: "#enrollment-support",
+    href: "enrollment-support",
   },
   {
     title: "Provider Data Management",
     desc: "Support provider record updates, data validation, directory maintenance, change requests, and structured provider data quality workflows.",
-    href: "#provider-data-management",
+    href: "provider-data-management",
   },
 ];
 
