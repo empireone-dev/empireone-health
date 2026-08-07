@@ -123,7 +123,7 @@ export default function WhyChooseUsSection() {
                   <div className="mt-6 flex items-center gap-4">
                     <div className="flex h-14 w-14 flex-col items-center justify-center sm:h-16 sm:w-16">
                       <img
-                        src="/images/hours.png"
+                        src="/images/hours.webp"
                         alt="24/7 Support"
                         className="mb-6 h-10 w-10 object-contain sm:h-12 sm:w-12"
                       />

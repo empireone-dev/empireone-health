@@ -106,15 +106,7 @@ export default function CardSection() {
             >
               <div className="relative min-h-[440px] w-full max-w-[650px] sm:min-h-[500px] lg:h-full">
                 <div className="absolute inset-0 overflow-hidden rounded-[26px] bg-gradient-to-br from-indigo-600/90 to-indigo-500/90 shadow-2xl backdrop-blur-md sm:rounded-[30px]">
-                  <motion.span
-                    animate={{ scale: [0.7, 2.4], opacity: [0.55, 0] }}
-                    transition={{
-                      duration: 2.6,
-                      repeat: Infinity,
-                      ease: "easeOut",
-                    }}
-                    className="absolute bottom-16 left-10 h-16 w-16 rounded-full bg-white/20"
-                  />
+                
                 </div>
 
                 <div className="relative z-10 flex h-full min-h-[440px] flex-col rounded-[26px] p-8 text-white sm:min-h-[500px] sm:rounded-[30px] sm:p-10">
