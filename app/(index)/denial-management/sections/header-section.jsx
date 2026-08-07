@@ -161,7 +161,7 @@ export default function HeaderSection() {
                   <label htmlFor="privacy" className="cursor-pointer">
                     By ticking this box I agree that I have read the{" "}
                     <Link href="privacy-policy" className="underline hover:text-white">
-                      privacy policy
+                      Privacy Policy
                     </Link>
                     .
                   </label>

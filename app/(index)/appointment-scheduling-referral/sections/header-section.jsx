@@ -172,7 +172,7 @@ export default function HeaderSection() {
                       href="privacy-policy"
                       className="underline hover:text-white"
                     >
-                      privacy policy
+                      Privacy Policy
                     </Link>
                     .
                   </label>

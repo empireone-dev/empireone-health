@@ -153,7 +153,7 @@ export default function BookFormSection({ compact = false }) {
               required
             />
             <label htmlFor="privacy" className="text-white text-sm">
-              By ticking this box I agree that I have read the <Link href="/privacy-policy" className="underline hover:text-white/80">privacy policy</Link>.
+              By ticking this box I agree that I have read the <Link href="/privacy-policy" className="underline hover:text-white/80">Privacy Policy</Link>.
             </label>
           </div>
 
