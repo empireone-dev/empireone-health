@@ -51,7 +51,7 @@ export default function CardSection() {
       <div className="mx-auto w-full max-w-[1700px] lg:px-10">
         <div
           className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-10 overflow-hidden sm:rounded-[32px] sm:px-8 lg:px-20 lg:py-16"
-          style={{ backgroundImage: "url('/images/image.png')" }}
+          style={{ backgroundImage: "url('/images/image.webp')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500/60 to-blue-500 pointer-events-none" />
 
@@ -122,7 +122,7 @@ export default function CardSection() {
                   <div className="mt-6 flex items-center gap-4">
                     <div className="flex h-14 w-14 flex-col items-center justify-center sm:h-16 sm:w-16">
                       <img
-                        src="/images/hours.png"
+                        src="/images/hours.webp"
                         alt="24/7 Support"
                         className="mb-6 h-10 w-10 object-contain sm:h-12 sm:w-12"
                       />

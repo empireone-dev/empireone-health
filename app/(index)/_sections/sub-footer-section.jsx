@@ -55,13 +55,12 @@ export default function SubFooterSection() {
             </div>
           </div>
 
-          {/* Column 1: Company */}
           <div className="space-y-3">
             <h3 className="font-semibold text-slate-900">Company</h3>
             <ul className="space-y-2 text-slate-600 text-sm">
               <li>
                 <a
-                  href="#about"
+                  href="about-us"
                   className="hover:text-slate-900 transition-colors"
                 >
                   About Us
@@ -77,7 +76,7 @@ export default function SubFooterSection() {
               </li>
               <li>
                 <a
-                  href="#career"
+                  href="https://careers.empireonecx.com/"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Career
@@ -85,14 +84,12 @@ export default function SubFooterSection() {
               </li>
             </ul>
           </div>
-
-          {/* Column 2: Services */}
           <div className="space-y-3">
             <h3 className="font-semibold text-slate-900">Services</h3>
             <ul className="space-y-2 text-slate-600 text-sm">
               <li>
                 <a
-                  href="#provider-services"
+                  href="provider"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Provider Services
@@ -100,7 +97,7 @@ export default function SubFooterSection() {
               </li>
               <li>
                 <a
-                  href="#payer-services"
+                  href="payer"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Payer Services
