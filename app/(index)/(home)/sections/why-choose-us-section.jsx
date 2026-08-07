@@ -51,7 +51,7 @@ export default function WhyChooseUsSection() {
       <div className="mx-auto w-full max-w-[1700px] lg:px-10">
         <div
           className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
-          style={{ backgroundImage: "url('/images/image.png')" }}
+          style={{ backgroundImage: "url('/images/image.webp')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500/60 to-blue-500 pointer-events-none" />
 
