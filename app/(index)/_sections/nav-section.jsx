@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
+import { GetInTouchModal } from "./get-it-touch";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -12,6 +13,7 @@ const navLinks = [
 export default function NavSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -63,13 +65,14 @@ export default function NavSection() {
           </Link>
         </div>
 
-        <Link
-          href="appointment"
+        <button
+          type="button"
+          onClick={() => setIsGetInTouchOpen(true)}
           className="hidden lg:inline-flex items-center gap-2 rounded-full bg-[#12379D] px-6 py-2.5 text-sm text-white font-semibold transition-all duration-200 hover:bg-[#0f2f87] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 xl:px-7 xl:py-3 xl:text-base"
         >
           <span>Get in touch</span>
           <ArrowUpRight className="w-4 h-4 xl:w-5 xl:h-5" />
-        </Link>
+        </button>
 
         {/* Mobile menu toggle (header bar version) */}
         <button
@@ -208,22 +211,26 @@ export default function NavSection() {
                 </Link>
               </div>
 
-              {/* Bottom section: divider + CTA */}
               <div className="mt-8">
                 <div className="mb-6 h-px w-full bg-gray-100" />
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsGetInTouchOpen(true);
+                  }}
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#12379D] px-6 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-[#0f2f87] active:scale-[0.98]"
                 >
                   <span>Get in touch</span>
                   <ArrowUpRight className="w-5 h-5" />
-                </Link>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} />
     </nav>
   );
 }
