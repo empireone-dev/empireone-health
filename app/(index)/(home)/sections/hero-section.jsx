@@ -207,20 +207,16 @@ export default function HeroSection() {
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      className="flex items-center gap-2 rounded-2xl bg-transparent border border-white px-3 py-2 sm:gap-3 sm:px-4 sm:py-3"
+                      className="flex items-center gap-2 rounded-2xl bg-white/50 backdrop-blur-md border border-white/60 shadow-sm px-3 py-2 sm:gap-3 sm:px-4 sm:py-3"
                     >
-                      <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-transparent sm:h-9 sm:w-9">
-                        <motion.span
-                          animate={{ scale: [0.7, 2.4], opacity: [0.55, 0] }}
-                          className="absolute h-7 w-7 rounded-full bg-teal-300/40 sm:h-9 sm:w-9"
-                        />
+                      <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-teal-50 sm:h-9 sm:w-9">
                         <ShieldCheck className="relative h-3.5 w-3.5 text-teal-600 sm:h-5 sm:w-5" />
                       </span>
                       <div>
                         <p className="text-[11px] font-semibold text-blue-600 sm:text-sm">
                           HIPAA Compliant
                         </p>
-                        <p className="text-[10px] text-gray-800 sm:text-xs font-semibold">
+                        <p className="text-[10px] text-gray-700 sm:text-xs font-semibold">
                           Secure by design
                         </p>
                       </div>
@@ -246,16 +242,16 @@ export default function HeroSection() {
                         ease: "easeInOut",
                         delay: 0.4,
                       }}
-                      className="flex items-center gap-2 rounded-2xl bg-transparent border border-white px-3 py-2 sm:gap-3 sm:px-4 sm:py-3"
+                      className="flex items-center gap-2 rounded-2xl bg-white/50 backdrop-blur-md border border-white/60 shadow-sm px-3 py-2 sm:gap-3 sm:px-4 sm:py-3"
                     >
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-transparent sm:h-9 sm:w-9">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-teal-50 sm:h-9 sm:w-9">
                         <UserCheck className="h-3.5 w-3.5 text-teal-600 sm:h-5 sm:w-5" />
                       </span>
                       <div>
                         <p className="text-[11px] font-semibold text-blue-600 sm:text-sm">
                           Care team of 850+
                         </p>
-                        <p className="text-[10px] text-gray-800 sm:text-xs font-semibold">
+                        <p className="text-[10px] text-gray-700 sm:text-xs font-semibold">
                           Always by your side
                         </p>
                       </div>
