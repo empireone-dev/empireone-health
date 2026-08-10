@@ -174,7 +174,7 @@ export default function BookCalendarSection() {
               {/* Header */}
               <div className="mb-5 text-center sm:mb-6">
                 <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl lg:text-4xl">
-                  Book Your 30 Minute Call
+                  Book a strategy call{" "}
                 </h1>
                 <p className="mt-2 text-sm text-slate-500 sm:text-base">
                   Pick a date and time that works for you.

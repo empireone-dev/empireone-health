@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { HeartPlus, ShieldCheck, UserCheck, Mail, Phone } from "lucide-react";
 
 const badgeContainer = {
@@ -17,58 +17,99 @@ const badgeItem = {
   },
 };
 
-const CertificationBadge = (
-  <motion.div
-    variants={badgeContainer}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.6 }}
-    className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3 justify-center lg:justify-start"
-  >
-    <motion.img
-      variants={badgeItem}
-      whileHover={{ scale: 1.06 }}
-      src="/images/gdpr.webp"
-      alt="GDPR compliant"
-      className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95"
-    />
-    <motion.img
-      variants={badgeItem}
-      whileHover={{ scale: 1.06 }}
-      src="/images/hippa.webp"
-      alt="HIPAA compliant"
-      className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95"
-    />
-    <motion.img
-      variants={badgeItem}
-      whileHover={{ scale: 1.06 }}
-      src="/images/iso.webp"
-      alt="ISO 27001"
-      className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95"
-    />
-    <motion.img
-      variants={badgeItem}
-      whileHover={{ scale: 1.06 }}
-      src="/images/pci.webp"
-      alt="PCI DSS"
-      className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95"
-    />
-    <motion.img
-      variants={badgeItem}
-      whileHover={{ scale: 1.06 }}
-      src="/images/soc2.webp"
-      alt="SOC 2 Type 2"
-      className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95"
-    />
-    <motion.img
-      variants={badgeItem}
-      whileHover={{ scale: 1.06 }}
-      src="/images/bbb.webp"
-      alt="BBB Accredited"
-      className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95"
-    />
-  </motion.div>
-);
+const badgeDetails = [
+  {
+    label: "ISO Certified",
+    img: "/images/iso.webp",
+    title: "ISO 27001:2022",
+    desc: "The ISO 27001:2022 badge is an internationally recognized certification that confirms our organization operates a world-class Information Security Management System (ISMS). This standard proves that we don't just use security tools—we have a comprehensive, board-led culture of risk management.",
+  },
+  {
+    label: "GDPR Compliant",
+    img: "/images/gdpr.webp",
+    title: "GDPR",
+    desc: "The GDPR badge signifies our adherence to the most stringent data protection framework in the world. Beyond mere security, GDPR compliance demonstrates our commitment to Data Privacy as a Human Right, ensuring that every individual's personal information is handled with transparency, purpose, and absolute care.",
+  },
+  {
+    label: "SOC 2 Type II",
+    img: "/images/soc2.webp",
+    title: "SOC2 TYPE2",
+    desc: 'The SOC 2 Type 2 badge is the gold standard for service organizations, representing a rigorous, independent audit of our internal controls. Unlike a "snapshot" audit, the Type 2 certification proves that our security protocols have been followed consistently and effectively over an extended period.',
+  },
+  {
+    label: "HIPAA Ready",
+    img: "/images/hippa.webp",
+    title: "HIPAA",
+    desc: "As a HIPAA-compliant organization, we adhere to the highest federal standards for the protection of Protected Health Information (PHI). This certification signifies that we have implemented rigorous safeguards to ensure the confidentiality, integrity, and availability of sensitive healthcare data.",
+  },
+  {
+    label: "PCI DSS Certified",
+    img: "/images/pci.webp",
+    title: "PCI DSS",
+    desc: "The PCI DSS badge signifies that our organization meets the rigorous security standards established by the world's leading financial institutions. This compliance ensures that every credit card transaction and financial record processed through our systems is handled with maximum security to prevent fraud and data theft.",
+  },
+  {
+    label: "BBB Accredited",
+    img: "/images/bbb.webp",
+    title: "BBB ACCREDITED BUSINESSES",
+    desc: "The BBB Accredited Business seal is more than a rating; it is a public declaration of our commitment to ethical business practices. Accreditation signifies that we have been independently vetted and have pledged to uphold the BBB Standards for Trust—a comprehensive set of best practices for how businesses should treat their clients and the public.",
+  },
+];
+
+function CertificationBadges() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  return (
+    <motion.div
+      variants={badgeContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.6 }}
+      className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3 justify-center lg:justify-start"
+    >
+      {badgeDetails.map((badge, i) => (
+        <div
+          key={badge.title}
+          className="relative"
+          onMouseEnter={() => setActiveIndex(i)}
+          onMouseLeave={() => setActiveIndex(null)}
+          onFocus={() => setActiveIndex(i)}
+          onBlur={() => setActiveIndex(null)}
+        >
+          <motion.img
+            variants={badgeItem}
+            whileHover={{ scale: 1.06 }}
+            src={badge.img}
+            alt={badge.label}
+            tabIndex={0}
+            className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95 cursor-pointer outline-none"
+          />
+
+          <AnimatePresence>
+            {activeIndex === i && (
+              <motion.div
+                initial={{ opacity: 0, y: 6, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 6, scale: 0.96 }}
+                transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute bottom-full left-1/2 z-50 mb-3 w-64 -translate-x-1/2 rounded-xl border border-slate-200 bg-white p-3 text-left shadow-xl sm:w-72"
+              >
+                <p className="mb-1 text-xs font-bold uppercase tracking-wide text-teal-600">
+                  {badge.title}
+                </p>
+                <p className="text-[11px] leading-relaxed text-slate-600 sm:text-xs">
+                  {badge.desc}
+                </p>
+                <div className="absolute left-1/2 top-full h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b border-r border-slate-200 bg-white" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </motion.div>
+  );
+}
+
 export default function HeroSection() {
   return (
     <div>
@@ -163,7 +204,7 @@ export default function HeroSection() {
                 providers for better healthcare outcomes.
               </motion.p>
 
-              {CertificationBadge}
+              <CertificationBadges />
             </div>
 
             {/* Right Column Media Content */}
@@ -213,7 +254,7 @@ export default function HeroSection() {
                         <ShieldCheck className="relative h-3.5 w-3.5 text-teal-600 sm:h-5 sm:w-5" />
                       </span>
                       <div>
-                        <p className="text-[11px] font-semibold text-blue-600 sm:text-sm">
+                        <p className="text-[11px] font-semibold text-blue-500 sm:text-sm">
                           HIPAA Compliant
                         </p>
                         <p className="text-[10px] text-gray-700 sm:text-xs font-semibold">
@@ -248,7 +289,7 @@ export default function HeroSection() {
                         <UserCheck className="h-3.5 w-3.5 text-teal-600 sm:h-5 sm:w-5" />
                       </span>
                       <div>
-                        <p className="text-[11px] font-semibold text-blue-600 sm:text-sm">
+                        <p className="text-[11px] font-semibold text-blue-500 sm:text-sm">
                           Care team of 850+
                         </p>
                         <p className="text-[10px] text-gray-700 sm:text-xs font-semibold">
