@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HeartPlus, ShieldCheck, UserCheck, Mail, Phone } from "lucide-react";
+import { HeartPlus, ShieldCheck, UserCheck, Mail, Phone, HeartHandshake } from "lucide-react";
 
 const badgeContainer = {
   hidden: { opacity: 0, y: 6 },
@@ -255,10 +255,10 @@ export default function HeroSection() {
                       </span>
                       <div>
                         <p className="text-[11px] font-semibold text-blue-500 sm:text-sm">
-                          HIPAA Compliant
+                          Patient-focused{" "}
                         </p>
                         <p className="text-[10px] text-gray-700 sm:text-xs font-semibold">
-                          Secure by design
+                          Every step, made easier{" "}
                         </p>
                       </div>
                     </motion.div>
@@ -286,14 +286,14 @@ export default function HeroSection() {
                       className="flex items-center gap-2 rounded-2xl bg-white/50 backdrop-blur-md border border-white/60 shadow-sm px-3 py-2 sm:gap-3 sm:px-4 sm:py-3"
                     >
                       <span className="flex h-7 w-7 items-center justify-center rounded-full bg-teal-50 sm:h-9 sm:w-9">
-                        <UserCheck className="h-3.5 w-3.5 text-teal-600 sm:h-5 sm:w-5" />
+                        <HeartHandshake className="h-3.5 w-3.5 text-teal-600 sm:h-5 sm:w-5" />
                       </span>
                       <div>
                         <p className="text-[11px] font-semibold text-blue-500 sm:text-sm">
-                          Care team of 850+
+                          Trusted healthcare support{" "}
                         </p>
                         <p className="text-[10px] text-gray-700 sm:text-xs font-semibold">
-                          Always by your side
+                          Care you can count on{" "}
                         </p>
                       </div>
                     </motion.div>
