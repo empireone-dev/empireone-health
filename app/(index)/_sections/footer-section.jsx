@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FooterSection() {
   return (
-    <footer className="flex w-full justify-center gap-14 bg-blue-700 text-white py-4 px-4 text-center font-medium text-xs sm:text-sm">
+    <footer className="flex w-full justify-center gap-14 bg-blue-600 text-white py-4 px-4 text-center font-medium text-xs sm:text-sm">
       <p>© 2026 EmpireOne Health. All Rights Reserved.</p>
       <div className="flex gap-2 items-center">
         <a href="/privacy-policy" className="text-white hover:underline">

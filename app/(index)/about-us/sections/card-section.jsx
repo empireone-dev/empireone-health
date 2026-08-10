@@ -67,7 +67,7 @@ export default function CardSection() {
               </Reveal>
 
               <Reveal delay={140}>
-                <p
+                <p 
                   className={`${spaceGrotesk.className} mt-5 max-w-xl text-xl leading-7 text-slate-200`}
                 >
                   We support the operational workflows that affect cash flow,

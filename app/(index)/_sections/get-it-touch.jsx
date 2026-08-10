@@ -189,7 +189,7 @@ export function GetInTouchModal({ isOpen, onClose, onSubmit }) {
                 e.currentTarget.style.backgroundColor = BRAND;
               }}
             >
-              {isSubmitting ? "Submitting…" : "Submit"}
+              {isSubmitting ? "Submitting…" : "Request a Callback"}
             </Button>
           </div>
         </form>
