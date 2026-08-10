@@ -65,8 +65,8 @@ export default function BookCalendarSection() {
     year: today.getFullYear(),
     month: today.getMonth(),
   });
-  const [selectedDate, setSelectedDate] = useState(12);
-  const [selectedTime, setSelectedTime] = useState("10:00 am");
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [monthDirection, setMonthDirection] = useState(0);
