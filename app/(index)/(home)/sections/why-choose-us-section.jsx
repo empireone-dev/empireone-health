@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
+import { GetInTouchModal } from "../../_sections/get-it-touch";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ function Reveal({ children, className = "", delay = 0, as = "div" }) {
 }
 
 export default function WhyChooseUsSection() {
+  const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
   return (
     <section className="flex items-center py-10 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
       <div className="mx-auto w-full max-w-[1700px] lg:px-10">
@@ -133,14 +135,16 @@ export default function WhyChooseUsSection() {
                     </span>
                   </div>
 
-                  <a
-                    href="appointment"
+                  <button
+                    type="button"
+                          onClick={() => setIsGetInTouchOpen(true)}
                     className="group relative z-10 mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-indigo-700 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-500 hover:text-white sm:mt-8"
                   >
                     <PhoneCall className="h-4 w-4" />
                     Get in Touch
-                  </a>
+                  </button>
                 </div>
+                
 
                 <img
                   src="/images/doctor-1.webp"
@@ -152,6 +156,7 @@ export default function WhyChooseUsSection() {
           </div>
         </div>
       </div>
+        <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} />
     </section>
   );
 }
