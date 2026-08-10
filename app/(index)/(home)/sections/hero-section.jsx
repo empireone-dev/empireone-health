@@ -2,6 +2,32 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HeartPlus, ShieldCheck, UserCheck, Mail, Phone } from 'lucide-react';
 
+const badgeContainer = {
+  hidden: { opacity: 0, y: 6 },
+  show: { opacity: 1, y: 0, transition: { staggerChildren: 0.06 } },
+};
+
+const badgeItem = {
+  hidden: { opacity: 0, y: 6, scale: 0.98 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.36, ease: [0.22, 1, 0.36, 1] } },
+};
+
+const CertificationBadge = (
+  <motion.div
+    variants={badgeContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.6 }}
+    className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3 justify-center lg:justify-start"
+  >
+    <motion.img variants={badgeItem} whileHover={{ scale: 1.06 }} src="/images/gdpr.webp" alt="GDPR compliant" className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95" />
+    <motion.img variants={badgeItem} whileHover={{ scale: 1.06 }} src="/images/hippa.webp" alt="HIPAA compliant" className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95" />
+    <motion.img variants={badgeItem} whileHover={{ scale: 1.06 }} src="/images/iso.webp" alt="ISO 27001" className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95" />
+    <motion.img variants={badgeItem} whileHover={{ scale: 1.06 }} src="/images/pci.webp" alt="PCI DSS" className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95" />
+    <motion.img variants={badgeItem} whileHover={{ scale: 1.06 }} src="/images/soc2.webp" alt="SOC 2 Type 2" className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95" />
+    <motion.img variants={badgeItem} whileHover={{ scale: 1.06 }} src="/images/bbb.webp" alt="BBB Accredited" className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95" />
+  </motion.div>
+)
 export default function HeroSection() {
   return (
     <div>
@@ -86,6 +112,9 @@ export default function HeroSection() {
                 access, optimize revenue workflows, and align payers and
                 providers for better healthcare outcomes.
               </motion.p>
+
+              {CertificationBadge}
+
             </div>
 
             {/* Right Column Media Content */}

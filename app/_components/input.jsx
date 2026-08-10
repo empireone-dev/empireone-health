@@ -33,7 +33,7 @@ const Input = forwardRef(
       className = "",
       accentColor = "#7c3aed", // focus ring/border + focused label color
       labelBg = "#ffffff", // color behind the floated label (match your surface)
-      textColor = "#111827", // input text, icons, resting label, border base
+      textColor = "#FFFFFF", // input text, icons, resting label, border base
       ...props
     },
     ref,
