@@ -60,8 +60,8 @@ export default function WhyChooseUsSection() {
           <div className="relative z-10 grid items-stretch gap-10 sm:gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div className="max-w-2xl">
               <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-5 py-2 text-sm font-semibold text-indigo-700 shadow-sm">
-                  <ShieldCheck className="h-4 w-4 text-teal-600" />
+                <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 border border-indigo-100">
+                  <ShieldCheck className="h-3.5 w-3.5" />
                   Why Choose Us
                 </span>
               </Reveal>
@@ -79,8 +79,8 @@ export default function WhyChooseUsSection() {
                   className={`${spaceGrotesk.className} mt-5 max-w-xl text-base leading-7 text-slate-200`}
                 >
                   Our dedicated teams, HIPAA-conscious approach, advanced AI
-                  workflows, and strong payer-provider alignment set us apart
-                  in healthcare operations.
+                  workflows, and strong payer-provider alignment set us apart in
+                  healthcare operations.
                 </p>
               </Reveal>
 
@@ -116,9 +116,7 @@ export default function WhyChooseUsSection() {
               className="relative flex justify-center lg:justify-end lg:items-stretch"
             >
               <div className="relative min-h-[440px] w-full max-w-[650px] sm:min-h-[500px] lg:h-full">
-                <div className="absolute inset-0 overflow-hidden rounded-[26px] bg-gradient-to-br from-indigo-600/90 to-indigo-500/90 shadow-2xl backdrop-blur-md sm:rounded-[30px]">
-                  
-                </div>
+                <div className="absolute inset-0 overflow-hidden rounded-[26px] bg-gradient-to-br from-indigo-600/90 to-indigo-500/90 shadow-2xl backdrop-blur-md sm:rounded-[30px]"></div>
 
                 <div className="relative z-10 flex h-full min-h-[440px] flex-col rounded-[26px] p-6 text-white sm:min-h-[500px] sm:rounded-[30px] sm:p-10">
                   <h3 className="text-3xl font-bold sm:text-5xl">Ready?</h3>
@@ -137,14 +135,13 @@ export default function WhyChooseUsSection() {
 
                   <button
                     type="button"
-                          onClick={() => setIsGetInTouchOpen(true)}
+                    onClick={() => setIsGetInTouchOpen(true)}
                     className="group relative z-10 mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-indigo-700 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-500 hover:text-white sm:mt-8"
                   >
                     <PhoneCall className="h-4 w-4" />
                     Get in Touch
                   </button>
                 </div>
-                
 
                 <img
                   src="/images/doctor-1.webp"
@@ -156,7 +153,10 @@ export default function WhyChooseUsSection() {
           </div>
         </div>
       </div>
-        <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} />
+      <GetInTouchModal
+        isOpen={isGetInTouchOpen}
+        onClose={() => setIsGetInTouchOpen(false)}
+      />
     </section>
   );
 }

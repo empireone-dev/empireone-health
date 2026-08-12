@@ -92,9 +92,9 @@ export default function FoundationServicesSection() {
     <section className="mx-auto max-w-screen-2xl px-6 py-20 sm:py-28">
       <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 border border-indigo-100">
+          <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700">
             <Building className="h-3.5 w-3.5" />
-            Foundation Services
+            Foundation Services{" "}
           </span>
           <h2 className="mt-4 text-5xl font-bold text-slate-900 ">
             Core healthcare operations services ready for outsourcing
