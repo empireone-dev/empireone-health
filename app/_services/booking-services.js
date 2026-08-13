@@ -1,4 +1,4 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_LOCAL;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_PRODUCTION;
 export async function add_booking_service(data) {
   try {
     const response = await fetch(`${baseUrl}/api/add_booking`, {
