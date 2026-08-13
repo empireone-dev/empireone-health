@@ -1,4 +1,5 @@
 import { HeartPlus } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function SubFooterSection() {
@@ -59,28 +60,28 @@ export default function SubFooterSection() {
             <h3 className="font-semibold text-slate-900">Company</h3>
             <ul className="space-y-2 text-slate-600 text-sm">
               <li>
-                <a
+                <Link
                   href="about-us"
                   className="hover:text-slate-900 transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#book-a-call"
+                <Link
+                  href="appointment"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Book A Call
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://careers.empireonecx.com/"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Career
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
