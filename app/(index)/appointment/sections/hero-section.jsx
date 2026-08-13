@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import BookCalendarSection from "../../_sections/book-calendar-section";
+import BookCalendarSection from "./book-calendar-section";
 
 export default function HeroSection() {
   return (
