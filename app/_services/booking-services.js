@@ -29,16 +29,17 @@ export async function add_appointment_service(data) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(data), // <-- Must stringify the object!
+      body: JSON.stringify(data),
     });
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    return await response.json();
+    const text = await response.text();
+    return text ? JSON.parse(text) : null;
   } catch (error) {
     console.error("Failed to create booking:", error);
-    throw error; // Excellent practice to throw this so your React try/catch handles it
+    throw error;
   }
 }

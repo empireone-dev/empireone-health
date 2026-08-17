@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
+import { GetInTouchModal } from "../../_components/get-in-touch-modal";
 
-import { GetInTouchModal } from "../../_sections/get-it-touch";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const WHY_CHOOSE_ITEMS = [

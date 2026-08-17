@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
-import { GetInTouchModal } from "../../_sections/get-it-touch";
+import { GetInTouchModal } from "../../_components/get-in-touch-modal";
+
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -153,10 +154,7 @@ export default function WhyChooseUsSection() {
           </div>
         </div>
       </div>
-      <GetInTouchModal
-        isOpen={isGetInTouchOpen}
-        onClose={() => setIsGetInTouchOpen(false)}
-      />
+      <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} />
     </section>
   );
 }

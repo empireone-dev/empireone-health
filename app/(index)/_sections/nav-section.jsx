@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
-import { GetInTouchModal } from "./get-it-touch";
+import GetInTouchModal from "../_components/get-in-touch-modal";
+// import { GetInTouchModal } from "../_components/get-in-touch-modal";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -65,14 +66,10 @@ export default function NavSection() {
           </Link>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setIsGetInTouchOpen(true)}
-          className="hidden lg:inline-flex items-center gap-2 rounded-full bg-[#12379D] px-6 py-2.5 text-sm text-white font-semibold transition-all duration-200 hover:bg-[#0f2f87] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 xl:px-7 xl:py-3 xl:text-base"
-        >
-          <span>Get in touch</span>
-          <ArrowUpRight className="w-4 h-4 xl:w-5 xl:h-5" />
-        </button>
+       
+    <GetInTouchModal />
+
+
 
         {/* Mobile menu toggle (header bar version) */}
         <button
@@ -230,7 +227,7 @@ export default function NavSection() {
         </div>
       </div>
 
-      <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} />
+      {/* <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} /> */}
     </nav>
   );
 }

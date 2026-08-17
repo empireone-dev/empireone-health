@@ -31,17 +31,33 @@ const Input = forwardRef(
       hint,
       readOnly = false,
       className = "",
-      accentColor = "#7c3aed", // focus ring/border + focused label color
+      accentColor = "#ffffff", // focus ring/border + focused label color
       labelBg = "#ffffff", // color behind the floated label (match your surface)
-      textColor = "#FFFFFF", // input text, icons, resting label, border base
+      textColor = "#ffffff", // input text, icons, resting label, border base
       ...props
     },
     ref,
   ) => {
     const autoId = useId();
     const id = name || autoId;
+    const isTextarea = type === "textarea";
     const errorId = error ? `${id}-error` : undefined;
     const hintId = hint && !error ? `${id}-hint` : undefined;
+
+    const borderClasses = error
+      ? "border-red-500 focus:border-red-500 focus:ring-red-500/40"
+      : "border-[color:var(--input-text)]/25 focus:border-[color:var(--input-accent)] focus:ring-[color:var(--input-accent)]/30";
+
+    const sharedFieldClasses = `
+      peer w-full border bg-transparent px-4 text-sm text-[color:var(--input-text)]
+      transition-colors duration-150
+      placeholder:text-transparent
+      focus:outline-none focus:ring-2 focus:ring-offset-0
+      disabled:cursor-not-allowed disabled:opacity-50
+      read-only:bg-[color:var(--input-text)]/5
+      ${borderClasses}
+      ${className}
+    `;
 
     return (
       <div
@@ -54,66 +70,68 @@ const Input = forwardRef(
       >
         <div className="relative">
           {/* Left Icon */}
-          {iconLeft && (
+          {!isTextarea && iconLeft && (
             <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[color:var(--input-text)]/50">
               {iconLeft}
             </div>
           )}
 
-          {/* Input */}
-          <input
-            autoComplete="off"
-            ref={ref}
-            id={id}
-            name={name}
-            type={type}
-            disabled={disabled}
-            required={required}
-            readOnly={readOnly}
-            step={type === "number" ? "any" : undefined}
-            placeholder=" " // needed for floating label
-            aria-invalid={!!error}
-            aria-describedby={errorId || hintId}
-            {...props}
-            className={`
-              peer w-full rounded-full border bg-transparent py-2.5 px-4 text-sm text-[color:var(--input-text)]
-              transition-colors duration-150
-              placeholder:text-transparent
-              focus:outline-none focus:ring-2 focus:ring-offset-0
-              disabled:cursor-not-allowed disabled:opacity-50
-              read-only:bg-[color:var(--input-text)]/5
-              ${iconLeft ? "pl-10" : ""} ${iconRight ? "pr-10" : ""}
-              ${
-                error
-                  ? "border-red-500 focus:border-red-500 focus:ring-red-500/40"
-                  : "border-[color:var(--input-text)]/25 focus:border-[color:var(--input-accent)] focus:ring-[color:var(--input-accent)]/30"
-              }
-              ${className}
-            `}
-          />
+          {/* Textarea */}
+          {isTextarea ? (
+            <textarea
+              ref={ref}
+              id={id}
+              name={name}
+              disabled={disabled}
+              required={required}
+              readOnly={readOnly}
+              placeholder=" "
+              aria-invalid={!!error}
+              aria-describedby={errorId || hintId}
+              {...props}
+              className={`${sharedFieldClasses} rounded-2xl py-3 resize-none`}
+            />
+          ) : (
+            /* Input */
+            <input
+              autoComplete="off"
+              ref={ref}
+              id={id}
+              name={name}
+              type={type}
+              disabled={disabled}
+              required={required}
+              readOnly={readOnly}
+              step={type === "number" ? "any" : undefined}
+              placeholder=" "
+              aria-invalid={!!error}
+              aria-describedby={errorId || hintId}
+              {...props}
+              className={`${sharedFieldClasses} rounded-full py-2.5 ${iconLeft ? "pl-10" : ""} ${iconRight ? "pr-10" : ""}`}
+            />
+          )}
 
           {/* Floating Label */}
           <label
             htmlFor={id}
             className={`
-              absolute left-3 top-1/2 z-10 -translate-y-1/2
-              origin-left rounded-full px-1.5 text-sm text-[color:var(--input-text)]/60
+              absolute left-3 z-10
+              origin-left rounded-full px-1.5 text-sm text-white
               transition-all duration-150 ease-out
               pointer-events-none
+              ${isTextarea
+                ? "-translate-y-1/2 top-[1.1rem] peer-placeholder-shown:top-[1.1rem] peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent"
+                : "top-1/2 -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent"
+              }
 
-              peer-placeholder-shown:top-1/2
-              peer-placeholder-shown:-translate-y-1/2
-              peer-placeholder-shown:text-sm
-              peer-placeholder-shown:bg-transparent
-
-              peer-focus:-top-0
-              peer-focus:-translate-y-1/2
+              peer-focus:top-0
+              peer-focus:-translate-y-full
               peer-focus:text-xs
               peer-focus:bg-[color:var(--input-label-bg)]
               ${error ? "peer-focus:text-red-500" : "peer-focus:text-[color:var(--input-accent)]"}
 
-              peer-not-placeholder-shown:-top-0
-              peer-not-placeholder-shown:-translate-y-1/2
+              peer-not-placeholder-shown:top-0
+              peer-not-placeholder-shown:-translate-y-full
               peer-not-placeholder-shown:text-xs
               peer-not-placeholder-shown:bg-[color:var(--input-label-bg)]
               peer-not-placeholder-shown:text-[color:var(--input-text)]/70
