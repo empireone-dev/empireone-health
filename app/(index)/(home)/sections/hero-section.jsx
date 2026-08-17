@@ -238,7 +238,6 @@ export default function HeroSection() {
                 </motion.div>
 
                 <>
-<<<<<<< HEAD
                   {/* First Badge: HIPAA Compliant */}
                   <motion.div
                     initial={{ opacity: 0, y: 16 }}
@@ -307,11 +306,9 @@ export default function HeroSection() {
                       </div>
                     </motion.div>
                   </motion.div>
-=======
                   {/* First Badge: Healthcare BPO */}
 
                   {/* Second Badge: Care Team */}
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
                 </>
               </div>
             </div>
