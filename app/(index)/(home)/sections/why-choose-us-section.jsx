@@ -54,7 +54,7 @@ export default function WhyChooseUsSection() {
       <div className="mx-auto w-full max-w-[1700px] lg:px-10">
         <div
           className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
-          style={{ backgroundImage: "url('/images/image.webp')" }}
+        
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500/60 to-blue-500 pointer-events-none" />
 
@@ -114,12 +114,14 @@ export default function WhyChooseUsSection() {
 
             <Reveal
               delay={120}
-              className="relative flex justify-center lg:justify-end lg:items-stretch"
+              className="relative flex justify-center lg:items-stretch lg:justify-end"
             >
               <div className="relative min-h-[440px] w-full max-w-[650px] sm:min-h-[500px] lg:h-full">
-                <div className="absolute inset-0 overflow-hidden rounded-[26px] bg-gradient-to-br from-indigo-600/90 to-indigo-500/90 shadow-2xl backdrop-blur-md sm:rounded-[30px]"></div>
-
-                <div className="relative z-10 flex h-full min-h-[440px] flex-col rounded-[26px] p-6 text-white sm:min-h-[500px] sm:rounded-[30px] sm:p-10">
+                <div
+                  className="absolute inset-0 overflow-hidden rounded-[26px] bg-cover bg-center shadow-2xl backdrop-blur-md sm:rounded-[30px]"
+                  style={{ backgroundImage: "url('/images/logo-doc.webp')" }}
+                />
+                <div className="relative z-10 flex h-full min-h-[440px] flex-col rounded-[26px] p-6 text-white sm:min-h-[500px] sm:p-10 sm:rounded-[30px]">
                   <h3 className="text-3xl font-bold sm:text-5xl">Ready?</h3>
                   <div className="mt-6 flex items-center gap-4">
                     <div className="flex h-14 w-14 flex-col items-center justify-center sm:h-16 sm:w-16">

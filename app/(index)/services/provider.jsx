@@ -11,11 +11,11 @@ export default function Provider() {
   return (
     <div className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe]">
       <section className="relative overflow-hidden px-8 py-16 sm:px-16 md:px-24 lg:px-28 lg:py-24">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-80"
-          style={{ backgroundImage: "url('/images/about-us-bg.png')" }}
+       <div
+          className="absolute inset-0 bg-cover"
+          style={{ backgroundImage: "url('/images/bg-med.webp')" }}
         />
-        <div className="absolute inset-0 bg-white/70" />
+        <div className="absolute inset-0 bg-purple-50/50" />
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
           {/* Left copy */}

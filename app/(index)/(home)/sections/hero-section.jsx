@@ -122,18 +122,17 @@ export default function HeroSection() {
   return (
     <div>
       {/* Hero Main Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-red-500 via-white to-red-700">
+      <section>
         <div className="absolute inset-0">
           <img
-            src="/images/home-page.jpg"
+            src="/images/hero-bg.webp"
             alt=""
             className="h-full w-full object-cover opacity-[0.6] mix-blend-multiply"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+        
         </div>
 
-        <motion.div
+        {/* <motion.div
           className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_65%)]"
           style={{
             backgroundImage:
@@ -158,7 +157,7 @@ export default function HeroSection() {
           src="/images/Caduceus.webp"
           alt=""
           className="pointer-events-none absolute bottom-0 h-44 w-auto select-none opacity-[0.15] sm:h-72 sm:opacity-[0.2] 2xl:h-96"
-        />
+        /> */}
 
         <div className="relative mx-auto flex min-h-svh max-w-[1600px] flex-col justify-center px-4 py-8 sm:min-h-0 sm:px-10 sm:py-20 lg:px-20 lg:py-0 xl:px-28">
           <div className="grid min-h-0 grid-cols-1 items-center gap-6 sm:gap-10 lg:min-h-[calc(100vh-124px)] lg:grid-cols-2 lg:gap-16">
@@ -231,10 +230,10 @@ export default function HeroSection() {
                 >
                   <img
                     src="/images/doctor-image.webp"
-                    alt="Doctor reviewing patient information"
+                    alt="Doctor reviewing patient information"  
                     className="h-full w-full object-cover sm:h-auto"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-20 bg-gradient-to-t from-white via-white/70 to-transparent sm:block sm:h-26" />
+                
                 </motion.div>
               </div>
             </div>

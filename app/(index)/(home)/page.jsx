@@ -54,7 +54,7 @@ export default function Page() {
           <FoundationServicesSection />
         </div>
       </section>
-      <div className=" bg-blue-100 p-6">
+      <div className=" bg-white p-6">
         <WhyChooseUsSection />
       </div>
 
