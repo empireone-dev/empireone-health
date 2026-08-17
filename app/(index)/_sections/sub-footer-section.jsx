@@ -23,7 +23,7 @@ export default function SubFooterSection() {
 
             {/* Certification Badges */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-                 <img
+              <img
                 src="/images/hippa.webp"
                 alt="HIPAA Compliant"
                 className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
@@ -38,7 +38,7 @@ export default function SubFooterSection() {
                 alt="PCI DSS"
                 className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
-           
+
               <img
                 src="/images/gdpr.webp"
                 alt="GDPR"

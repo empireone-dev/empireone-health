@@ -88,11 +88,26 @@ export function GetInTouchModal({ isOpen, onClose, onSubmit }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4 transition-all duration-300 animate-in fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 transition-all duration-300 animate-in fade-in"
       onClick={handleClose}
     >
       <div
-        className="relative w-full max-w-md rounded-3xl border border-white/50 bg-white/60 p-8 shadow-2xl backdrop-blur-xl transition-all animate-in fade-in zoom-in-95 duration-200"
+        className="
+    relative w-full max-w-md
+    rounded-3xl
+    border border-white/30
+    bg-white/10
+    p-8
+    shadow-[0_8px_40px_rgba(0,0,0,0.15)]
+    backdrop-blur-2xl
+    backdrop-saturate-150
+    transition-all
+    animate-in fade-in zoom-in-95 duration-200
+    before:absolute before:inset-0 before:-z-10
+    before:rounded-3xl
+    before:bg-gradient-to-br before:from-white/20 before:via-white/20 before:to-transparent
+    before:opacity-60
+  "
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -118,10 +133,10 @@ export function GetInTouchModal({ isOpen, onClose, onSubmit }) {
         </button>
 
         <div className="mb-6 text-center">
-          <h3 className="text-3xl font-extrabold tracking-tight text-gray-800">
+          <h3 className="text-3xl font-extrabold tracking-tight text-white">
             Book a Call
           </h3>
-          <p className="mt-1 text-xs font-medium text-gray-600">
+          <p className="mt-1 text-xs font-medium text-gray-200">
             Fill in the details below to schedule your conversation.
           </p>
         </div>
@@ -132,7 +147,7 @@ export function GetInTouchModal({ isOpen, onClose, onSubmit }) {
           <div className="flex flex-col gap-1.5 text-left">
             <label
               htmlFor="name"
-              className="text-xs font-semibold tracking-wide uppercase text-gray-700"
+              className="text-xs font-semibold tracking-wide uppercase text-white"
             >
               Name <span className="text-red-500">*</span>
             </label>
@@ -161,7 +176,7 @@ export function GetInTouchModal({ isOpen, onClose, onSubmit }) {
           <div className="flex flex-col gap-1.5 text-left">
             <label
               htmlFor="email"
-              className="text-xs font-semibold tracking-wide uppercase text-gray-700"
+              className="text-xs font-semibold tracking-wide uppercase text-white"
             >
               Email Address <span className="text-red-500">*</span>
             </label>
@@ -190,7 +205,7 @@ export function GetInTouchModal({ isOpen, onClose, onSubmit }) {
           <div className="flex flex-col gap-1.5 text-left">
             <label
               htmlFor="phone"
-              className="text-xs font-semibold tracking-wide uppercase text-gray-700"
+              className="text-xs font-semibold tracking-wide uppercase text-white"
             >
               Phone Number
             </label>
@@ -218,7 +233,7 @@ export function GetInTouchModal({ isOpen, onClose, onSubmit }) {
           <div className="flex flex-col gap-1.5 text-left">
             <label
               htmlFor="notes"
-              className="text-xs font-semibold tracking-wide uppercase text-gray-700"
+              className="text-xs font-semibold tracking-wide uppercase text-white"
             >
               Notes
             </label>
@@ -270,7 +285,7 @@ export default function GetInTouch() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="rounded-full bg-[#5150e0] px-8 py-3 font-semibold text-white shadow-xl transition-all hover:bg-[#4340c9] hover:shadow-2xl"
+        className="rounded-full bg-[#5150e0] px-8 py-3 font-semibold text-white shadow-xl transition-all hover:bg-[#615EFC] hover:shadow-2xl"
       >
         Get in Touch
       </button>
