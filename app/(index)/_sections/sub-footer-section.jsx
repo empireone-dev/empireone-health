@@ -24,14 +24,11 @@ export default function SubFooterSection() {
             {/* Certification Badges */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <img
-<<<<<<< HEAD
-=======
                 src="/images/hippa.webp"
                 alt="HIPAA Compliant"
                 className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
               <img
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
                 src="/images/soc2.webp"
                 alt="SOC 2 Type 2"
                 className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
@@ -41,15 +38,6 @@ export default function SubFooterSection() {
                 alt="PCI DSS"
                 className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
-<<<<<<< HEAD
-              <img
-                src="/images/hippa.webp"
-                alt="HIPAA Compliant"
-                className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-=======
-
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
               <img
                 src="/images/gdpr.webp"
                 alt="GDPR"
@@ -101,35 +89,20 @@ export default function SubFooterSection() {
             <h3 className="font-semibold text-slate-900">Services</h3>
             <ul className="space-y-2 text-slate-600 text-sm">
               <li>
-<<<<<<< HEAD
-                <a
-=======
                 <Link
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
                   href="provider"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Provider Services
-<<<<<<< HEAD
-                </a>
-              </li>
-              <li>
-                <a
-=======
                 </Link>
               </li>
               <li>
                 <Link
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
                   href="payer"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Payer Services
-<<<<<<< HEAD
-                </a>
-=======
                 </Link>
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
               </li>
             </ul>
           </div>

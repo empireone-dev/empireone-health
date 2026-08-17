@@ -4,10 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Activity, ArrowUpRight, Stethoscope } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
-<<<<<<< HEAD
-=======
 import Link from "next/link";
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -44,11 +41,7 @@ export default function WhoWeAreSection() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
           </div>
 
-<<<<<<< HEAD
-          <motion.div
-=======
           {/* <motion.div
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:-bottom-8 sm:left-8"
@@ -63,11 +56,7 @@ export default function WhoWeAreSection() {
               </p>
               <p className="text-xs text-gray-500">Care behind every claim</p>
             </div>
-<<<<<<< HEAD
-          </motion.div>
-=======
           </motion.div> */}
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
         </Reveal>
 
         <div className="order-1 lg:order-2">
@@ -93,24 +82,14 @@ export default function WhoWeAreSection() {
               measurable, accountable results.
             </p>
           </Reveal>
-<<<<<<< HEAD
-
-          <Reveal delay={240}>
-            <a
-=======
           <Reveal delay={240}>
             <Link
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
               href="about-us"
               className="group mt-8 inline-flex items-center gap-2 rounded-full bg-blue-900 px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-600 hover:shadow-lg hover:shadow-teal-500/30"
             >
               About Us
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-<<<<<<< HEAD
-            </a>
-=======
             </Link>
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
           </Reveal>
         </div>
       </div>

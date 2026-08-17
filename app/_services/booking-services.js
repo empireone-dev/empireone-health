@@ -20,8 +20,6 @@ export async function add_booking_service(data) {
     throw error; // Excellent practice to throw this so your React try/catch handles it
   }
 }
-<<<<<<< HEAD
-=======
 
 export async function add_appointment_service(data) {
   try {
@@ -44,4 +42,3 @@ export async function add_appointment_service(data) {
     throw error; // Excellent practice to throw this so your React try/catch handles it
   }
 }
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6

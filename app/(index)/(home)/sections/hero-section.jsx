@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-import { motion, AnimatePresence } from "framer-motion";
-import { HeartPlus, ShieldCheck, UserCheck, Mail, Phone, HeartHandshake } from "lucide-react";
-=======
 import { Activity } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -13,7 +9,6 @@ import {
   Phone,
   HeartHandshake,
 } from "lucide-react";
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
 
 const badgeContainer = {
   hidden: { opacity: 0, y: 6 },
@@ -32,15 +27,12 @@ const badgeItem = {
 
 const badgeDetails = [
   {
-<<<<<<< HEAD
-=======
     label: "HIPAA Ready",
     img: "/images/hippa.webp",
     title: "HIPAA",
     desc: "As a HIPAA-compliant organization, we adhere to the highest federal standards for the protection of Protected Health Information (PHI). This certification signifies that we have implemented rigorous safeguards to ensure the confidentiality, integrity, and availability of sensitive healthcare data.",
   },
   {
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
     label: "ISO Certified",
     img: "/images/iso.webp",
     title: "ISO 27001:2022",
@@ -58,16 +50,6 @@ const badgeDetails = [
     title: "SOC2 TYPE2",
     desc: 'The SOC 2 Type 2 badge is the gold standard for service organizations, representing a rigorous, independent audit of our internal controls. Unlike a "snapshot" audit, the Type 2 certification proves that our security protocols have been followed consistently and effectively over an extended period.',
   },
-<<<<<<< HEAD
-  {
-    label: "HIPAA Ready",
-    img: "/images/hippa.webp",
-    title: "HIPAA",
-    desc: "As a HIPAA-compliant organization, we adhere to the highest federal standards for the protection of Protected Health Information (PHI). This certification signifies that we have implemented rigorous safeguards to ensure the confidentiality, integrity, and availability of sensitive healthcare data.",
-  },
-=======
-
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
   {
     label: "PCI DSS Certified",
     img: "/images/pci.webp",
@@ -189,17 +171,10 @@ export default function HeroSection() {
                   delay: 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-<<<<<<< HEAD
-                className="mb-4 inline-flex items-center gap-2 rounded-full border border-white  px-4 py-1.5 shadow-md backdrop-blur sm:mb-6 sm:px-5 sm:py-2"
-              >
-                <HeartPlus className="h-4 w-4 animate-pulse text-teal-600 sm:h-5 sm:w-5" />
-                <span className="text-xs font-semibold tracking-wide text-slate-700 sm:text-base">
-=======
                 className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/50 px-4 py-2 shadow-sm backdrop-blur-md sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none sm:backdrop-blur-none"
               >
                 <Activity className="h-4 w-4 text-blue-600 sm:h-6 sm:w-6 text-bold" />
                 <span className="text-sm font-semibold tracking-wide text-slate-600 sm:text-xl">
->>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
                   EmpireOne Health
                 </span>
               </motion.div>
