@@ -117,6 +117,7 @@ export default function AboutSection() {
               />
             </div>
 
+<<<<<<< HEAD
             <div className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:-bottom-8 sm:left-8">
               <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-teal-50">
                 <HeartHandshake className="relative h-5 w-5 text-teal-600" />
@@ -130,6 +131,9 @@ export default function AboutSection() {
                 </p>
               </div>
             </div>
+=======
+            
+>>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
           </motion.div>
         </div>
       </section>

@@ -3,7 +3,11 @@ import { Mail, Phone } from "lucide-react";
 
 export default function SubHeaderSection() {
   return (
+<<<<<<< HEAD
     <div className="hidden bg-blue-600 text-white sm:block">
+=======
+    <div className="hidden bg-[#615EFC] text-white sm:block">
+>>>>>>> 257cc616607f813026a1c2d8451e9dcaa91939d6
       <div className="mx-auto flex w-full flex-col items-center gap-1.5 px-4 py-2 sm:h-11 sm:flex-row sm:justify-between sm:gap-0 sm:px-6 sm:py-0 lg:px-16 xl:px-20">
         <a
           href="mailto:info@empireonehealth.com"
