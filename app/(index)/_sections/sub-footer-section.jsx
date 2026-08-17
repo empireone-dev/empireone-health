@@ -89,20 +89,20 @@ export default function SubFooterSection() {
             <h3 className="font-semibold text-slate-900">Services</h3>
             <ul className="space-y-2 text-slate-600 text-sm">
               <li>
-                <a
+                <Link
                   href="provider"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Provider Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="payer"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Payer Services
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

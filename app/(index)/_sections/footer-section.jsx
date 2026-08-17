@@ -13,6 +13,6 @@ export default function FooterSection() {
           Terms of Use
         </a> */}
       </div>
-    </footer>
+    </footer> 
   );
 }

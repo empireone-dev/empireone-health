@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Activity, ArrowUpRight, Stethoscope } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
+import Link from "next/link";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -81,15 +82,14 @@ export default function WhoWeAreSection() {
               measurable, accountable results.
             </p>
           </Reveal>
-
           <Reveal delay={240}>
-            <a
+            <Link
               href="about-us"
               className="group mt-8 inline-flex items-center gap-2 rounded-full bg-blue-900 px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-600 hover:shadow-lg hover:shadow-teal-500/30"
             >
               About Us
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </div>
