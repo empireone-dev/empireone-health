@@ -54,7 +54,7 @@ export default function CardSection() {
         <div
           className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-10 overflow-hidden sm:rounded-[32px] sm:px-8 lg:px-20 lg:py-16"
         
-        >
+        > 
           <div className="absolute inset-0 bg-purple-50 pointer-events-none" />
 
           <div className="relative z-10 grid items-stretch gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">

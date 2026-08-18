@@ -126,7 +126,6 @@ export default function HeaderSection() {
                   <Select
                     label="Need Help With?"
                     name="need_help"
-                    s
                     options={[
                       { value: "", label: "Need Help With?" },
                       { value: "eligibility", label: "Eligibility & Benefits" },
