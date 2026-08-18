@@ -56,7 +56,7 @@ export default function WhyChooseUsSection() {
           className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
         
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500/60 to-blue-500 pointer-events-none" />
+          <div className="absolute inset-0 bg-purple-50 pointer-events-none" />
 
           <div className="relative z-10 grid items-stretch gap-10 sm:gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div className="max-w-2xl">
@@ -68,7 +68,7 @@ export default function WhyChooseUsSection() {
               </Reveal>
 
               <Reveal delay={80}>
-                <h2 className="mt-5 text-3xl font-bold leading-tight text-white lg:text-5xl">
+                <h2 className="mt-5 text-3xl font-bold leading-tight text-black lg:text-5xl">
                   Why Healthcare Teams
                   <br />
                   Choose Us
@@ -77,7 +77,7 @@ export default function WhyChooseUsSection() {
 
               <Reveal delay={140}>
                 <p
-                  className={`${spaceGrotesk.className} mt-5 max-w-xl text-base leading-7 text-slate-200`}
+                  className={`${spaceGrotesk.className} mt-5 max-w-xl text-lg  text-slate-700`}
                 >
                   Our dedicated teams, HIPAA-conscious approach, advanced AI
                   workflows, and strong payer-provider alignment set us apart in
@@ -97,11 +97,11 @@ export default function WhyChooseUsSection() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-white sm:text-xl">
+                        <h3 className="text-lg font-bold text-black sm:text-xl">
                           {item.title}
                         </h3>
                         <p
-                          className={`${spaceGrotesk.className} mt-1 text-sm leading-6 text-white sm:text-base sm:leading-7`}
+                          className={`${spaceGrotesk.className} mt-1 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7`}
                         >
                           {item.desc}
                         </p>
