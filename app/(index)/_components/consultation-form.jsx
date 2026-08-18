@@ -24,7 +24,7 @@ export default function ConsultationForm() {
                     className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
                   />
                   <Input
-                    label="Company"
+                    label="Company" 
                     name="company"
                     className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
                   />
