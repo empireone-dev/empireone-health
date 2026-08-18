@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+import Image from "next/image";
 import { Activity } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -124,10 +127,15 @@ export default function HeroSection() {
       {/* Hero Main Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/home-banner.jpeg"
             alt=""
-            className="w-full h-full object-cover object-top"
+            fill
+            preload
+            fetchPriority="high"
+            sizes="100vw"
+            quality={70}
+            className="object-cover object-top"
           />
         </div>
 
@@ -162,7 +170,7 @@ export default function HeroSection() {
           <div className="grid min-h-0 grid-cols-1 items-center gap-6 sm:gap-10 lg:min-h-[calc(100vh-124px)] lg:grid-cols-2 lg:gap-16">
             <div className="order-1 text-center lg:order-1 lg:text-left">
               <motion.div
-                initial={{ opacity: 0, y: 16 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.8,
@@ -178,7 +186,7 @@ export default function HeroSection() {
               </motion.div>
 
               <motion.h1
-                initial={{ opacity: 0, y: 16 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.8,
@@ -196,7 +204,7 @@ export default function HeroSection() {
               </motion.h1>
 
               <motion.p
-                initial={{ opacity: 0, y: 16 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.8,
@@ -218,7 +226,7 @@ export default function HeroSection() {
               <div className="relative">
                 <div className="absolute inset-x-6 inset-y-2 -z-10 rounded-full bg-gradient-to-br from-teal-200/50 to-cyan-200/40 blur-2xl sm:inset-x-8 sm:inset-y-auto sm:bottom-4 sm:top-16 sm:bg-teal-200/40 sm:blur-3xl" />
                 <motion.div
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.8,
@@ -230,6 +238,8 @@ export default function HeroSection() {
                   <img
                     src="/images/doctor-image.webp"
                     alt="Doctor reviewing patient information"
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover sm:h-auto"
                   />
                 </motion.div>
