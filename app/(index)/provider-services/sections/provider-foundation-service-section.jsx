@@ -2,10 +2,28 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { ArrowUpRight, Briefcase } from "lucide-react";
+import { ArrowUpRight, Building } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+
+const FOUNDATION_CARDS = [
+  {
+    title: "Appointment Scheduling & Referral Management",
+    desc: "Coordinate scheduling, rescheduling, reminders, referral intake, referral tracking, and follow-up requirements.",
+    href: "/provider-services/appointment-scheduling-referral-management",
+  },
+  {
+    title: "Denial Management",
+    desc: "Work denial queues, appeal preparation, payer-specific rework, status tracking, and denial trend reporting.",
+    href: "/provider-services/denial-management",
+  },
+  {
+    title: "Patient / Self-Pay Collections",
+    desc: "Support patient balance outreach, self-pay follow-up, payment coordination, and account resolution workflows.",
+    href: "/provider-services/patient-self-pay-collections",
+  },
+];
 
 function Reveal({ children, className = "", delay = 0, as = "div" }) {
   const MotionTag = motion[as] || motion.div;
@@ -52,7 +70,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
           href={href}
           className="mt-8 inline-flex items-center gap-2 text-base font-bold text-slate-900 transition-colors group-hover:text-teal-600"
         >
-          <span>Read the Case study</span>
+          <span>View Services</span>
           <ArrowUpRight className="h-5 w-5 stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
         </a>
       </div>
@@ -60,48 +78,57 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
   );
 }
 
-export default function FeatureWorkSection() {
+export default function ProviderFoundationServiceSection() {
   return (
     <section className="mx-auto max-w-[1600px] px-6 py-20 sm:py-28 lg:px-12">
       <div className="mb-12 lg:mb-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
-      
+        
+        {/* Left Column: Heading & Intro */}
         <Reveal className="lg:col-span-6 xl:col-span-5">
           <span className="inline-flex items-center gap-2.5 rounded-full bg-indigo-50 px-5 py-2 text-sm font-bold text-indigo-700 border border-indigo-200">
-            <Briefcase className="h-4 w-4" />
-            Featured Work   
+            <Building className="h-4 w-4" />
+            Foundation Services
           </span>
           <h2 className="mt-6 text-4xl font-extrabold text-slate-900 sm:text-5xl lg:text-6xl leading-[1.15] tracking-tight">
-            Healthcare BPO case studies.
+            Core provider services.
           </h2>
           <p
             className={`${spaceGrotesk.className} mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600 font-normal`}
           >
-            These case studies will highlight practical workflow improvements
-            across patient access, revenue cycle, payer operations, and
-            healthcare administrative support.
+            Build reliable front-end and revenue cycle support around benefits
+            verification, prior authorization, scheduling, referrals, denial
+            recovery, underpayments, and patient collections.
           </p>
         </Reveal>
 
         {/* Right Column: First 2 Cards */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-6 xl:col-span-7">
           <ServiceCard
-            title="Client Success Story - Self-Pay Revenue Optimization"
-            desc="Our revenue cycle leadership team worked with a multi-site healthcare provider to redesign its self-pay collections strategy, improving financial performance while enhancing the patient financial experience.
-
-"
-            href="/case-study/self-pay-revenue-optimization"
+            title="Benefits Verification & Eligibility"
+            desc="Confirm coverage, benefits, eligibility status, patient responsibility, and payer-specific requirements before care is delivered."
+            href="/provider-services/benefits-verification-eligibility"
             delay={80}
           />
           <ServiceCard
-            title="Client Success Story - Third-Party Healthcare Collections Transformation
-"
-            desc="A healthcare organization engaged our executive revenue cycle leadership to improve commercial payer recoveries while creating a scalable operating model focused on sustainable financial performance.
-
-."
-            href="/case-study/third-party-healthcare-collections-transformation"
+            title="Prior Authorization Management"
+            desc="Support authorization intake, documentation checks, payer follow-up, status tracking, and approval workflows."
+            href="/provider-services/prior-authorization-management"
             delay={160}
           />
         </div>
+      </div>
+
+      {/* Bottom Row: Remaining 3 Cards */}
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {FOUNDATION_CARDS.map((card, i) => (
+          <ServiceCard
+            key={card.title}
+            title={card.title}
+            desc={card.desc}
+            href={card.href}
+            delay={i * 90}
+          />
+        ))}
       </div>
     </section>
   );

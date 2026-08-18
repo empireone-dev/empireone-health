@@ -90,7 +90,7 @@ export default function SubFooterSection() {
             <ul className="space-y-2 text-slate-600 text-sm">
               <li>
                 <Link
-                  href="provider"
+                  href="/provider-services"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Provider Services
@@ -98,7 +98,7 @@ export default function SubFooterSection() {
               </li>
               <li>
                 <Link
-                  href="payer"
+                  href="/payer-services"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Payer Services

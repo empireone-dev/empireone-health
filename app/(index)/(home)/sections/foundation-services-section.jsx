@@ -22,25 +22,25 @@ const FOUNDATION_CARDS = [
     icon: ShieldCheck,
     title: "Eligibility & Benefits",
     desc: "Accurate and timely verification of patient eligibility and benefits, reducing billing errors and ensuring smooth patient onboarding.",
-    href: "eligibility-benefits-verification",
+    href: "/provider-services/benefits-verification-eligibility",
   },
   {
     icon: ClipboardCheck,
     title: "Prior Authorization",
     desc: "Streamlined prior authorization management to accelerate approvals, minimize delays, and enhance patient access to care.",
-    href: "prior-authorization-management",
+    href: "/provider-services/prior-authorization-management",
   },
   {
     icon: FileWarning,
     title: "Denial Management",
     desc: "Proactive denial management strategies to maximize reimbursement, reduce appeals, and resolve issues swiftly.",
-    href: "denial-management",
+    href: "/provider-services/denial-management",
   },
   {
     icon: CreditCard,
     title: "Patient Collections",
     desc: "Patient-friendly collections approach that improves account resolution while preserving patient relationships and satisfaction.",
-    href: "patient-self-pay-collections",
+    href: "/provider-services/patient-self-pay-collections",
   },
 ];
 

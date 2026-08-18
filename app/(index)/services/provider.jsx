@@ -4,8 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, HeartHandshake, BadgeCheck } from "lucide-react";
 import BookACallSection from "../_sections/book-a-call-section";
-import ProviderFoundationServiceSection from "../provider/sections/provider-foundation-service-section";
-import ProviderHowWeWorkSection from "../provider/sections/provider-how-we-work-section";
+import ProviderFoundationServiceSection from "../provider-services/sections/provider-foundation-service-section";
+import ProviderHowWeWorkSection from "../provider-services/sections/provider-how-we-work-section";
 
 export default function Provider() {
   return (

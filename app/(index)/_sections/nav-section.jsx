@@ -37,7 +37,7 @@ export default function NavSection() {
 
         <div className="hidden lg:flex items-center gap-8 xl:gap-12 text-[16px] xl:text-[17px] font-medium text-[#1b2559]">
           <Link href="/" className="relative transition-colors duration-200 hover:text-[#0c3895] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#0c3895] after:transition-all after:duration-300 hover:after:w-full">
-            Homes
+            Home
           </Link>
           <Link href="/about-us" className="relative transition-colors duration-200 hover:text-[#0c3895] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#0c3895] after:transition-all after:duration-300 hover:after:w-full">
             About Us
@@ -49,10 +49,10 @@ export default function NavSection() {
               <ChevronDown className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-180" />
             </button>
             <div className="absolute left-0 top-full mt-3 w-56 origin-top scale-95 rounded-xl border border-gray-200 bg-white shadow-xl opacity-0 invisible -translate-y-1 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden">
-              <Link href="/provider" className="block px-5 py-3 text-[15px] transition-colors duration-150 hover:bg-blue-600 hover:text-white">
+              <Link href="/provider-services" className="block px-5 py-3 text-[15px] transition-colors duration-150 hover:bg-blue-600 hover:text-white">
                 Provider
               </Link>
-              <Link href="/payer" className="block px-5 py-3 text-[15px] transition-colors duration-150 hover:bg-blue-600 hover:text-white">
+              <Link href="/payer-services" className="block px-5 py-3 text-[15px] transition-colors duration-150 hover:bg-blue-600 hover:text-white">
                 Payer
               </Link>
             </div>
@@ -168,14 +168,14 @@ export default function NavSection() {
                   <div className="min-h-0 overflow-hidden">
                     <div className="ml-12 flex flex-col gap-1 border-l border-gray-100 pl-4 py-1 text-[16px] font-normal text-blue-950 sm:text-[17px]">
                       <Link
-                        href="/provider"
+                        href="/provider-services"
                         onClick={() => setIsOpen(false)}
                         className="rounded-lg px-3 py-2.5 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100"
                       >
                         Provider
                       </Link>
                       <Link
-                        href="/payer"
+                        href="/payer-services"
                         onClick={() => setIsOpen(false)}
                         className="rounded-lg px-3 py-2.5 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100"
                       >
