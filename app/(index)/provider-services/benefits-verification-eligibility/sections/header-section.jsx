@@ -25,7 +25,10 @@ export default function HeaderSection() {
                 Home
               </a>
               <span className="text-slate-400">/</span>
-              <a href="/provider-services" className="text-[#0f2d9e] hover:underline">
+              <a
+                href="/provider-services"
+                className="text-[#0f2d9e] hover:underline"
+              >
                 Provider Services
               </a>
               <span className="text-slate-400">/</span>
@@ -59,7 +62,7 @@ export default function HeaderSection() {
 
           {/* Right Column: Free Consultation Form Card */}
           <div className="w-full lg:col-span-6 xl:col-span-5">
-           <ConsultationForm />
+            <ConsultationForm />
           </div>
         </div>
       </div>
