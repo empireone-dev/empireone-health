@@ -122,14 +122,13 @@ export default function HeroSection() {
   return (
     <div>
       {/* Hero Main Section */}
-      <section>
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-bg.webp"
+            src="/images/home-banner.jpeg"
             alt=""
-            className="h-full w-full object-cover opacity-[0.6] mix-blend-multiply"
+            className="w-full h-full object-cover object-top"
           />
-        
         </div>
 
         {/* <motion.div
@@ -230,10 +229,9 @@ export default function HeroSection() {
                 >
                   <img
                     src="/images/doctor-image.webp"
-                    alt="Doctor reviewing patient information"  
+                    alt="Doctor reviewing patient information"
                     className="h-full w-full object-cover sm:h-auto"
                   />
-                
                 </motion.div>
               </div>
             </div>
