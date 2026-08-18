@@ -4,7 +4,7 @@ import FeatureWorkSection from './sections/feature-work-section'
 import WhatWeMeasureSection from './sections/what-we-measure-section'
 
 export const metadata = {
-  title: "Case Studies | EmpireOne Health | Healthcare BPO & RCM Services",
+  title: "Case Studies | EmpireOneHealth",
   description:
     "Explore how EmpireOneHealth supports provider and payer teams with structured operations, QA visibility, and scalable execution.",
 };

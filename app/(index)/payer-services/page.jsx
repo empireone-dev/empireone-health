@@ -2,7 +2,7 @@ import React from 'react'
 import Payer from '../services/payer'
 
 export const metadata = {
-  title: "Payer Services | EmpireOne Health | Healthcare BPO & RCM Services",
+  title: "Payer Services | EmpireOneHealth",
   description:
     "Payer operations support for member experience, provider data accuracy, enrollment, and core payer BPO workflows ready for outsourcing.",
 };

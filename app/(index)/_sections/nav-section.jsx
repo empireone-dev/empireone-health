@@ -29,7 +29,7 @@ export default function NavSection() {
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0" onClick={() => setIsOpen(false)}>
           <img
-            src="/images/empireone-health.png"
+            src="/images/empireone-health.webp"
             alt="EmpireOne Health Logo"
             className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
           />
