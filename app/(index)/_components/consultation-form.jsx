@@ -188,7 +188,7 @@ export default function ConsultationForm() {
               <textarea
                 rows={3}
                 placeholder="Tell us about your workflow goals. Do not include sensitive healthcare information."
-                {...register("message")}
+                {...register("notes")}
                 className="w-full resize-none rounded-2xl border border-white/40 bg-white/10 px-4 py-2.5 text-xs text-white placeholder-white/80 outline-none transition focus:border-white focus:bg-white/20"
               />
             </div>
