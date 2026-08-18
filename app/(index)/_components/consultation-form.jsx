@@ -74,7 +74,7 @@ export default function ConsultationForm() {
               <Input
                 label="Company"
                 {...INPUT_PROPS}
-                {...register("company")}
+                {...register("company_name")}
                 className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
               />
             </div>

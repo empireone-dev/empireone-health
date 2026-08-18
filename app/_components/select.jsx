@@ -84,7 +84,7 @@ const Select = forwardRef(
             }}
             onClick={handleInputClick}
             placeholder=""
-            className={`w-full rounded-md border bg-white py-2.5 px-4 text-sm text-black
+            className={`w-full rounded-full border bg-white py-2.5 px-4 text-sm text-black
               focus:outline-none focus:ring-2 focus:ring-purple-500
               ${iconLeft ? "pl-10" : ""} ${iconRight ? "pr-10" : "pr-8"}
               ${error ? "border-red-500 focus:ring-red-500" : "border-gray-300"}
