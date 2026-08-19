@@ -1,12 +1,102 @@
-import React from 'react';
-import Link from 'next/link';
-import Input from '../../_components/input';
-import Select from '../../_components/select';
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { useForm, Controller } from "react-hook-form";
+import Input from "../../_components/input";
+import Select from "../../_components/select";
+import { add_appointment_service } from "../../_services/booking-services";
 
 const fieldClassName =
   "!rounded-full !border-white/40 !bg-white/10 !text-white placeholder:!text-white/60 focus:!ring-white/70 focus:!border-white";
 
 export default function BookFormSection({ compact = false }) {
+  const [submitError, setSubmitError] = useState(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    getValues,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    setSubmitError(null);
+
+    try {
+      await add_appointment_service({
+        name: data.fullName,
+        email: data.email,
+        phone: data.contactNumber,
+        notes: data.message,
+        company_name: data.companyName,
+        source: data.source,
+        looking_for: data.lookingToBuild,
+        privacy_policy_agreed: data.privacy_policy_agreed === true,
+      });
+
+      reset();
+      setSubmitSuccess(true);
+    } catch (err) {
+      console.error("Booking submission error:", err);
+      setSubmitError("Failed to submit. Please try again.");
+    }
+  };
+
+  if (submitSuccess) {
+    return (
+      <div
+        className={
+          compact
+            ? "flex h-full w-full flex-col font-sans"
+            : "min-h-screen flex items-center justify-center p-6 font-sans"
+        }
+      >
+        <div
+          className={
+            compact
+              ? "relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#615eff] bg-cover bg-center p-6 shadow-lg sm:p-8"
+              : "bg-linear-to-br from-[#6a69f7] to-[#5150e0] w-full max-w-7xl rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl ring-1 ring-white/10 flex flex-col items-center justify-center text-center"
+          }
+          style={{ backgroundImage: "url('/images/book-bg.webp')" }}
+        >
+          <div className="absolute inset-0 bg-[#615eff]/90 pointer-events-none"></div>
+          <div className="relative z-10 flex flex-col items-center gap-4 py-12">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20">
+              <svg
+                className="h-8 w-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-white">Thank You!</h2>
+            <p className="text-white/80">
+              We&apos;ve received your booking request and will be in touch
+              shortly.
+            </p>
+            <button
+              onClick={() => setSubmitSuccess(false)}
+              className="mt-4 rounded-full bg-white px-8 py-2.5 font-bold text-[#5c5bf4] shadow-md transition-all hover:bg-gray-100"
+            >
+              Book Another
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={
@@ -59,114 +149,190 @@ export default function BookFormSection({ compact = false }) {
         </p>
 
         <form
-          className={compact ? "relative z-10 space-y-3.5" : "relative z-10 space-y-6"}
-          onSubmit={(e) => e.preventDefault()}
+          className={
+            compact ? "relative z-10 space-y-3.5" : "relative z-10 space-y-6"
+          }
+          onSubmit={handleSubmit(onSubmit)}
         >
           {/* Top Grid: 3 columns on large screens, 1 on small */}
-          <div className={compact ? "grid grid-cols-1 gap-3 md:grid-cols-3" : "grid grid-cols-1 md:grid-cols-3 gap-5"}>
+          <div
+            className={
+              compact
+                ? "grid grid-cols-1 gap-3 md:grid-cols-3"
+                : "grid grid-cols-1 md:grid-cols-3 gap-5"
+            }
+          >
             <Input
               label="Full Name *"
-              name="fullName"
-              required
+              type="text"
               className={fieldClassName}
+              error={errors.fullName?.message}
+              {...register("fullName", { required: "Full name is required" })}
             />
 
             <Input
               label="Company Name"
-              name="companyName"
+              type="text"
               className={fieldClassName}
+              {...register("companyName")}
             />
 
             <Input
               label="Email Address *"
-              name="email"
               type="email"
-              required
               className={fieldClassName}
+              error={errors.email?.message}
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Invalid email address",
+                },
+              })}
             />
 
             <Input
               label="Contact Number *"
-              name="contactNumber"
               type="tel"
-              required
               className={fieldClassName}
+              error={errors.contactNumber?.message}
+              {...register("contactNumber", {
+                required: "Contact number is required",
+              })}
             />
 
             <Input
               label="Verify Email *"
-              name="verifyEmail"
               type="email"
-              required
               className={fieldClassName}
+              error={errors.verifyEmail?.message}
+              {...register("verifyEmail", {
+                required: "Please verify your email",
+                validate: (val) =>
+                  val === getValues("email") || "Emails do not match",
+              })}
             />
 
-            <Select
-              label="Source"
+            <Controller
               name="source"
-              options={[
-                { value: "google", label: "Google" },
-                { value: "chatgpt", label: "ChatGPT" },
-                { value: "referral", label: "Referral" },
-                { value: "linkedin", label: "LinkedIn" },
-                { value: "website", label: "Website" },
-                { value: "other", label: "Other" },
-              ]}
-              className={fieldClassName}
+              control={control}
+              render={({ field }) => (
+                <Select
+                  label="Source"
+                  options={[
+                    { value: "google", label: "Google" },
+                    { value: "chatgpt", label: "ChatGPT" },
+                    { value: "referral", label: "Referral" },
+                    { value: "linkedin", label: "LinkedIn" },
+                    { value: "website", label: "Website" },
+                    { value: "other", label: "Other" },
+                  ]}
+                  className={fieldClassName}
+                  value={field.value}
+                  onChange={field.onChange}
+                />
+              )}
             />
           </div>
 
           {/* Build Dropdown */}
-          <Select
-            label="What are you looking to build?"
+          <Controller
             name="lookingToBuild"
-            options={[
-              { value: "benefits", label: "Benefits Verification & Eligibility" },
-              { value: "prior_auth", label: "Prior Authorization Management" },
-              { value: "appointment", label: "Appointment Scheduling & Referral Management" },
-              { value: "denial", label: "Denial Management" },
-              { value: "patient_collections", label: "Patient / Self-Pay Collections" },
-              { value: "member_services", label: "Member Services" },
-              { value: "enrollment", label: "Enrollment Support" },
-              { value: "provider_data", label: "Provider Data Management" },
-              { value: "other", label: "Other" },
-            ]}
-            className={fieldClassName}
+            control={control}
+            render={({ field }) => (
+              <Select
+                label="What are you looking to build?"
+                options={[
+                  {
+                    value: "benefits",
+                    label: "Benefits Verification & Eligibility",
+                  },
+                  {
+                    value: "prior_auth",
+                    label: "Prior Authorization Management",
+                  },
+                  {
+                    value: "appointment",
+                    label: "Appointment Scheduling & Referral Management",
+                  },
+                  { value: "denial", label: "Denial Management" },
+                  {
+                    value: "patient_collections",
+                    label: "Patient / Self-Pay Collections",
+                  },
+                  { value: "member_services", label: "Member Services" },
+                  { value: "enrollment", label: "Enrollment Support" },
+                  { value: "provider_data", label: "Provider Data Management" },
+                  { value: "other", label: "Other" },
+                ]}
+                className={fieldClassName}
+                value={field.value}
+                onChange={field.onChange}
+              />
+            )}
           />
 
           {/* Message Textarea */}
           <div className="flex flex-col">
-            <label className="mb-1.5 text-sm font-medium text-white">Message</label>
+            <label className="mb-1.5 text-sm font-medium text-white">
+              Message
+            </label>
             <textarea
               rows={compact ? 3 : 5}
               placeholder="Tell us about your workflow goals. Do not include sensitive healthcare information."
               className="w-full resize-none rounded-2xl border border-white/40 bg-white/10 px-5 py-3 text-white placeholder-white/60 transition-all focus:border-white focus:ring-2 focus:ring-white/70 focus:outline-none"
+              {...register("message")}
             ></textarea>
           </div>
 
           {/* Checkbox and Privacy Policy */}
-          <div className="flex items-center space-x-3">
-            <input
-              type="checkbox"
-              id="privacy"
-              className="w-4 h-4 mt-0.5 rounded border-white/60 bg-transparent accent-white focus:ring-2 focus:ring-white/80"
-              required
-            />
-            <label htmlFor="privacy" className="text-white text-sm">
-              By ticking this box I agree that I have read the <Link href="/privacy-policy" className="underline hover:text-white/80">Privacy Policy</Link>.
-            </label>
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center space-x-3">
+              <input
+                type="checkbox"
+                id="privacy"
+                className="w-4 h-4 mt-0.5 rounded border-white/60 bg-transparent accent-white focus:ring-2 focus:ring-white/80"
+                {...register("privacy_policy_agreed", {
+                  required: "You must agree to the Privacy Policy",
+                })}
+              />
+              <label htmlFor="privacy" className="text-white text-sm">
+                By ticking this box I agree that I have read the{" "}
+                <Link
+                  href="/privacy-policy"
+                  className="underline hover:text-white/80"
+                >
+                  Privacy Policy
+                </Link>
+                .
+              </label>
+            </div>
+            {errors.privacy_policy_agreed && (
+              <p className="text-red-300 text-xs pl-7">
+                {errors.privacy_policy_agreed.message}
+              </p>
+            )}
           </div>
 
-          <div className={compact ? "flex justify-center pt-2" : "flex justify-center mt-8"}>
+          {submitError && (
+            <p className="text-center text-sm text-red-300">{submitError}</p>
+          )}
+
+          <div
+            className={
+              compact ? "flex justify-center pt-2" : "flex justify-center mt-8"
+            }
+          >
             <button
               type="submit"
+              disabled={isSubmitting}
               className={
                 compact
-                  ? "rounded-full bg-white px-10 py-2.5 text-base font-bold text-[#5c5bf4] shadow-md transition-all hover:scale-[1.02] hover:bg-gray-100 active:scale-100"
-                  : "bg-white text-[#5c5bf4] font-bold text-lg px-12 py-3 rounded-full hover:bg-gray-100 hover:scale-[1.02] active:scale-100 transition-all shadow-md"
+                  ? "rounded-full bg-white px-10 py-2.5 text-base font-bold text-[#5c5bf4] shadow-md transition-all hover:scale-[1.02] hover:bg-gray-100 active:scale-100 disabled:opacity-60 disabled:cursor-not-allowed"
+                  : "bg-white text-[#5c5bf4] font-bold text-lg px-12 py-3 rounded-full hover:bg-gray-100 hover:scale-[1.02] active:scale-100 transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
               }
             >
-              Send
+              {isSubmitting ? "Sending..." : "Send"}
             </button>
           </div>
         </form>

@@ -82,8 +82,8 @@ export function GetInTouchModal({ isOpen, onClose }) {
             </h2>
 
             <p className="mt-3 max-w-sm text-sm leading-6 text-white/80">
-              Thank you for reaching out. We have received your request and
-              will get back to you shortly.
+              Thank you for reaching out. We have received your request and will
+              get back to you shortly.
             </p>
 
             <button
@@ -111,9 +111,8 @@ export function GetInTouchModal({ isOpen, onClose }) {
               noValidate
             >
               <Input
-                label="Name"
+                label="Name *"
                 placeholder="e.g. John Doe"
-                required
                 error={errors.name}
                 {...INPUT_PROPS}
                 {...register("name", {
@@ -123,9 +122,8 @@ export function GetInTouchModal({ isOpen, onClose }) {
 
               <Input
                 type="email"
-                label="Email Address"
+                label="Email Address *"
                 placeholder="e.g. name@company.com"
-                required
                 error={errors.email}
                 {...INPUT_PROPS}
                 {...register("email", {
@@ -139,9 +137,8 @@ export function GetInTouchModal({ isOpen, onClose }) {
 
               <Input
                 type="tel"
-                label="Phone Number"
+                label="Phone Number *"
                 placeholder="e.g. +1 (555) 000-0000"
-                required
                 error={errors.phone}
                 {...INPUT_PROPS}
                 {...register("phone", {
@@ -193,10 +190,7 @@ export default function GetInTouchButton() {
         <ArrowUpRight className="h-4 w-4 xl:h-5 xl:w-5" />
       </button>
 
-      <GetInTouchModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-      />
+      <GetInTouchModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>
   );
 }
