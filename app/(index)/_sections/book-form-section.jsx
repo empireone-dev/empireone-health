@@ -244,26 +244,26 @@ export default function BookFormSection({ compact = false }) {
                 label="What are you looking to build?"
                 options={[
                   {
-                    value: "benefits",
+                    value: "Benefits Verification & Eligibility",
                     label: "Benefits Verification & Eligibility",
                   },
                   {
-                    value: "prior_auth",
+                    value: "Prior Authorization Management",
                     label: "Prior Authorization Management",
                   },
                   {
-                    value: "appointment",
+                    value: "Appointment Scheduling & Referral Management",
                     label: "Appointment Scheduling & Referral Management",
                   },
-                  { value: "denial", label: "Denial Management" },
+                  { value: "Denial Management", label: "Denial Management" },
                   {
-                    value: "patient_collections",
+                    value: "Patient / Self-Pay Collections",
                     label: "Patient / Self-Pay Collections",
                   },
-                  { value: "member_services", label: "Member Services" },
-                  { value: "enrollment", label: "Enrollment Support" },
-                  { value: "provider_data", label: "Provider Data Management" },
-                  { value: "other", label: "Other" },
+                  { value: "Member Services", label: "Member Services" },
+                  { value: "Enrollment Support", label: "Enrollment Support" },
+                  { value: "Provider Data Management", label: "Provider Data Management" },
+                  { value: "Other", label: "Other" },
                 ]}
                 className={fieldClassName}
                 value={field.value}
