@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <>
       <div className="sticky top-0 z-50">
-        <SubHeaderSection />
+        {/* <SubHeaderSection /> */}
         <NavSection />
       </div>
 
