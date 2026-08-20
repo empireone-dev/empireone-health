@@ -104,7 +104,7 @@ export default function NavSection() {
               <img
                 src="/images/empireone-health.webp"
                 alt="EmpireOne Health Logo"
-                className="h-12 w-42"
+                className="h-11 w-42"
               />
             </Link>
             <button
