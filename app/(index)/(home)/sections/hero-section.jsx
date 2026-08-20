@@ -121,7 +121,6 @@ function CertificationBadges() {
     </motion.div>
   );
 }
-
 export default function HeroSection() {
   return (
     <div>
@@ -194,8 +193,8 @@ export default function HeroSection() {
               <CertificationBadges />
             </div>
 
-            {/* Right Column Media Content */}
-            <div className="order-2 flex justify-center lg:order-2 lg:justify-end">
+            {/* Right Column Media Content - Aligned to bottom */}
+            <div className="order-2 flex justify-center lg:order-2 lg:justify-end lg:self-end">
               <div className="relative">
                 <div className="absolute inset-x-6 inset-y-2 -z-10 rounded-full bg-gradient-to-br from-teal-200/50 to-cyan-200/40 blur-2xl sm:inset-x-8 sm:inset-y-auto sm:bottom-4 sm:top-16 sm:bg-teal-200/40 sm:blur-3xl" />
                 <motion.div
@@ -206,7 +205,7 @@ export default function HeroSection() {
                     delay: 0.3,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="relative mx-auto mt-8 aspect-square w-full max-w-[300px] overflow-hidden rounded-full ring-4 ring-white/80 shadow-2xl xs:max-w-[320px] sm:mx-0 sm:mt-16 sm:aspect-auto sm:max-w-md sm:overflow-visible sm:rounded-none sm:ring-0 sm:shadow-none md:max-w-lg lg:mt-30 lg:max-w-xl xl:max-w-2xl"
+                  className="relative mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-full ring-4 ring-white/80 shadow-2xl xs:max-w-[320px] sm:mx-0 sm:aspect-auto sm:max-w-md sm:overflow-visible sm:rounded-none sm:ring-0 sm:shadow-none md:max-w-lg lg:max-w-xl xl:max-w-2xl"
                 >
                   <Image
                     src="/images/doctor-image.webp"
@@ -214,7 +213,7 @@ export default function HeroSection() {
                     width={600}
                     height={720}
                     priority
-                    className="h-full w-full object-cover sm:h-auto"
+                    className="h-full w-full object-cover sm:h-auto block"
                     sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 600px"
                   />
                 </motion.div>

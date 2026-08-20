@@ -3,6 +3,7 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 
 import ConsultationForm from "@/app/(index)/_components/consultation-form";
+import BookCallButtonSection from "@/app/(index)/_sections/book-call-button-section";
 export default function HeaderSection() {
   return (
     <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-20">
@@ -45,13 +46,7 @@ export default function HeaderSection() {
               with a trained payer operations team.
             </p>
 
-            <a
-              href="#book-call"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0b1b68] px-7 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#071142] focus:outline-none focus:ring-2 focus:ring-[#0b1b68] focus:ring-offset-2"
-            >
-              <span>Book a 30 Minute Call</span>
-              <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
-            </a>
+           <BookCallButtonSection/>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}
