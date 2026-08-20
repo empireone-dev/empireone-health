@@ -49,7 +49,7 @@ export default function NavSection() {
 
           <div className="relative group">
             <button className="flex items-center gap-1 transition-colors duration-200 hover:text-[#0c3895]">
-              <span>Service</span>
+              <span>Services</span>
               <ChevronDown className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-180" />
             </button>
             <div className="absolute left-0 top-full mt-3 w-56 origin-top scale-95 rounded-xl border border-gray-200 bg-white shadow-xl opacity-0 invisible -translate-y-1 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden">
