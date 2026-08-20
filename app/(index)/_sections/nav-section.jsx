@@ -14,7 +14,7 @@ const navLinks = [
 
 export default function NavSection() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [isServiceOpen, setIsServiceOpen] = useState(false);` `
   const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function NavSection() {
   }, [isOpen]);
 
   return (
-    <nav className="relative bg-white border-b border-gray-100">
+    <nav className="relative bg-red-400 border-b border-gray-100">
       <div className="w-full flex h-16 items-center justify-between px-4 sm:h-18 sm:px-6 md:px-8 lg:h-20 lg:px-16 xl:px-20">
         {/* Logo */}
         <Link
