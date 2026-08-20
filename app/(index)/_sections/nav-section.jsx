@@ -134,11 +134,11 @@ export default function NavSection() {
                 src="/images/empireone-health.webp"
                 alt="EmpireOne Health Logo"
                 width={180}
-                height={44}
+                height={46}
                 priority
                 className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
               />
-            </Link>
+            </Link> 
             <button
               type="button"
               onClick={() => setIsOpen(false)}
