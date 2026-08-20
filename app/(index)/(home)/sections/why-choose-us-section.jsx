@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
@@ -93,6 +94,10 @@ export default function WhyChooseUsSection() {
                         <img
                           src={item.img}
                           alt={item.title}
+                          width={44}
+                          height={44}
+                          loading="lazy"
+                          decoding="async"
                           className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-11 sm:w-11"
                         />
                       </div>
@@ -128,6 +133,10 @@ export default function WhyChooseUsSection() {
                       <img
                         src="/images/hours.webp"
                         alt="24/7 Support"
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        decoding="async"
                         className="mb-6 h-10 w-10 object-contain sm:h-12 sm:w-12"
                       />
                     </div>
@@ -149,6 +158,10 @@ export default function WhyChooseUsSection() {
                 <img
                   src="/images/doctor-1.webp"
                   alt="Doctor"
+                  width={400}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom sm:max-w-none"
                 />
               </div>

@@ -1,6 +1,8 @@
+"use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { Activity } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import {
   HeartPlus,
   ShieldCheck,
@@ -89,6 +91,8 @@ function CertificationBadges() {
             whileHover={{ scale: 1.06 }}
             src={badge.img}
             alt={badge.label}
+            width={64}
+            height={64}
             tabIndex={0}
             className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto opacity-95 cursor-pointer outline-none"
           />
@@ -124,10 +128,14 @@ export default function HeroSection() {
       {/* Hero Main Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/home-banner.jpeg"
             alt=""
-            className="w-full h-full object-cover object-top"
+            fill
+            priority
+            className="object-cover object-top"
+            sizes="100vw"
+            quality={75}
           />
         </div>
 
@@ -200,10 +208,14 @@ export default function HeroSection() {
                   }}
                   className="relative mx-auto mt-8 aspect-square w-full max-w-[300px] overflow-hidden rounded-full ring-4 ring-white/80 shadow-2xl xs:max-w-[320px] sm:mx-0 sm:mt-16 sm:aspect-auto sm:max-w-md sm:overflow-visible sm:rounded-none sm:ring-0 sm:shadow-none md:max-w-lg lg:mt-30 lg:max-w-xl xl:max-w-2xl"
                 >
-                  <img
+                  <Image
                     src="/images/doctor-image.webp"
                     alt="Doctor reviewing patient information"
+                    width={600}
+                    height={720}
+                    priority
                     className="h-full w-full object-cover sm:h-auto"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 600px"
                   />
                 </motion.div>
               </div>
