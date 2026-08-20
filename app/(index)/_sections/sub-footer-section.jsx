@@ -1,6 +1,6 @@
 import { HeartPlus } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
 
 export default function SubFooterSection() {
   return (
@@ -10,10 +10,20 @@ export default function SubFooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 text-sm">
           {/* Brand & Badges Column (Spans 2 cols on desktop) */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2 font-semibold text-xl">
-              <HeartPlus className="h-6 w-6 text-red-500" />
-              <span>EmpireOne Health</span>
-            </div>
+            {/* <Link
+              href="/"
+              className="flex items-center shrink-0"
+              onClick={() => setIsOpen(false)}
+            > */}
+            <Image
+              src="/images/empireone-health.webp"
+              alt="EmpireOne Health Logo"
+              width={180}
+              height={44}
+              priority
+              className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+            />
+            {/* </Link> */}
 
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
               Your trusted healthcare partner for accessible, quality, and
