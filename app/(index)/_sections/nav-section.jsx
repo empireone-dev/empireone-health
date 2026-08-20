@@ -4,9 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
-import GetInTouchButton, {
-  GetInTouchModal,
-} from "../_components/get-in-touch-modal";
+import GetInTouchModal from "../_components/get-in-touch-modal";
+// import { GetInTouchModal } from "../_components/get-in-touch-modal";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -93,7 +92,7 @@ export default function NavSection() {
           </Link>
         </div>
 
-        <GetInTouchButton />
+        <GetInTouchModal />
 
         {/* Mobile menu toggle (header bar version) */}
         <button
@@ -118,14 +117,14 @@ export default function NavSection() {
       </div>
 
       <div
-        className={`fixed inset-0 z-50 h-dvh bg-white transition-opacity duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-0 z-50 bg-white transition-opacity duration-300 ease-in-out lg:hidden ${
           isOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
         }`}
       >
         <div className="flex h-full flex-col">
-          <div className="flex h-16 shrink-0 items-center justify-between px-4 sm:h-18 sm:px-6">
+          <div className="flex h-16 items-center justify-between px-4 sm:h-18 sm:px-6">
             <Link
               href="/"
               className="flex items-center shrink-0"
@@ -136,6 +135,7 @@ export default function NavSection() {
                 alt="EmpireOne Health Logo"
                 width={180}
                 height={44}
+                priority
                 className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
               />
             </Link>
@@ -158,22 +158,22 @@ export default function NavSection() {
           <div className="h-px w-full bg-gray-100" />
 
           {/* Scrollable content */}
-          <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain">
+          <div className="flex flex-1 flex-col overflow-y-auto">
             <div
-              className={`flex min-h-full flex-col justify-between px-4 py-3 pb-[max(1rem,env(safe-area-inset-bottom))] transition-all duration-300 ease-out sm:px-6 sm:py-6 ${
+              className={`flex flex-1 flex-col justify-between px-6 py-6 transition-all duration-300 ease-out ${
                 isOpen
                   ? "translate-y-0 opacity-100 delay-100"
                   : "translate-y-4 opacity-0"
               }`}
             >
               {/* Links */}
-              <div className="flex flex-col text-[17px] font-medium text-[#1b2559] sm:text-[21px]">
+              <div className="flex flex-col text-[19px] font-medium text-[#1b2559] sm:text-[21px]">
                 {navLinks.map((link, i) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="group flex min-h-12 items-center justify-between rounded-lg px-3 py-3 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100 sm:py-4"
+                    className="group flex items-center justify-between rounded-lg px-3 py-4 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100"
                   >
                     <span className="flex items-center gap-3">
                       {link.label}
@@ -186,7 +186,7 @@ export default function NavSection() {
                   type="button"
                   onClick={() => setIsServiceOpen((prev) => !prev)}
                   aria-expanded={isServiceOpen}
-                  className="flex min-h-12 items-center justify-between rounded-lg px-3 py-3 text-left transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100 sm:py-4"
+                  className="flex items-center justify-between rounded-lg px-3 py-4 text-left transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100"
                 >
                   <span className="flex items-center gap-3">Service</span>
                   <ChevronDown
@@ -202,7 +202,7 @@ export default function NavSection() {
                   }`}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <div className="ml-4 flex flex-col gap-1 border-l border-gray-100 py-1 pl-4 text-[15px] font-normal text-blue-950 sm:ml-12 sm:text-[17px]">
+                    <div className="ml-12 flex flex-col gap-1 border-l border-gray-100 pl-4 py-1 text-[16px] font-normal text-blue-950 sm:text-[17px]">
                       <Link
                         href="/provider-services"
                         onClick={() => setIsOpen(false)}
@@ -224,7 +224,7 @@ export default function NavSection() {
                 <Link
                   href="/case-study"
                   onClick={() => setIsOpen(false)}
-                  className="group flex min-h-12 items-center justify-between rounded-lg px-3 py-3 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100 sm:py-4"
+                  className="group flex items-center justify-between rounded-lg px-3 py-4 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100"
                 >
                   <span className="flex items-center gap-3">Case Study</span>
                   <ArrowUpRight className="h-4 w-4 text-gray-300 opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[#0c3895]" />
@@ -233,22 +233,22 @@ export default function NavSection() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="group flex min-h-12 items-center justify-between rounded-lg px-3 py-3 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100 sm:py-4"
+                  className="group flex items-center justify-between rounded-lg px-3 py-4 transition-colors duration-150 hover:bg-blue-50 hover:text-[#0c3895] active:bg-blue-100"
                 >
                   <span className="flex items-center gap-3">Contact</span>
                   <ArrowUpRight className="h-4 w-4 text-gray-300 opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[#0c3895]" />
                 </Link>
               </div>
 
-              <div className="mt-4 sm:mt-8">
-                <div className="mb-4 h-px w-full bg-gray-100 sm:mb-6" />
+              <div className="mt-8">
+                <div className="mb-6 h-px w-full bg-gray-100" />
                 <button
                   type="button"
                   onClick={() => {
                     setIsOpen(false);
                     setIsGetInTouchOpen(true);
                   }}
-                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#12379D] px-6 py-3 text-base font-semibold text-white transition-all duration-200 hover:bg-[#0f2f87] active:scale-[0.98] sm:py-4"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#12379D] px-6 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-[#0f2f87] active:scale-[0.98]"
                 >
                   <span>Get in touch</span>
                   <ArrowUpRight className="w-5 h-5" />
@@ -259,10 +259,7 @@ export default function NavSection() {
         </div>
       </div>
 
-      <GetInTouchModal
-        isOpen={isGetInTouchOpen}
-        onClose={() => setIsGetInTouchOpen(false)}
-      />
+      {/* <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} /> */}
     </nav>
   );
 }
