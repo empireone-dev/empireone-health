@@ -131,33 +131,6 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* <motion.div
-          className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_65%)]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #1E3A8A 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
-          animate={{ opacity: [0.35, 0.5, 0.35] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -left-24 top-10 h-48 w-48 rounded-full bg-teal-200/30 blur-3xl sm:h-72 sm:w-72"
-          animate={{ x: [0, 18, 0], y: [0, -14, 0], scale: [1, 1.08, 1] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute right-0 top-1/3 h-64 w-64 rounded-full bg-blue-200/30 blur-3xl sm:h-96 sm:w-96"
-          animate={{ x: [0, -18, 0], y: [0, 14, 0], scale: [1, 1.08, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-
-        <img
-          src="/images/Caduceus.webp"
-          alt=""
-          className="pointer-events-none absolute bottom-0 h-44 w-auto select-none opacity-[0.15] sm:h-72 sm:opacity-[0.2] 2xl:h-96"
-        /> */}
-
         <div className="relative mx-auto flex min-h-svh max-w-[1600px] flex-col justify-center px-4 py-8 sm:min-h-0 sm:px-10 sm:py-20 lg:px-20 lg:py-0 xl:px-28">
           <div className="grid min-h-0 grid-cols-1 items-center gap-6 sm:gap-10 lg:min-h-[calc(100vh-124px)] lg:grid-cols-2 lg:gap-16">
             <div className="order-1 text-center lg:order-1 lg:text-left">
