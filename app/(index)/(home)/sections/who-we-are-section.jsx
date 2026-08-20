@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Activity, ArrowUpRight, Stethoscope } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
@@ -33,10 +34,14 @@ export default function WhoWeAreSection() {
         <Reveal className="relative order-2 lg:order-1">
           <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-br from-teal-200/60 to-cyan-100/40 blur-xl" />
           <div className="group relative overflow-hidden rounded-[1.75rem] border border-white shadow-xl shadow-slate-900/5">
-            <img
+            <Image
               src="/images/empireonegroup.webp"
               alt="EmpireOne Health Team at work"
+              width={700}
+              height={560}
+              loading="lazy"
               className="h-full w-full scale-100 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
           </div>

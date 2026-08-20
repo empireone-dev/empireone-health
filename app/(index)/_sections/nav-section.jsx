@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
 import GetInTouchModal from "../_components/get-in-touch-modal";
 // import { GetInTouchModal } from "../_components/get-in-touch-modal";
@@ -28,9 +29,12 @@ export default function NavSection() {
       <div className="w-full flex h-16 items-center justify-between px-4 sm:h-18 sm:px-6 md:px-8 lg:h-20 lg:px-16 xl:px-20">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0" onClick={() => setIsOpen(false)}>
-          <img
+          <Image
             src="/images/empireone-health.webp"
             alt="EmpireOne Health Logo"
+            width={180}
+            height={44}
+            priority
             className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
           />
         </Link>
