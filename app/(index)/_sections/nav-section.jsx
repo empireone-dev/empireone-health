@@ -102,7 +102,7 @@ export default function NavSection() {
           <div className="flex h-16 items-center justify-between px-4 sm:h-18 sm:px-6">
             <Link href="/" className="flex items-center shrink-0" onClick={() => setIsOpen(false)}>
               <img
-                src="/images/empireone-health.png"
+                src="/images/empireone-health.webp"
                 alt="EmpireOne Health Logo"
                 className="h-11 w-42"
               />
