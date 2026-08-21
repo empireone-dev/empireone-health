@@ -198,7 +198,7 @@ export default function HeroSection() {
               <div className="relative">
                 <div className="absolute inset-x-6 inset-y-2 -z-10 rounded-full bg-gradient-to-br from-teal-200/50 to-cyan-200/40 blur-2xl sm:inset-x-8 sm:inset-y-auto sm:bottom-4 sm:top-16 sm:bg-teal-200/40 sm:blur-3xl" />
                 <motion.div
-                  initial={{   y: 16 }}
+                  initial={{ y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.8,
@@ -213,8 +213,24 @@ export default function HeroSection() {
                     width={600}
                     height={720}
                     priority
-                    className="h-full w-full object-cover sm:h-auto block"
-                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 600px"
+                    className="
+    block
+    h-auto
+    w-[280px]
+    sm:w-[350px]
+    md:w-[420px]
+    lg:w-[480px]
+    xl:w-[520px]
+    2xl:w-[600px]
+    object-contain
+  "
+                    sizes="
+    (max-width: 640px) 280px,
+    (max-width: 768px) 350px,
+    (max-width: 1024px) 420px,
+    (max-width: 1280px) 480px,
+    600px
+  "
                   />
                 </motion.div>
               </div>
