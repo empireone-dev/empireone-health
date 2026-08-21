@@ -198,7 +198,7 @@ export default function HeroSection() {
               <div className="relative">
                 <div className="absolute inset-x-6 inset-y-2 -z-10 rounded-full bg-gradient-to-br from-teal-200/50 to-cyan-200/40 blur-2xl sm:inset-x-8 sm:inset-y-auto sm:bottom-4 sm:top-16 sm:bg-teal-200/40 sm:blur-3xl" />
                 <motion.div
-                  initial={{ y: 16 }}
+                  initial={{   y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.8,

@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { BookOpen } from "lucide-react";
+import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden min-h-105 sm:min-h-110 md:min-h-120 lg:min-h-130 flex items-center">
@@ -44,7 +45,7 @@ export default function HeroSection() {
           </p>
 
           <div className="w-full pt-2 sm:w-auto">
-            <a
+            <Link
               href="appointment"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0d237d] px-5 py-3 text-xs font-medium text-white shadow-xs transition-all duration-200 hover:bg-[#091a5e] sm:w-auto md:text-sm"
             >
@@ -63,7 +64,7 @@ export default function HeroSection() {
                   d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

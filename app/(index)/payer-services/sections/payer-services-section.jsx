@@ -3,12 +3,13 @@
 import { BadgeCheck, ArrowUpRight, HeartHandshake } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function PayerServicesSection() {
   return (
     <div>
       <section className="relative overflow-hidden px-8 py-16 sm:px-16 md:px-24 lg:px-28 lg:py-24">
-       <div
+        <div
           className="absolute inset-0 bg-cover"
           style={{ backgroundImage: "url('/images/bg-med.webp')" }}
         />
@@ -38,13 +39,13 @@ export default function PayerServicesSection() {
               outsourcing.
             </p>
 
-            <a
+            <Link
               href="appointment"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#0f2d9e] px-7 py-3.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#0b2278] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0f2d9e] focus:ring-offset-2 focus:ring-offset-white"
             >
               <span>Book a 30-Min Call</span>
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -71,7 +72,7 @@ export default function PayerServicesSection() {
                   Operational Excellence
                 </p>
                 <p className="text-xs text-gray-500">
-               Empowering efficient provider operations.
+                  Empowering efficient provider operations.
                 </p>
               </div>
             </div>

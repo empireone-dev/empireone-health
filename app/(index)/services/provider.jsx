@@ -6,12 +6,13 @@ import { ArrowUpRight, HeartHandshake, BadgeCheck } from "lucide-react";
 import BookACallSection from "../_sections/book-a-call-section";
 import ProviderFoundationServiceSection from "../provider-services/sections/provider-foundation-service-section";
 import ProviderHowWeWorkSection from "../provider-services/sections/provider-how-we-work-section";
+import Link from "next/link";
 
 export default function Provider() {
   return (
     <div className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe]">
       <section className="relative overflow-hidden px-8 py-16 sm:px-16 md:px-24 lg:px-28 lg:py-24">
-       <div
+        <div
           className="absolute inset-0 bg-cover"
           style={{ backgroundImage: "url('/images/bg-med.webp')" }}
         />
@@ -41,13 +42,13 @@ export default function Provider() {
               for outsourcing.
             </p>
 
-            <a
+            <Link
               href="appointment"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#0f2d9e] px-7 py-3.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#0b2278] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0f2d9e] focus:ring-offset-2 focus:ring-offset-white"
             >
               <span>Book a 30-Min Call</span>
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -82,9 +83,9 @@ export default function Provider() {
           </motion.div>
         </div>
       </section>
-    <ProviderFoundationServiceSection />
-    <ProviderHowWeWorkSection />
-      <BookACallSection/> 
+      <ProviderFoundationServiceSection />
+      <ProviderHowWeWorkSection />
+      <BookACallSection />
     </div>
   );
 }
