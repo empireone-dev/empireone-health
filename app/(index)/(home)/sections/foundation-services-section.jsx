@@ -112,14 +112,14 @@ export default function FoundationServicesSection() {
             icon={UserCheck}
             title="Provider Services"
             desc="Comprehensive support for providers, improving patient care coordination and operational efficiency through specialized teams, advanced QA, and full transparency."
-            href="provider-services"
+            href="/provider-services"
             delay={80}
           />
           <ServiceCard
             icon={Activity}
             title="Payer Services"
             desc="Tailored solutions for payers, enhancing claim accuracy, turnaround times, and compliance with expert teams and transparent performance metrics."
-            href="payer-services"
+            href="/payer-services"
             delay={160}
           />
         </div>
