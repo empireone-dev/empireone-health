@@ -4,6 +4,12 @@ import BodySection from './sections/body-section'
 import ServiceScopeSection from './sections/service-scope-section'
 import HowWeWorkSection from './sections/how-we-work-section'
 
+export const metadata = {
+  title: "Enrollment Support | EmpireOneHealth",
+  description:
+    "Assist enrollment workflows, application review, member updates, documentation routing, and status tracking for cleaner queues.",
+};
+
 export default function Page() {
   return (
     <div className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe]">  
