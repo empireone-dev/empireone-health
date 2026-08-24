@@ -17,8 +17,8 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="mx-auto max-w-[1600px] px-4 py-10 sm:px-10 sm:py-16 lg:px-20 lg:py-0 xl:px-28">
-        <div className="grid items-center gap-8 lg:min-h-[calc(100vh-124px)] lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto max-w-[1600px] px-4 pt-10 sm:px-10 sm:pt-16 lg:px-20 lg:py-0 xl:px-28">
+        <div className="flex min-h-[calc(100svh-64px)] flex-col items-center gap-8 lg:grid lg:min-h-[calc(105vh-124px)] lg:grid-cols-2 lg:gap-16">
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-2">
@@ -43,7 +43,7 @@ export default function HeroSection() {
                 tracking-tight
                 text-slate-900
                 sm:text-5xl
-                sm:leading-[1.05]
+                sm:leading-[1.25]
                 lg:mx-0
                 lg:text-6xl
                 lg:tracking-[-0.04em]
@@ -69,7 +69,7 @@ export default function HeroSection() {
           </div>
 
           {/* Doctor Image */}
-          <div className="flex justify-center lg:justify-end lg:self-end">
+          <div className="mt-auto flex justify-center lg:mt-0 lg:justify-end lg:self-end">
             <div className="relative">
               {/* Decorative background */}
               <div
