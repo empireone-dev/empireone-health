@@ -46,7 +46,7 @@ export default function HeroSection() {
 
           <div className="w-full pt-2 sm:w-auto">
             <Link
-              href="appointment"
+              href="/appointment"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0d237d] px-5 py-3 text-xs font-medium text-white shadow-xs transition-all duration-200 hover:bg-[#091a5e] sm:w-auto md:text-sm"
             >
               <span>Book a 30 Minute Call</span>

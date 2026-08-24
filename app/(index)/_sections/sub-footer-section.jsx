@@ -71,7 +71,7 @@ export default function SubFooterSection() {
             <ul className="space-y-2 text-slate-600 text-sm">
               <li>
                 <Link
-                  href="about-us"
+                  href="/about-us"
                   className="hover:text-slate-900 transition-colors"
                 >
                   About Us
@@ -79,7 +79,7 @@ export default function SubFooterSection() {
               </li>
               <li>
                 <Link
-                  href="appointment"
+                  href="/appointment"
                   className="hover:text-slate-900 transition-colors"
                 >
                   Book A Call
