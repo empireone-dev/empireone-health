@@ -16,7 +16,7 @@ export const metadata = {
   description:
     "Healthcare BPO and RCM support for providers and payers, focused on foundation services ready for outsourcing.",
   icons: {
-    icon: "/images/favicon.webp",
+    icon: "/images/Favicon-02.webp",
   },
 };
 
