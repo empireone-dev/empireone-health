@@ -168,7 +168,7 @@ export default function HeroSection() {
                 style={{ fontFamily: "Arial, sans-serif" }}
                 className="max-w-3xl text-3xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.05] lg:text-6xl lg:leading-18 lg:tracking-[-0.04em]"
               >
-                Better Patient Experiences sample.{" "}
+                Better Patient Experiences.{" "}
                 <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
                   Smarter
                 </span>{" "}
