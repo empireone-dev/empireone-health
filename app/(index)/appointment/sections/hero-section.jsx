@@ -24,9 +24,9 @@ export default function HeroSection() {
           className="flex flex-col items-center justify-center text-center"
         >
           {/* Main Heading */}
-          <h1 className="text-3xl font-bold tracking-tight text-[#0b132b] sm:text-4xl lg:text-5xl">
-            Appoinment
-          </h1>
+          <div className="text-3xl font-bold tracking-tight text-black sm:text-4xl lg:text-5xl">
+            Appointment
+          </div>
 
           {/* Breadcrumb Navigation */}
           <nav className="mt-4 flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-700 sm:text-sm">
