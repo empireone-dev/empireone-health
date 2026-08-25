@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ArrowUpRight, X, CheckCircle2 } from "lucide-react";
-import Modal from "@/app/_components/modal";
-import Input from "@/app/_components/input";
 import { add_appointment_service } from "@/app/_services/booking-services";
+import Input from "@/app/_components/input";
+import Modal from "@/app/_components/modal";
 
 const INPUT_PROPS = {
   textColor: "#ffffff",
