@@ -149,7 +149,7 @@ export default function AboutSection() {
 
       <section className="w-full bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe] py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -157,7 +157,7 @@ export default function AboutSection() {
             className="text-center text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px] mb-12"
           >
             Human-led delivery with practical AI-assisted visibility.
-          </motion.h1>
+          </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {cards.map((card, idx) => (

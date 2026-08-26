@@ -87,7 +87,7 @@ export default function HeroSection() {
               />
 
               <Image
-                src="/images/doctor-image.webp"
+                src="/images/hero-doctor-img.webp"
                 alt="Doctor reviewing patient information"
                 width={600}
                 height={720}
