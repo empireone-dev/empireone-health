@@ -48,7 +48,7 @@ export default function NavSection() {
             href="/"
             className="relative transition-colors duration-200 hover:text-[#0c3895] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#0c3895] after:transition-all after:duration-300 hover:after:w-full"
           >
-            Home
+            Homes
           </Link>
           <Link
             href="/about-us"
