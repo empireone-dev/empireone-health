@@ -56,7 +56,7 @@ export default function HeroSection() {
               <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
                 Smarter
               </span>{" "}
-              Healthcare Operations.sssssssssssssssssssssssssss
+              Healthcare Operations.
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-800 sm:mt-8 sm:text-lg sm:leading-8 md:text-xl lg:mx-0">
