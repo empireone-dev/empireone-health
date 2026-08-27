@@ -28,7 +28,7 @@ export default function HeroSection() {
               />
 
               <span className="text-base font-semibold tracking-wide text-slate-600 sm:text-xl">
-                EmpireOne Health
+                EmpireOne Healthssss
               </span>
             </div>
 
