@@ -28,7 +28,7 @@ export default function HeroSection() {
               />
 
               <span className="text-base font-semibold tracking-wide text-slate-600 sm:text-xl">
-                EmpireOne Healthssss
+                EmpireOne Health
               </span>
             </div>
 
@@ -56,7 +56,7 @@ export default function HeroSection() {
               <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
                 Smarter
               </span>{" "}
-              Healthcare Operations.
+              Healthcare Operations.sssssssssssssssssssssssssss
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-800 sm:mt-8 sm:text-lg sm:leading-8 md:text-xl lg:mx-0">
