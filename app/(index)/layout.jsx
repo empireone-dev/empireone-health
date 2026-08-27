@@ -12,10 +12,9 @@ export default function Layout({ children }) {
         {/* <SubHeaderSection /> */}
         <NavSection />
       </div>
-
       {children}
       <SubFooterSection />
       <FooterSection />
     </>
   );
-}
+} 
