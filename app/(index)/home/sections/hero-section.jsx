@@ -52,7 +52,7 @@ export default function HeroSection() {
                 fontFamily: "Arial, sans-serif",
               }}
             >
-              Better Patient Experiences.{" "}
+              Better Patient Experiences.{" "}ssssssssssssss
               <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
                 Smarter
               </span>{" "}

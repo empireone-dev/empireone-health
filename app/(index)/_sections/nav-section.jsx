@@ -45,7 +45,7 @@ export default function NavSection() {
 
         <div className="hidden lg:flex items-center gap-8 xl:gap-12 text-[16px] xl:text-[17px] font-medium text-[#1b2559]">
           <Link
-            href="home"
+            href="/home"
             className="relative transition-colors duration-200 hover:text-[#0c3895] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#0c3895] after:transition-all after:duration-300 hover:after:w-full"
           >
             Home
