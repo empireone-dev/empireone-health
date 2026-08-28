@@ -1,66 +1,70 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_PRODUCTION;
-export async function add_booking_service(data) {
-  try {
-    const response = await fetch(`/${baseUrl}/api/add_booking`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(data), // <-- Must stringify the object!
-    });
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_PRODUCTION || "";
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error("Failed to create booking:", error);
-    throw error; // Excellent practice to throw this so your React try/catch handles it
+/**
+ * Builds a valid absolute or relative URL string without duplicate slashes.
+ */
+function buildUrl(path) {
+  if (!baseUrl) {
+    return path.startsWith("/") ? path : `/${path}`;
   }
+
+  // Ensure protocol is present if baseUrl is a domain (e.g. "careers.empireonecx.com")
+  let domain = baseUrl;
+  if (!domain.startsWith("http://") && !domain.startsWith("https://")) {
+    domain = `https://${domain}`;
+  }
+
+  // Strip trailing slashes from domain and leading slashes from path
+  const cleanDomain = domain.replace(/\/+$/, "");
+  const cleanPath = path.replace(/^\/+/, "");
+
+  return `${cleanDomain}/${cleanPath}`;
 }
 
-export async function add_appointment_service(data) {
+/**
+ * Generic API client helper for POST requests
+ */
+async function postRequest(path, data) {
+  const url = buildUrl(path);
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+
+  const text = await response.text();
+  return text ? JSON.parse(text) : null;
+}
+
+export async function add_booking_service(data) {
   try {
-    const response = await fetch(`/${baseUrl}/api/add_appointment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const text = await response.text();
-    return text ? JSON.parse(text) : null;
+    return await postRequest("/api/add_booking", data);
   } catch (error) {
     console.error("Failed to create booking:", error);
     throw error;
   }
 }
 
+export async function add_appointment_service(data) {
+  try {
+    return await postRequest("/api/add_appointment", data);
+  } catch (error) {
+    console.error("Failed to create appointment:", error);
+    throw error;
+  }
+}
+
 export async function add_consultation_service(data) {
   try {
-    const response = await fetch(`/${baseUrl}/api/add_consultation`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const text = await response.text();
-    return text ? JSON.parse(text) : null;
+    return await postRequest("/api/add_consultation", data);
   } catch (error) {
     console.error("Failed to create consultation:", error);
     throw error;
