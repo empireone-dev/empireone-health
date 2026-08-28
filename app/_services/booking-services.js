@@ -1,7 +1,7 @@
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_PRODUCTION;
 export async function add_booking_service(data) {
   try {
-    const response = await fetch(`/api/add_booking`, {
+    const response = await fetch(`${baseUrl}/api/add_booking`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export async function add_booking_service(data) {
 
 export async function add_appointment_service(data) {
   try {
-    const response = await fetch(`/api/add_appointment`, {
+    const response = await fetch(`${baseUrl}/api/add_appointment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export async function add_appointment_service(data) {
 
 export async function add_consultation_service(data) {
   try {
-    const response = await fetch(`/api/add_consultation`, {
+    const response = await fetch(`${baseUrl}/api/add_consultation`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
