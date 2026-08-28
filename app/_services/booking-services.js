@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_PRODUCTION?.replace(/\/$/, "");
 
 function apiUrl(path) {
@@ -9,6 +10,9 @@ function apiUrl(path) {
   return `${baseUrl}${path}`;
 }
 
+=======
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_PRODUCTION;
+>>>>>>> bb5f47a602f74f7d79fd1dec09cec70d646f4174
 export async function add_booking_service(data) {
   try {
     const response = await fetch(apiUrl("/api/add_booking"), {
