@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 import { CheckCircle, Workflow } from "lucide-react";
 import BookACallSection from "../../_sections/book-a-call-section";
 

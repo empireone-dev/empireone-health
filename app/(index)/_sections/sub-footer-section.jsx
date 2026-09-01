@@ -20,7 +20,7 @@ export default function SubFooterSection() {
               alt="EmpireOne Health Logo"
               width={180}
               height={44}
-              priority
+              loading="lazy"
               className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
             />
             {/* </Link> */}

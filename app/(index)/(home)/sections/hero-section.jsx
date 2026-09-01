@@ -10,7 +10,7 @@ export default function HeroSection() {
           src="/images/home-banner.webp"
           alt=""
           fill
-          priority
+          loading="eager"
           sizes="100vw"
           quality={60}
           className="object-cover object-top"
@@ -91,8 +91,7 @@ export default function HeroSection() {
                 alt="Doctor reviewing patient information"
                 width={600}
                 height={720}
-                priority
-                fetchPriority="high"
+                preload
                 quality={70}
                 className="
                   block
