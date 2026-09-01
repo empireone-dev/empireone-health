@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
+import { motion, useReducedMotion } from "motion/react";
 import { CheckCircle, Workflow } from "lucide-react";
 import BookACallSection from "@/app/(index)/_sections/book-a-call-section";
 
@@ -21,10 +22,13 @@ export default function HowWeWorkSection() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-sm sm:aspect-[16/12] lg:col-span-6"
           >
-            <img
+            <Image
               src="/images/enrollment-support.webp"
               alt="EmpireOne team member"
-              className="h-full w-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
+              className="object-cover"
             />
           </motion.div>
 

@@ -14,7 +14,7 @@ const navLinks = [
 
 export default function NavSection() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServiceOpen, setIsServiceOpen] = useState(false);` `
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function NavSection() {
             alt="EmpireOne Health Logo"
             width={180}
             height={44}
-            priority
+            preload
             className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
           />
         </Link>
@@ -135,7 +135,7 @@ export default function NavSection() {
                 alt="EmpireOne Health Logo"
                 width={180}
                 height={44}
-                priority
+                loading="lazy"
                 className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
               />
             </Link>

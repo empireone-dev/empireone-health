@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowUpRight, HeartHandshake, BadgeCheck } from "lucide-react";
 import BookACallSection from "../_sections/book-a-call-section";
 import ProviderFoundationServiceSection from "../provider-services/sections/provider-foundation-service-section";

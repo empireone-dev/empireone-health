@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import BookCalendarSection from "./book-calendar-section";
 

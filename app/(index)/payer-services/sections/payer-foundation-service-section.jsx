@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowRight, Building } from "lucide-react";
 import { Space_Grotesk } from "next/font/google";
 
