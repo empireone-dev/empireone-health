@@ -56,7 +56,7 @@ export async function add_booking_service(data) {
 
     // 2. Create Lead with the appointment slot
     const resLead = await pipeDrivePost("/leads", {
-      title: `Booking - ${data.name}`,
+      title: `${data.name} - Booking Request`,
       person_id: resPerson?.data?.id,
     });
 
@@ -87,12 +87,13 @@ export async function add_booking30_min_call_service(data) {
       ...data.organization,
     });
 
-    console.log('resOrgField?.data?.id',resOrgField?.data?.id)
+    console.log('resOrgField?.data?.id', resOrgField?.data?.id)
 
     // 3. Create Lead
     const resLead = await pipeDrivePost("/leads", {
+      title: `${data.name} - Appointment Request`,
       person_id: resPerson?.data?.id,
-    //   organization_id: resOrgField?.data?.id,
+      //   organization_id: resOrgField?.data?.id,
       ...data.lead,
     });
 
@@ -134,16 +135,16 @@ export async function add_appointment_service(data) {
 
     // 2. Create Lead
     const resLead = await pipeDrivePost("/leads", {
-      title: `Get In Touch - ${data.name}`,
+      title: `${data.name} - Get In Touch`,
       person_id: resPerson?.data?.id,
     });
 
     // 3. Attach notes, if provided
     const resNote = data.notes
       ? await pipeDrivePost("/notes", {
-          person_id: resPerson?.data?.id,
-          content: data.notes,
-        })
+        person_id: resPerson?.data?.id,
+        content: data.notes,
+      })
       : null;
 
     // 4. Send confirmation + admin notification emails via the Apps Script web app
@@ -175,17 +176,17 @@ export async function add_consultation_service(data) {
     // 2. Create Organization Field, if a company name was provided
     const resOrgField = data.company_name
       ? await pipeDrivePost("/organizationFields", {
-          person_id: resPerson?.data?.id,
-          name: data.company_name,
-          field_name: data.company_name,
-          field_type: "text",
-          custom_fields: { help_with: data.help_with },
-        })
+        person_id: resPerson?.data?.id,
+        name: data.company_name,
+        field_name: data.company_name,
+        field_type: "text",
+        custom_fields: { help_with: data.help_with },
+      })
       : null;
 
     // 3. Create Lead
     const resLead = await pipeDrivePost("/leads", {
-      title: `Consultation Request - ${data.name}`,
+      title: `${data.name} - Consultation Request`,
       person_id: resPerson?.data?.id,
       origin_id: data.source,
     });
@@ -193,9 +194,9 @@ export async function add_consultation_service(data) {
     // 4. Attach notes, if provided
     const resNote = data.notes
       ? await pipeDrivePost("/notes", {
-          person_id: resPerson?.data?.id,
-          content: data.notes,
-        })
+        person_id: resPerson?.data?.id,
+        content: data.notes,
+      })
       : null;
 
     // 5. Send confirmation + admin notification emails via the Apps Script web app
