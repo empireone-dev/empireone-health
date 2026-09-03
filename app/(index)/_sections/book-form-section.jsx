@@ -30,41 +30,40 @@ export default function BookFormSection({ compact = false }) {
             name: data.fullName,
             email: [
                 {
-                    "value": data.email,
-                    "primary": true,
-                    "label": "work"
+                    value: data.email,
+                    primary: true,
+                    label: "work"
                 }
-            ],//done
+            ],
             phone: [
                 {
-                    "value": data.contactNumber,
-                    "primary": true,
-                    "label": "work"
+                    value: data.contactNumber,
+                    primary: true,
+                    label: "work"
                 }
-            ],//done
-            notes: data.message,//done
-        }
+            ],
+            notes: data.message,
+        };
+
         const organization = {
-            name: data.companyName,//done
+            name: data.companyName,
             field_name: data.companyName,
             field_type: "text",
             custom_fields: {
                 service: data.lookingToBuild
             }
-        }
-        const leads = {
-            title: `${data.fullName} - Appointment Request`,
-            origin_id: data.source,
+        };
 
-            // label_ids: [data.lookingToBuild]
-        }
+        const leads = {
+            title: data.fullName, // Now explicitly passes full name
+            origin_id: data.source,
+        };
+
         try {
             await add_booking30_min_call_service({
                 person: person,
                 organization: organization,
                 lead: leads,
-                // source: data.source, //done
-                // looking_for: data.lookingToBuild //pending,
             });
 
             reset();

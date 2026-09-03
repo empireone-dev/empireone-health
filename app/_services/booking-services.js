@@ -92,9 +92,10 @@ export async function add_booking30_min_call_service(data) {
 
     console.log("resOrgField?.data?.id", resOrgField?.data?.id);
 
-    // 3. Create Lead using the person's FULL NAME
+    // 3. Create Lead using the person's FULL NAME (or data.lead.title if explicitly set)
     const resLead = await pipeDrivePost("/leads", {
-      title: fullName,
+      ...data.lead,
+      title: data.lead?.title || fullName,
       person_id: resPerson?.data?.id,
     });
 
@@ -143,7 +144,7 @@ export async function add_booking30_min_call_service(data) {
 //       //   organization_id: resOrgField?.data?.id,
 //       // ...data.lead,
 //     });
-    
+
 
 //     console.log("Lead created successfully:", resLead);
 
