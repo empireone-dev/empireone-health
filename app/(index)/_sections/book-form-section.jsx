@@ -53,7 +53,7 @@ export default function BookFormSection({ compact = false }) {
             }
         }
         const leads = {
-            title: "EmpireOneHealth",
+            title: `${data.fullName} - Appointment Request`,
             origin_id: data.source,
 
             // label_ids: [data.lookingToBuild]
