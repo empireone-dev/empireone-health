@@ -81,26 +81,26 @@ export async function add_booking30_min_call_service(data) {
     // 1. Create Person
     const resPerson = await pipeDrivePost("/persons", data.person);
 
+    // Get the person's full name
+    const fullName = data.person?.name?.trim() || "Appointment Request";
+
     // 2. Create Organization Field
     const resOrgField = await pipeDrivePost("/organizationFields", {
       person_id: resPerson?.data?.id,
       ...data.organization,
     });
 
-    console.log('resOrgField?.data?.id', resOrgField?.data?.id)
+    console.log("resOrgField?.data?.id", resOrgField?.data?.id);
 
-    // 3. Create Lead
+    // 3. Create Lead using the person's FULL NAME
     const resLead = await pipeDrivePost("/leads", {
-      title: `${data.name} - Appointment Request`,
+      title: fullName,
       person_id: resPerson?.data?.id,
-      //   organization_id: resOrgField?.data?.id,
-      // ...data.lead,
     });
-    
 
     console.log("Lead created successfully:", resLead);
 
-    // 4. Send confirmation + admin notification emails via the Apps Script web app
+    // 4. Send confirmation + admin notification emails
     await sendEmpireOneHealthEmail("/api/empireonehealth/appointment", {
       name: data.person?.name,
       email: data.person?.email?.[0]?.value,
@@ -122,6 +122,53 @@ export async function add_booking30_min_call_service(data) {
     throw error;
   }
 }
+
+// export async function add_booking30_min_call_service(data) {
+//   try {
+//     // 1. Create Person
+//     const resPerson = await pipeDrivePost("/persons", data.person);
+
+//     // 2. Create Organization Field
+//     const resOrgField = await pipeDrivePost("/organizationFields", {
+//       person_id: resPerson?.data?.id,
+//       ...data.organization,
+//     });
+
+//     console.log('resOrgField?.data?.id', resOrgField?.data?.id)
+
+//     // 3. Create Lead
+//     const resLead = await pipeDrivePost("/leads", {
+//       title: `${data.name} - Appointment Request`,
+//       person_id: resPerson?.data?.id,
+//       //   organization_id: resOrgField?.data?.id,
+//       // ...data.lead,
+//     });
+    
+
+//     console.log("Lead created successfully:", resLead);
+
+//     // 4. Send confirmation + admin notification emails via the Apps Script web app
+//     await sendEmpireOneHealthEmail("/api/empireonehealth/appointment", {
+//       name: data.person?.name,
+//       email: data.person?.email?.[0]?.value,
+//       phone: data.person?.phone?.[0]?.value,
+//       notes: data.person?.notes,
+//       company_name: data.organization?.name,
+//       source: data.lead?.origin_id,
+//       looking_for: data.organization?.custom_fields?.service,
+//       appointment_id: resLead?.data?.id,
+//     });
+
+//     return {
+//       person: resPerson.data,
+//       organizationField: resOrgField.data,
+//       lead: resLead.data,
+//     };
+//   } catch (error) {
+//     console.error("Failed to create booking:", error);
+//     throw error;
+//   }
+// }
 
 export async function add_appointment_service(data) {
   try {
