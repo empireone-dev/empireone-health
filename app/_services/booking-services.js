@@ -94,8 +94,9 @@ export async function add_booking30_min_call_service(data) {
       title: `${data.name} - Appointment Request`,
       person_id: resPerson?.data?.id,
       //   organization_id: resOrgField?.data?.id,
-      ...data.lead,
+      // ...data.lead,
     });
+    
 
     console.log("Lead created successfully:", resLead);
 
