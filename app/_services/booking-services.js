@@ -95,7 +95,7 @@ export async function add_booking30_min_call_service(data) {
     // 3. Create Lead using the person's FULL NAME (or data.lead.title if explicitly set)
     const resLead = await pipeDrivePost("/leads", {
       ...data.lead,
-      title: data.lead?.title || fullName,
+      title: `${fullName} - Appointment Request`,
       person_id: resPerson?.data?.id,
     });
 
