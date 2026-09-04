@@ -33,8 +33,10 @@ export default function HeroSection() {
 
           {/* Main Title */}
           <h1 className="text-xl font-bold leading-tight tracking-tight text-[#0a1b39] sm:text-2xl sm:leading-[1.2] md:text-3xl lg:text-4xl">
-            Real healthcare operations improvements, built around measurable
-            workflow outcomes.
+            <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+              Real healthcare
+            </span>{" "}
+            operations improvements, built around measurable workflow outcomes.
           </h1>
 
           {/* Description Text */}

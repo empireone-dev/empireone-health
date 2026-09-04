@@ -30,7 +30,10 @@ export default function PayerServicesSection() {
             </span>
 
             <h1 className="text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px]">
-              Payer operations support for member experience and provider data
+              <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                Payer
+              </span>{" "}
+              operations support for member experience and provider data
               accuracy.
             </h1>
 

@@ -74,7 +74,11 @@ export default function WhoWeAreSection() {
 
           <Reveal delay={80}>
             <h2 className="mt-5 text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
-              Your Trusted Healthcare Operations &amp; RCM Support Partner
+              Your Trusted{" "}
+              <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                Healthcare
+              </span>
+              {" "}Operations &amp; RCM Support Partner
             </h2>
           </Reveal>
 

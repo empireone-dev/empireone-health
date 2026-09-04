@@ -97,7 +97,11 @@ export default function FoundationServicesSection() {
             Foundation Services{" "}
           </span>
           <h2 className="mt-4 text-5xl font-bold text-slate-900 ">
-            Core healthcare operations services ready for outsourcing
+            Core {""}
+            <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+              healthcare
+            </span>{" "}
+            operations services ready for outsourcing
           </h2>
           <p
             className={`${spaceGrotesk.className} mt-6 max-w-md text-xl leading-relaxed font-semibold text-gslate-700`}

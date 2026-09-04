@@ -130,15 +130,15 @@ export default function HeroSection() {
               {/* Heading */}
               <h1></h1>
               <div
-               className="text-xl font-bold leading-tight tracking-tight text-[#0a1b39] md:text-3xl mt-2"
+               className="text-xl font-bold leading-tight tracking-tight text-[#0a1b39] md:text-4xl mt-4"
                 style={{
                   fontFamily: "Arial, sans-serif",
                 }}
               >
                 <span className="text-shadow-purple-900">
-                  WE KNOW BOTH SIDES OF{" "}
+                  We Know Both Sides of{" "}
                   <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
-                    HEALTHCARE
+                    Healthcare
                   </span>
                 </span>
               </div>
@@ -146,7 +146,7 @@ export default function HeroSection() {
               {/* Subtitle */}
               <p
                 className="
-                  mt-3
+                  mt-4
                   max-w-[650px]
                   text-sm
                   font-semibold
