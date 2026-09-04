@@ -1,10 +1,21 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 import { Activity } from "lucide-react";
 import CertificationBadges from "./certification-badges";
 
 const STATS = [
-  { icon: "/images/dollar.webp", value: "98%+", label: "Clean Claim Rate" },
-  { icon: "/images/time.webp", value: "30%+", label: "Faster Collections" },
+  {
+    icon: "/images/dollar.webp",
+    value: "15%+",
+    label: "Patient Collections",
+  },
+  {
+    icon: "/images/time.webp",
+    value: "30%+",
+    label: "Faster Insurance Collections",
+  },
   {
     icon: "/images/arrowdown.webp",
     value: "25%+",
@@ -75,7 +86,10 @@ export default function HeroSection() {
           {/* =================================
               LEFT CONTENT
           ================================= */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="
               relative
               z-20
@@ -84,21 +98,21 @@ export default function HeroSection() {
               lg:absolute
               lg:left-0
               lg:top-[43%]
-              lg:w-[46%]
+              lg:w-[60%]
               lg:-translate-y-1/2
 
-              xl:w-[45%]
+              xl:w-[58%]
             "
           >
             <div
               className="
                 mx-auto
-                max-w-[680px]
+                max-w-[760px]
                 text-center
-                lg:ml-5
+                lg:ml-16
                 lg:mx-0
                 lg:text-left
-                xl:ml-7
+                xl:ml-20
               "
             >
               {/* Brand */}
@@ -128,9 +142,9 @@ export default function HeroSection() {
               </div>
 
               {/* Heading */}
-              <h1></h1>
+            
               <div
-               className="text-xl font-bold leading-tight tracking-tight text-[#0a1b39] md:text-4xl mt-4"
+               className="text-4xl font-extrabold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4"
                 style={{
                   fontFamily: "Arial, sans-serif",
                 }}
@@ -148,13 +162,13 @@ export default function HeroSection() {
                 className="
                   mt-4
                   max-w-[650px]
-                  text-sm
+                  text-base
                   font-semibold
                   leading-relaxed
                   text-blue-600
-                  sm:text-base
-                  lg:text-lg
-                  xl:text-xl
+                  sm:text-lg
+                  lg:text-xl
+                  xl:text-2xl
                 "
               >
                 Payer Administration + Provider Revenue Cycle Services
@@ -165,12 +179,12 @@ export default function HeroSection() {
                 className="
                   mt-3
                   max-w-[620px]
-                  text-sm
+                  text-base
                   leading-relaxed
                   text-slate-800
-                  sm:text-base
-                  lg:text-base
-                  xl:text-lg
+                  sm:text-lg
+                  lg:text-lg
+                  xl:text-xl
                 "
               >
                 Our experience across payer and provider operations gives us a
@@ -184,12 +198,15 @@ export default function HeroSection() {
                 <CertificationBadges />
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* =================================
               RIGHT SIDE / DOCTOR IMAGE
           ================================= */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
             className="
               pointer-events-none
               relative
@@ -209,18 +226,18 @@ export default function HeroSection() {
               lg:mx-0
               lg:block
               lg:h-[94%]
-              lg:w-[57%]
+              lg:w-[51%]
               lg:max-w-none
 
               xl:right-[0%]
               xl:top-[-7%]
               xl:h-[96%]
-              xl:w-[56%]
+              xl:w-[50%]
 
               2xl:right-[1%]
               2xl:top-[-6%]
               2xl:h-[97%]
-              2xl:w-[55%]
+              2xl:w-[49%]
             "
           >
             {/* Glow */}
@@ -238,7 +255,7 @@ export default function HeroSection() {
             />
 
             <Image
-              src="/images/Untitled design (16).png"
+              src="/images/nurse-hero-image.png"
               alt="Doctor reviewing patient information"
               fill
               priority
@@ -255,12 +272,15 @@ export default function HeroSection() {
                 -translate-y-[6%]
               "
             />
-          </div>
+          </motion.div>
 
           {/* =================================
               STATS BAR
           ================================= */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
             className="
               relative
               z-40
@@ -379,7 +399,7 @@ export default function HeroSection() {
                 </span>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
