@@ -27,7 +27,7 @@ export default function BookFormSection({ compact = false }) {
         setSubmitError(null);
 
         const person = {
-            name: data.fullName,//done
+            name: data.fullName,
             email: [
                 {
                     value: data.email,
@@ -67,8 +67,8 @@ export default function BookFormSection({ compact = false }) {
                 // looking_for: data.lookingToBuild //pending,
             });
 
-            // reset();
-            // setSubmitSuccess(true);
+            reset();
+            setSubmitSuccess(true);
         } catch (err) {
             console.error("Booking submission error:", err);
             setSubmitError("Failed to submit. Please try again.");
