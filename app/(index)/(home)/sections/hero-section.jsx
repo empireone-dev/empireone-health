@@ -35,8 +35,8 @@ export default function HeroSection() {
         relative
         isolate
         overflow-hidden
-        lg:h-[calc(100svh-76px)]
-        lg:min-h-[680px]  
+        lg:h-[calc(100svh-80px)]
+        lg:min-h-[600px]
       "
     >
       {/* Background */}
@@ -309,14 +309,14 @@ export default function HeroSection() {
               sm:py-5
 
               lg:absolute
-              lg:bottom-12
+              lg:bottom-8
               lg:left-0
               lg:right-0
               lg:gap-6
               lg:px-8
               lg:py-5
 
-              xl:bottom-14
+              xl:bottom-10
               xl:px-10
               xl:py-5
             "
