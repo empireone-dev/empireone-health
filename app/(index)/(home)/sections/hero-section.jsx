@@ -150,7 +150,9 @@ export default function HeroSection() {
                 }}
               >
                 <span className="text-shadow-purple-900">
-                  We Know Both Sides of{" "}
+                  We Know Both Sides
+                  <br />
+                  of{" "}
                   <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
                     Healthcare
                   </span>
@@ -255,7 +257,7 @@ export default function HeroSection() {
             />
 
             <Image
-              src="/images/nurse-hero-image.png"
+              src="/images/data-hero.webp"
               alt="Doctor reviewing patient information"
               fill
               priority
