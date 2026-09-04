@@ -5,8 +5,16 @@ import CertificationBadges from "./certification-badges";
 const STATS = [
   { icon: "/images/dollar.webp", value: "98%+", label: "Clean Claim Rate" },
   { icon: "/images/time.webp", value: "30%+", label: "Faster Collections" },
-  { icon: "/images/arrowdown.webp", value: "25%+", label: "Reduction in Denials" },
-  { icon: "/images/stats.webp", value: "15%+", label: "Increase in Net Revenue" },
+  {
+    icon: "/images/arrowdown.webp",
+    value: "25%+",
+    label: "Reduction in Denials",
+  },
+  {
+    icon: "/images/stats.webp",
+    value: "15%+",
+    label: "Increase in Net Revenue",
+  },
 ];
 
 export default function HeroSection() {
@@ -146,7 +154,9 @@ export default function HeroSection() {
                 <span className="text-shadow-purple-900">
                   WE KNOW BOTH SIDES OF
                 </span>{" "}
-                <span className="text-purple-700">HEALTHCARE.</span>
+                <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                  HEALTHCARE
+                </span>
               </div>
 
               {/* Subtitle */}
