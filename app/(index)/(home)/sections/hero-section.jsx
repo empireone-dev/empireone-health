@@ -257,7 +257,7 @@ export default function HeroSection() {
             />
 
             <Image
-              src="/images/data-hero.webp"
+              src="/images/Nurse-Hero-PNG.png"
               alt="Doctor reviewing patient information"
               fill
               priority
