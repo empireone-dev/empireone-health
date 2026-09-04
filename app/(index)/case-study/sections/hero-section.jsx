@@ -38,7 +38,18 @@ export default function HeroSection() {
           </h1>
 
           {/* Description Text */}
-          <p className="max-w-xl text-base leading-relaxed font-bold text-[#596d88] sm:text-lg">
+          <p
+            className="
+                  mt-3
+                  max-w-[620px]
+                  text-sm
+                  leading-relaxed
+                  text-slate-800
+                  sm:text-base
+                  lg:text-base
+                  xl:text-lg
+                "
+          >
             Review focused examples of how EmpireOneHealth supports provider and
             payer teams with structured operations, QA visibility, and scalable
             execution.

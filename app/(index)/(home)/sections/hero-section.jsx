@@ -110,8 +110,6 @@ export default function HeroSection() {
                     text-blue-600
                     sm:h-6
                     sm:w-6
-                    lg:h-7
-                    lg:w-7
                   "
                   aria-hidden="true"
                 />
@@ -123,8 +121,6 @@ export default function HeroSection() {
                     tracking-wide
                     text-slate-600
                     sm:text-lg
-                    lg:text-xl
-                    xl:text-2xl
                   "
                 >
                   EmpireOne Health
@@ -132,42 +128,30 @@ export default function HeroSection() {
               </div>
 
               {/* Heading */}
+              <h1></h1>
               <div
-                className="
-                  mt-4
-                  max-w-[680px]
-                  text-3xl
-                  font-extrabold
-                  leading-[1.1]
-                  tracking-[-0.03em]
-                  text-slate-900
-                  sm:text-5xl
-                  sm:tracking-[-0.045em]
-                  lg:text-[56px]
-                  xl:text-[64px]
-                  2xl:text-[70px]
-                "
+               className="text-xl font-bold leading-tight tracking-tight text-[#0a1b39] md:text-3xl mt-2"
                 style={{
                   fontFamily: "Arial, sans-serif",
                 }}
               >
                 <span className="text-shadow-purple-900">
-                  WE KNOW BOTH SIDES OF
-                </span>{" "}
-                <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
-                  HEALTHCARE
+                  WE KNOW BOTH SIDES OF{" "}
+                  <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                    HEALTHCARE
+                  </span>
                 </span>
               </div>
 
               {/* Subtitle */}
               <p
                 className="
-                  mt-5
+                  mt-3
                   max-w-[650px]
                   text-sm
                   font-semibold
                   leading-relaxed
-                  text-slate-700
+                  text-blue-600
                   sm:text-base
                   lg:text-lg
                   xl:text-xl
