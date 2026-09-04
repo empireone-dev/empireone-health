@@ -257,7 +257,7 @@ export default function HeroSection() {
             />
 
             <Image
-              src="/images/Nurse-Hero-PNG.png"
+              src="/images/Hero-Image-Nurse001.png"
               alt="Doctor reviewing patient information"
               fill
               priority
