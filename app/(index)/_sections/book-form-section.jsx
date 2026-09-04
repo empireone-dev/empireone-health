@@ -30,7 +30,7 @@ export default function BookFormSection({ compact = false }) {
             name: data.fullName,//done
             email: [
                 {
-                    email: data.email,
+                    value: data.email,
                     "primary": true,
                     "label": "work"
                 }
