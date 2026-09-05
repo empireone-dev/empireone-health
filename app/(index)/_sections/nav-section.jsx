@@ -135,7 +135,7 @@ export default function NavSection() {
                 alt="EmpireOne Health Logo"
                 width={180}
                 height={44}
-                loading="lazy"
+                loading="eager"
                 className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
               />
             </Link>

@@ -142,12 +142,8 @@ export default function HeroSection() {
               </div>
 
               {/* Heading */}
-            
               <div
-               className="mt-4 text-4xl font-extrabold leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-5xl 2xl:text-6xl"
-                style={{
-                  fontFamily: "Arial, sans-serif",
-                }}
+               className="text-4xl font-extrabold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4"
               >
                 <span className="text-shadow-purple-900">
                   We Know Both Sides
@@ -216,19 +212,19 @@ export default function HeroSection() {
               relative
               z-10
               mx-auto
-              hidden
+              block
               aspect-[5625/4566]
               h-[42vh]
               w-full
-              max-w-[520px]
+              max-w-[440px]
 
-              sm:h-[46vh]
+              sm:h-[52vh]
+              sm:max-w-[560px]
 
               lg:absolute
               lg:right-[-1%]
               lg:top-[-7%]
               lg:mx-0
-              lg:block
               lg:h-[94%]
               lg:w-[51%]
               lg:max-w-none
