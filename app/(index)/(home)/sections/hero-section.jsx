@@ -98,10 +98,10 @@ export default function HeroSection() {
               lg:absolute
               lg:left-0
               lg:top-[43%]
-              lg:w-[60%]
+              lg:w-[58%]
               lg:-translate-y-1/2
 
-              xl:w-[58%]
+              xl:w-[56%]
             "
           >
             <div
@@ -144,7 +144,7 @@ export default function HeroSection() {
               {/* Heading */}
             
               <div
-               className="text-4xl font-extrabold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4"
+               className="mt-4 text-4xl font-extrabold leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-5xl 2xl:text-6xl"
                 style={{
                   fontFamily: "Arial, sans-serif",
                 }}
@@ -169,8 +169,9 @@ export default function HeroSection() {
                   leading-relaxed
                   text-blue-600
                   sm:text-lg
-                  lg:text-xl
-                  xl:text-2xl
+                  lg:text-lg
+                  xl:text-lg
+                  2xl:text-2xl
                 "
               >
                 Payer Administration + Provider Revenue Cycle Services
@@ -185,8 +186,9 @@ export default function HeroSection() {
                   leading-relaxed
                   text-slate-800
                   sm:text-lg
-                  lg:text-lg
-                  xl:text-xl
+                  lg:text-base
+                  xl:text-base
+                  2xl:text-xl
                 "
               >
                 Our experience across payer and provider operations gives us a
