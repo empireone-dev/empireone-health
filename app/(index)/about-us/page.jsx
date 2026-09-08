@@ -85,7 +85,7 @@ export default function AboutSection() {
               About Us
             </span>
 
-            <h1 className="text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px]">
+            <h1 className="text-3xl font-bold leading-[1.1] tracking-wide text-[#0f172a] sm:text-4xl lg:text-[42px]">
               <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
                 Healthcare
               </span>{" "}

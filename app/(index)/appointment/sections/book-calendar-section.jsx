@@ -14,11 +14,10 @@ import {
   MailIcon,
   Loader2,
 } from "lucide-react";
-import { Syne, Space_Grotesk } from "next/font/google";
+import { Syne } from "next/font/google";
 import { add_booking_service } from "@/app/_services/booking-services";
 
 const syne = Syne({ subsets: ["latin"], weight: ["700", "800"] });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const MONTHS = [
   "January",
@@ -203,7 +202,7 @@ export default function BookCalendarSection() {
 
   return (
     <div
-      className={`${spaceGrotesk.className} flex items-center justify-center p-2 sm:p-4 lg:p-6`}
+      className={`flex items-center justify-center p-2 sm:p-4 lg:p-6`}
     >
       <div className="mt-4 w-full max-w-[1200px]">
         <div className="relative">

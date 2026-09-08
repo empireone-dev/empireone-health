@@ -3,9 +3,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Building } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const FOUNDATION_CARDS = [
   {
@@ -47,7 +44,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
         <div>
           <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
           <p
-            className={`${spaceGrotesk.className} mt-4 text-base leading-relaxed text-gray-600`}
+            className={`mt-4 text-base leading-relaxed text-gray-600`}
           >
             {desc}
           </p>
@@ -77,7 +74,7 @@ export default function PayerFoundationServiceSection() {
             Core payer services.
           </h2>
           <p
-            className={`${spaceGrotesk.className} mt-3 max-w-2xl text-base leading-relaxed text-gray-600`}
+            className={`mt-3 max-w-2xl text-base leading-relaxed text-gray-600`}
           >
             Build reliable payer operations capacity around member services,
             enrollment support, and provider data management.

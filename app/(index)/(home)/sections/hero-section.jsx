@@ -13,8 +13,8 @@ const STATS = [
   },
   {
     icon: "/images/time.webp",
-    value: "30%+",
-    label: "Faster Insurance Collections",
+    value: "20%",
+    label: "Reduction in AR days",
   },
   {
     icon: "/images/arrowdown.webp",
@@ -143,7 +143,7 @@ export default function HeroSection() {
 
               {/* Heading */}
               <div
-               className="text-4xl font-extrabold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4"
+               className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4"
               >
                 <span className="text-shadow-purple-900">
                   We Know Both Sides
@@ -255,7 +255,7 @@ export default function HeroSection() {
             />
 
             <Image
-              src="/images/Hero-Image-Nurse001.png"
+              src="/images/hero-badge-image.webp"
               alt="Doctor reviewing patient information"
               fill
               priority
@@ -285,6 +285,8 @@ export default function HeroSection() {
               relative
               z-40
 
+              -mt-12
+
               grid
               grid-cols-2
               gap-3
@@ -303,6 +305,7 @@ export default function HeroSection() {
 
               sm:grid-cols-4
               sm:gap-5
+              sm:-mt-12
               sm:px-7
               sm:py-5
 
@@ -310,6 +313,7 @@ export default function HeroSection() {
               lg:bottom-8
               lg:left-0
               lg:right-0
+              lg:mt-0
               lg:gap-6
               lg:px-8
               lg:py-5

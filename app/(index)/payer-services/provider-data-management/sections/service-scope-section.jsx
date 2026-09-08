@@ -1,9 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const TOP_CARDS = [
   {
@@ -71,7 +68,7 @@ function ServiceCard({ badge, title, desc, delay = 0 }) {
 
           {/* Expanded Clear Text */}
           <p
-            className={`${inter.className} mt-4 text-base lg:text-lg leading-relaxed text-slate-600 font-normal`}
+            className={`mt-4 text-base lg:text-lg leading-relaxed text-slate-600 font-normal`}
           >
             {desc}
           </p>
@@ -96,7 +93,7 @@ export default function ServiceScopeSection() {
               What the workflow covers.
             </h2>
             <p
-              className={`${inter.className} mt-6 text-lg lg:text-xl leading-relaxed text-slate-600 font-normal max-w-2xl`}
+              className={`mt-6 text-lg lg:text-xl leading-relaxed text-slate-600 font-normal max-w-2xl`}
             >
               Patient collections works best when it is organized, documented,
               and sensitive to the patient experience. EmpireOneHealth helps

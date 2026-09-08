@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
 import { GetInTouchModal } from "../../_components/get-in-touch-modal";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const WHY_CHOOSE_ITEMS = [
   {
@@ -68,7 +65,7 @@ export default function CardSection() {
 
               <Reveal delay={140}>
                 <p
-                  className={`${spaceGrotesk.className} mt-5 max-w-xl text-xl leading-7 text-slate-700`}
+                  className={`mt-5 max-w-xl text-xl leading-7 text-slate-700`}
                 >
                   We support the operational workflows that affect cash flow,
                   patient access, member experience, and team capacity.
@@ -91,7 +88,7 @@ export default function CardSection() {
                           {item.title}
                         </h3>
                         <p
-                          className={`${spaceGrotesk.className} mt-1  leading-7 text-slate-600 sm:text-base sm:leading-7`}
+                          className={`mt-1  leading-7 text-slate-600 sm:text-base sm:leading-7`}
                         >
                           {item.desc}
                         </p>

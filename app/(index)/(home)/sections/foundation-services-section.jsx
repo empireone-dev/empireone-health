@@ -12,10 +12,7 @@ import {
   ShieldCheck,
   UserCheck,
 } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
 import Card from "../../../_components/card";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const FOUNDATION_CARDS = [
   {
@@ -73,7 +70,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
           </div>
           <h3 className="text-base font-bold text-slate-900">{title}</h3>
           <p
-            className={`${spaceGrotesk.className} mt-2 text-xs leading-relaxed text-gray-600`}
+            className={`mt-2 text-xs leading-relaxed text-gray-600`}
           >
             {desc}
           </p>
@@ -104,7 +101,7 @@ export default function FoundationServicesSection() {
             operations services ready for outsourcing
           </h2>
           <p
-            className={`${spaceGrotesk.className} mt-6 max-w-md text-xl leading-relaxed font-semibold text-gslate-700`}
+            className={`mt-6 max-w-md text-xl leading-relaxed font-semibold text-gslate-700`}
           >
             We streamline provider and payer workflows, ensuring a seamless
             outsourcing transition and rapid operational improvements.

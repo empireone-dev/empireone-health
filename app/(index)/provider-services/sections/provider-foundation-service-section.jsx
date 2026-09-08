@@ -3,9 +3,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, Building } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const FOUNDATION_CARDS = [
   {
@@ -59,7 +56,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
           {/* Card Body - Scaled Up */}
           <p
-            className={`${spaceGrotesk.className} mt-4 text-base sm:text-lg leading-relaxed text-gray-600 font-normal`}
+            className={`mt-4 text-base sm:text-lg leading-relaxed text-gray-600 font-normal`}
           >
             {desc}
           </p>
@@ -93,7 +90,7 @@ export default function ProviderFoundationServiceSection() {
             Core provider services.
           </h2>
           <p
-            className={`${spaceGrotesk.className} mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600 font-normal`}
+            className={`mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600 font-normal`}
           >
             Build reliable front-end and revenue cycle support around benefits
             verification, prior authorization, scheduling, referrals, denial

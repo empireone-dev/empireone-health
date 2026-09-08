@@ -4,10 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Activity, ArrowUpRight, Stethoscope } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
 import Link from "next/link";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 function Reveal({ children, className = "", delay = 0, as = "div" }) {
   const MotionTag = motion[as] || motion.div;
@@ -84,7 +81,7 @@ export default function WhoWeAreSection() {
 
           <Reveal delay={160}>
             <p
-              className={`${spaceGrotesk.className} mt-5 max-w-lg text-base leading-relaxed text-gray-600`}
+              className={`mt-5 max-w-lg text-base leading-relaxed text-gray-600`}
             >
               EmpireOne Health empowers providers and payers with reliable,
               AI-enhanced healthcare operations and revenue cycle management for
