@@ -135,7 +135,7 @@ export default function NavSection() {
                 alt="EmpireOne Health Logo"
                 width={180}
                 height={44}
-                loading="lazy"
+                loading="eager"
                 className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
               />
             </Link>
@@ -241,14 +241,14 @@ export default function NavSection() {
               </div>
 
               <div className="mt-8">
-                <div className="mb-6 h-px w-full bg-gray-100" />
+                <div className="mb-6 h-px w-full " />
                 <button
                   type="button"
                   onClick={() => {
                     setIsOpen(false);
                     setIsGetInTouchOpen(true);
                   }}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#12379D] px-6 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-[#0f2f87] active:scale-[0.98]"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-500 px-6 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-[#0f2f87] active:scale-[0.98]"
                 >
                   <span>Get in touch</span>
                   <ArrowUpRight className="w-5 h-5" />

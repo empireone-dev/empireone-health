@@ -3,9 +3,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, Briefcase } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 function Reveal({ children, className = "", delay = 0, as = "div" }) {
   const MotionTag = motion[as] || motion.div;
@@ -41,7 +38,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
           {/* Card Body - Scaled Up */}
           <p
-            className={`${spaceGrotesk.className} mt-4 text-base sm:text-lg leading-relaxed text-gray-600 font-normal`}
+            className={`mt-4 text-base sm:text-lg leading-relaxed text-gray-600 font-normal`}
           >
             {desc}
           </p>
@@ -74,7 +71,7 @@ export default function FeatureWorkSection() {
             Healthcare BPO case studies.
           </h2>
           <p
-            className={`${spaceGrotesk.className} mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600 font-normal`}
+            className={`mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600 font-normal`}
           >
             These case studies will highlight practical workflow improvements
             across patient access, revenue cycle, payer operations, and

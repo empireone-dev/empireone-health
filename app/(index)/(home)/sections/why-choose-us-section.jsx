@@ -4,11 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
 import { GetInTouchModal } from "../../_components/get-in-touch-modal";
 
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const WHY_CHOOSE_ITEMS = [
   {
@@ -78,7 +75,7 @@ export default function WhyChooseUsSection() {
 
               <Reveal delay={140}>
                 <p
-                  className={`${spaceGrotesk.className} mt-5 max-w-xl text-lg  text-slate-700`}
+                  className={`mt-5 max-w-xl text-lg  text-slate-700`}
                 >
                   Our dedicated teams, HIPAA-conscious approach, advanced AI
                   workflows, and strong payer-provider alignment set us apart in
@@ -106,7 +103,7 @@ export default function WhyChooseUsSection() {
                           {item.title}
                         </h3>
                         <p
-                          className={`${spaceGrotesk.className} mt-1 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7`}
+                          className={`mt-1 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7`}
                         >
                           {item.desc}
                         </p>

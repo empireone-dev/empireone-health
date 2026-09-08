@@ -31,10 +31,24 @@ export default function HeroSection() {
             </span>
 
             <h1 className="text-xl font-bold leading-tight tracking-tight text-[#0a1b39] sm:text-2xl sm:leading-[1.2] md:text-4xl lg:text-5xl">
-              Discover What is Possible
+              Discover What is{" "}
+              <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                Possible
+              </span>
             </h1>
 
-            <p className="max-w-xl text-base leading-relaxed font-bold text-[#596d88] sm:text-lg">
+            <p
+              className="
+                  mt-3
+                  max-w-[620px]
+                  text-sm
+                  leading-relaxed
+                  text-slate-800
+                  sm:text-base
+                  lg:text-base
+                  xl:text-lg
+                "
+            >
               Tell us where you want to go. We’ll build the right mix of people,
               processes, and technology to help you get there.
             </p>

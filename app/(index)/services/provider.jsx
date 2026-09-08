@@ -33,8 +33,10 @@ export default function Provider() {
             </span>
 
             <h1 className="text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px]">
-              Provider operations support built for access, authorization, and
-              revenue.
+              <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                Provider
+              </span>{" "}
+              operations support built for access, authorization, and revenue.
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg">
