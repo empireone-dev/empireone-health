@@ -26,10 +26,6 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         {children}
 
-<<<<<<< HEAD
-       
-=======
->>>>>>> 1c1247d4699de11097174213de5174bf9201b790
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
