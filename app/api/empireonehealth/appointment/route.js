@@ -48,7 +48,7 @@ export async function POST(request) {
       }),
       sendAppsScriptEmail(webAppUrl, {
         recipient: ADMIN_RECIPIENT,
-        subject: `Appointment Notification #${appointmentId}`,
+        subject: `New Form Submission E1H #${appointmentId}`,
         body: bookingNotificationEmail(templateData),
       }),
     ]);

@@ -110,7 +110,7 @@ export async function add_booking30_min_call_service(data) {
       company_name: data.organization?.name,
       source: data.lead?.origin_id,
       looking_for: data.organization?.custom_fields?.service,
-      appointment_id: resLead?.data?.id,
+      appointment_id: data?.id,
     });
 
     return {
