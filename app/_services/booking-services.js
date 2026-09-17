@@ -46,6 +46,15 @@ async function sendEmpireOneHealthEmail(endpoint, payload) {
   }
 }
 
+function trackLeadFormSuccess() {
+  if (typeof window !== "undefined") {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "lead_form_success",
+    });
+  }
+}
+
 export async function add_booking_service(data) {
   try {
     // 1. Create Person
@@ -68,6 +77,8 @@ export async function add_booking_service(data) {
 
     // 4. Send the calendar invite via the Apps Script web app
     await sendEmpireOneHealthEmail("/api/empireonehealth/schedule", data);
+
+    trackLeadFormSuccess();
 
     return { person: resPerson.data, lead: resLead.data, note: resNote.data };
   } catch (error) {
@@ -113,6 +124,8 @@ export async function add_booking30_min_call_service(data) {
       appointment_id: data?.id,
     });
 
+    trackLeadFormSuccess();
+
     return {
       person: resPerson.data,
       organizationField: resOrgField.data,
@@ -144,7 +157,6 @@ export async function add_booking30_min_call_service(data) {
 //       //   organization_id: resOrgField?.data?.id,
 //       // ...data.lead,
 //     });
-
 
 //     console.log("Lead created successfully:", resLead);
 
@@ -191,9 +203,9 @@ export async function add_appointment_service(data) {
     // 3. Attach notes, if provided
     const resNote = data.notes
       ? await pipeDrivePost("/notes", {
-        person_id: resPerson?.data?.id,
-        content: data.notes,
-      })
+          person_id: resPerson?.data?.id,
+          content: data.notes,
+        })
       : null;
 
     // 4. Send confirmation + admin notification emails via the Apps Script web app
@@ -201,6 +213,8 @@ export async function add_appointment_service(data) {
       ...data,
       appointment_id: resLead?.data?.id,
     });
+
+    trackLeadFormSuccess();
 
     return {
       person: resPerson.data,
@@ -225,12 +239,12 @@ export async function add_consultation_service(data) {
     // 2. Create Organization Field, if a company name was provided
     const resOrgField = data.company_name
       ? await pipeDrivePost("/organizationFields", {
-        person_id: resPerson?.data?.id,
-        name: data.company_name,
-        field_name: data.company_name,
-        field_type: "text",
-        custom_fields: { help_with: data.help_with },
-      })
+          person_id: resPerson?.data?.id,
+          name: data.company_name,
+          field_name: data.company_name,
+          field_type: "text",
+          custom_fields: { help_with: data.help_with },
+        })
       : null;
 
     // 3. Create Lead
@@ -243,9 +257,9 @@ export async function add_consultation_service(data) {
     // 4. Attach notes, if provided
     const resNote = data.notes
       ? await pipeDrivePost("/notes", {
-        person_id: resPerson?.data?.id,
-        content: data.notes,
-      })
+          person_id: resPerson?.data?.id,
+          content: data.notes,
+        })
       : null;
 
     // 5. Send confirmation + admin notification emails via the Apps Script web app
@@ -253,7 +267,7 @@ export async function add_consultation_service(data) {
       ...data,
       consultation_id: resLead?.data?.id,
     });
-
+    trackLeadFormSuccess();
     return {
       person: resPerson.data,
       organizationField: resOrgField?.data ?? null,
