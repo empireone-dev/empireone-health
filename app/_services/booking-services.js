@@ -55,18 +55,24 @@ function trackLeadFormSuccess() {
   }
 }
 
+// function generateAppointmentId() {
+//   const date = new Date();
+
+//   const datePart = [
+//     String(date.getFullYear()).slice(-2),
+//     String(date.getMonth() + 1).padStart(2, "0"),
+//     String(date.getDate()).padStart(2, "0"),
+//   ].join("");
+
+//   const randomPart = Math.random().toString(36).substring(2, 8).toUpperCase();
+
+//   return `EH${datePart}${randomPart}`;
+// }
+
 function generateAppointmentId() {
-  const date = new Date();
+  const randomPart = Math.floor(100000 + Math.random() * 900000);
 
-  const datePart = [
-    String(date.getFullYear()).slice(-2),
-    String(date.getMonth() + 1).padStart(2, "0"),
-    String(date.getDate()).padStart(2, "0"),
-  ].join("");
-
-  const randomPart = Math.random().toString(36).substring(2, 8).toUpperCase();
-
-  return `EH${datePart}${randomPart}`;
+  return `${randomPart}`;
 }
 
 export async function add_booking_service(data) {
