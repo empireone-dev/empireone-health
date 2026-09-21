@@ -69,11 +69,15 @@ function trackLeadFormSuccess() {
 //   return `EH${datePart}${randomPart}`;
 // }
 
-function generateAppointmentId() {
-  const randomPart = Math.floor(100000 + Math.random() * 900000);
-
-  return `${randomPart}`;
+function createAppointmentIdGenerator(startId = 1120) {
+  let currentId = startId;
+  
+  return function() {
+    return `${currentId++}`;
+  };
 }
+
+const getNextAppointmentId = createAppointmentIdGenerator(1120);
 
 export async function add_booking_service(data) {
   try {
@@ -112,7 +116,7 @@ export async function add_booking30_min_call_service(data) {
     // 1. Create Person
     const resPerson = await pipeDrivePost("/persons", data.person);
 
-    const appointmentId = generateAppointmentId();
+    const appointmentId = getNextAppointmentId();
 
     // Get the person's full name
     const fullName = data.person?.name?.trim() || "Appointment Request";
@@ -217,7 +221,7 @@ export async function add_appointment_service(data) {
         : undefined,
     });
 
-    const appointmentId = generateAppointmentId();
+    const appointmentId = getNextAppointmentId();
 
     // 2. Create Lead
     const resLead = await pipeDrivePost("/leads", {
@@ -261,7 +265,7 @@ export async function add_consultation_service(data) {
       email: [{ value: data.email, primary: true, label: "work" }],
       phone: [{ value: data.phone, primary: true, label: "work" }],
     });
-    const appointmentId = generateAppointmentId();
+    const appointmentId = getNextAppointmentId();
 
     // 2. Create Organization Field, if a company name was provided
     const resOrgField = data.company_name
