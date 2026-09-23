@@ -7,6 +7,7 @@ import BookACallSection from "../_sections/book-a-call-section";
 import ProviderFoundationServiceSection from "../provider-services/sections/provider-foundation-service-section";
 import ProviderHowWeWorkSection from "../provider-services/sections/provider-how-we-work-section";
 import Link from "next/link";
+import BookCallButtonSection from "../_sections/book-call-button-section";
 
 export default function Provider() {
   return (
@@ -44,13 +45,7 @@ export default function Provider() {
               for outsourcing.
             </p>
 
-            <Link
-              href="/appointment"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#0f2d9e] px-7 py-3.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#0b2278] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0f2d9e] focus:ring-offset-2 focus:ring-offset-white"
-            >
-              <span>Book a 30-Min Call</span>
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+               <BookCallButtonSection/>
           </motion.div>
 
           <motion.div
