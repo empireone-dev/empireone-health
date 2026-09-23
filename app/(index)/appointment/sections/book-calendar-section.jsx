@@ -13,6 +13,10 @@ import {
   Sparkles,
   MailIcon,
   Loader2,
+  User,
+  Phone,
+  Building,
+  MessageCircleQuestion,
 } from "lucide-react";
 import { Syne } from "next/font/google";
 import { add_booking_service } from "@/app/_services/booking-services";
@@ -83,6 +87,9 @@ export default function BookCalendarSection() {
       email: "",
       date: null,
       time: null,
+      phone: "",
+      message: "",
+      company: "",
     },
   });
 
@@ -177,6 +184,9 @@ export default function BookCalendarSection() {
         email: data.email,
         start_time: startTime.toISOString(),
         end_time: endTime.toISOString(),
+        phone: data.phone,
+        message: data.message,
+        company: data.company,
       };
 
       // 5. Call your API service
@@ -201,12 +211,10 @@ export default function BookCalendarSection() {
   };
 
   return (
-    <div
-      className={`flex items-center justify-center p-2 sm:p-4 lg:p-6`}
-    >
-      <div className="mt-4 w-full max-w-[1200px]">
+    <div className={`flex items-center justify-center p-2 sm:p-4 lg:p-2`}>
+      <div className="w-full max-w-[1200px]">
         <div className="relative">
-          <motion.div
+          {/* <motion.div
             aria-hidden="true"
             initial={{ opacity: 0, y: 16, rotate: 0 }}
             animate={{ opacity: 1, y: 0, rotate: -10 }}
@@ -238,9 +246,9 @@ export default function BookCalendarSection() {
               <div className="h-1.5 w-4/5 rounded-full bg-slate-100" />
               <div className="h-1.5 w-3/5 rounded-full bg-slate-100" />
             </div>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -401,18 +409,34 @@ export default function BookCalendarSection() {
                   </div>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col overflow-y-auto max-h-[450px]">
                   <div className="mb-5">
                     <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
-                      <Mail className="h-4 w-4" />
+                      <User className="h-4 w-4" />
                       Name
                     </label>
                     <input
                       type="text"
-                      placeholder="Jane Doe"
+                      placeholder="Ex: John Doe"
                       {...register("name", { required: true })}
                       className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
                         errors.name
+                          ? "border-rose-400 focus:border-rose-400"
+                          : "border-slate-200 focus:border-indigo-400"
+                      }`}
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
+                      <Building className="h-4 w-4" />
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Ex: Example Corp"
+                      {...register("company", { required: true })}
+                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
+                        errors.company
                           ? "border-rose-400 focus:border-rose-400"
                           : "border-slate-200 focus:border-indigo-400"
                       }`}
@@ -425,7 +449,7 @@ export default function BookCalendarSection() {
                     </label>
                     <input
                       type="email"
-                      placeholder="you@example.com"
+                      placeholder="Ex: you@example.com"
                       {...register("email", { required: true })}
                       className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
                         errors.email
@@ -434,7 +458,37 @@ export default function BookCalendarSection() {
                       }`}
                     />
                   </div>
-
+                  <div className="mb-5">
+                    <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
+                      <Phone className="h-4 w-4" />
+                      Phone (optional)
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Ex: (123) 456-7890"
+                      {...register("phone", { required: false })}
+                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
+                        errors.phone
+                          ? "border-rose-400 focus:border-rose-400"
+                          : "border-slate-200 focus:border-indigo-400"
+                      }`}
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
+                      <MessageCircleQuestion className="h-4 w-4" />
+                      Message (optional)
+                    </label>
+                    <textarea
+                      placeholder="Your message"
+                      {...register("message", { required: false })}
+                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
+                        errors.message
+                          ? "border-rose-400 focus:border-rose-400"
+                          : "border-slate-200 focus:border-indigo-400"
+                      }`}
+                    ></textarea>
+                  </div>
                   <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
                     <Clock className="h-4 w-4" />
                     Select time
@@ -548,7 +602,7 @@ export default function BookCalendarSection() {
                 </div>
               </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

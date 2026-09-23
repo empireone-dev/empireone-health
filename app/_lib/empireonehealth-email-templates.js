@@ -180,7 +180,7 @@ function signature() {
     <p>Best Regards,</p>
     <p class="company"><b>EmpireOne Health</b></p>
     <p>
-        <img src="https://careers.empireonecx.com/images/empireone-health.png"
+        <img src="https://careers.empireonecx.com/images/EmpireOneHealthLogo.png"
              alt="EmpireOne Health Logo" style="width: 155px; height: auto;">
     </p>
 </div>`;
@@ -197,7 +197,7 @@ export function bookingConfirmationEmail({ name }) {
     bodyHtml: `
         <p class="greeting">Hi ${escapeHtml(name) || "there"},</p>
         <p class="otp-intro">Thank you for contacting EmpireOne Health.</p>
-        <p>A member of our team will contact you within 24 hours. For immediate assistance, please call us at +1 800 233 0843.</p>
+        <p>A member of our team will contact you within 24 hours. For immediate assistance, please call us at +1 (833) 200-6002.</p>
         ${signature()}
     `,
   });
@@ -240,7 +240,7 @@ export function consultationConfirmationEmail({ name }) {
     bodyHtml: `
         <p class="greeting">Hi ${escapeHtml(name) || "there"},</p>
         <p class="otp-intro">Thank you for contacting EmpireOne Health.</p>
-        <p>A member of our team will contact you within 24 hours. For immediate assistance, please call us at +1 800 233 0843.</p>
+        <p>A member of our team will contact you within 24 hours. For immediate assistance, please call us at +1 (833) 200-6002.</p>
         ${signature()}
     `,
   });

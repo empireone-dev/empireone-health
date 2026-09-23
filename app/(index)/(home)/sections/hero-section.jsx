@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Activity } from "lucide-react";
+import { Activity, ArrowUpRight } from "lucide-react";
 import CertificationBadges from "./certification-badges";
+import BookCallButtonSection from "../../_sections/book-call-button-section";
+import Button from "@/app/_components/button";
 
 const STATS = [
   {
@@ -142,9 +144,7 @@ export default function HeroSection() {
               </div>
 
               {/* Heading */}
-              <div
-               className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4"
-              >
+              <div className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4">
                 <span className="text-shadow-purple-900">
                   We Know Both Sides
                   <br />
@@ -192,7 +192,36 @@ export default function HeroSection() {
                 teams deliver smarter processes and a better experience for the
                 organizations, members and patients we serve.
               </p>
+              <div className="flex gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="mt-8">
+                    <BookCallButtonSection />
+                  </div>
+                </motion.div>
 
+                <motion.a
+                  href="#book-form-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("book-form-section")
+                      ?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#0b1b68] bg-white px-7 py-3 text-sm font-semibold text-[#0b1b68] shadow-md transition-all duration-200 hover:bg-[#0b1b68] hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0b1b68] focus:ring-offset-2"
+                >
+                  Build your team
+                  <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
+                </motion.a>
+              </div>
               {/* Certifications */}
               <div className="mt-5 sm:mt-6">
                 <CertificationBadges />
