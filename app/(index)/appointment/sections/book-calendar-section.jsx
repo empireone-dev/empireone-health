@@ -87,6 +87,9 @@ export default function BookCalendarSection() {
       email: "",
       date: null,
       time: null,
+      phone: "",
+      message: "",
+      company: "",
     },
   });
 
@@ -181,6 +184,9 @@ export default function BookCalendarSection() {
         email: data.email,
         start_time: startTime.toISOString(),
         end_time: endTime.toISOString(),
+        phone: data.phone,
+        message: data.message,
+        company: data.company,
       };
 
       // 5. Call your API service

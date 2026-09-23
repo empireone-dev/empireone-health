@@ -77,9 +77,10 @@ function generateAppointmentId() {
 
 export async function add_booking_service(data) {
   try {
-    // 1. Create Person
+    // 1. Create Person (company/message aren't valid Person fields, so they go in the note instead)
     const resPerson = await pipeDrivePost("/persons", {
       name: data.name,
+      phone: [{ value: data.phone, primary: true, label: "work" }],
       email: [{ value: data.email, primary: true, label: "work" }],
     });
 
@@ -89,10 +90,17 @@ export async function add_booking_service(data) {
       person_id: resPerson?.data?.id,
     });
 
-    // 3. Attach the appointment time as a note on the person
+    // 3. Attach the appointment time, company, and message as a note on the person
+    const noteLines = [
+      `Start: ${data.start_time}`,
+      `End: ${data.end_time}`,
+      data.company ? `Company: ${data.company}` : null,
+      data.message ? `Message: ${data.message}` : null,
+    ].filter(Boolean);
+
     const resNote = await pipeDrivePost("/notes", {
       person_id: resPerson?.data?.id,
-      content: `Start: ${data.start_time}\nEnd: ${data.end_time}`,
+      content: noteLines.join("\n"),
     });
 
     // 4. Send the calendar invite via the Apps Script web app
