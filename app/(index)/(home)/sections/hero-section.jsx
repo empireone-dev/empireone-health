@@ -192,7 +192,7 @@ export default function HeroSection() {
                 teams deliver smarter processes and a better experience for the
                 organizations, members and patients we serve.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-between">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -216,14 +216,14 @@ export default function HeroSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#0b1b68] bg-white px-7 py-3 text-sm font-semibold text-[#0b1b68] shadow-md transition-all duration-200 hover:bg-[#0b1b68] hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0b1b68] focus:ring-offset-2"
+                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#0b1b68] bg-white px-7 py-3 text-sm font-semibold text-[#0b1b68] shadow-md transition-all duration-200 hover:bg-[#0b1b68] hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0b1b68] focus:ring-offset-2 mr-40"
                 >
                   Build your team
                   <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
                 </motion.a>
               </div>
               {/* Certifications */}
-              <div className="mt-5 sm:mt-6">
+              <div className="mt-5 sm:mt-10">
                 <CertificationBadges />
               </div>
             </div>
@@ -246,6 +246,7 @@ export default function HeroSection() {
               h-[42vh]
               w-full
               max-w-[440px]
+              mt-10
 
               sm:h-[52vh]
               sm:max-w-[560px]
@@ -314,8 +315,6 @@ export default function HeroSection() {
               relative
               z-40
 
-              -mt-12
-
               grid
               grid-cols-2
               gap-3
@@ -349,7 +348,7 @@ export default function HeroSection() {
 
               xl:bottom-10
               xl:px-10
-              xl:py-5
+              xl:py-0.5
             "
           >
             {STATS.map(({ icon, value, label }) => (
@@ -410,7 +409,6 @@ export default function HeroSection() {
                       text-slate-900
 
                       sm:text-2xl
-
                       lg:text-[26px]
                     "
                   >

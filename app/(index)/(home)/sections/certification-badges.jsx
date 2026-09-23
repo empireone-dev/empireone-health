@@ -47,7 +47,7 @@ export default function CertificationBadges() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 lg:justify-start">
+    <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-11 lg:justify-start">
       {badgeDetails.map((badge, index) => (
         <div
           key={badge.title}
