@@ -183,7 +183,7 @@
 
 
                 <p>
-                    A member of our team will contact you within 24 hours. For immediate assistance, please call us at +1 800 233 0843.
+                    A member of our team will contact you within 24 hours. For immediate assistance, please call us at +1 (833) 200-6002.
                 </p>
 
                 <!-- Signature -->
