@@ -168,7 +168,7 @@ export default function BookFormSection({ compact = false }) {
               : "text-white text-3xl sm:text-4xl font-bold text-center mb-2 relative z-10"
           }
         >
-          "Let's Build Your Team Now
+          Let's Build Your Team Now
         </h2>
         <p
           className={
