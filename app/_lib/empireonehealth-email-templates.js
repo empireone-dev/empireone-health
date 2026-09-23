@@ -180,7 +180,7 @@ function signature() {
     <p>Best Regards,</p>
     <p class="company"><b>EmpireOne Health</b></p>
     <p>
-        <img src="https://careers.empireonecx.com/images/empireone-health.png"
+        <img src="https://careers.empireonecx.com/images/EmpireOneHealthLogo.png"
              alt="EmpireOne Health Logo" style="width: 155px; height: auto;">
     </p>
 </div>`;
