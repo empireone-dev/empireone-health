@@ -334,7 +334,7 @@ export default function BookCalendarSection() {
                 className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-10"
               >
                 <div>
-                  <p className="justify-start text-left mt-3 mb-1.5 text-sm text-slate-500 sm:text-base">
+                  <p className="justify-start text-left mt-2 mb-1.5 text-sm text-slate-500 sm:text-base">
                     Pick a date and time that works for you:
                   </p>
                   <div
