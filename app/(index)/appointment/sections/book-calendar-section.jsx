@@ -41,7 +41,6 @@ const MONTHS = [
 const DAY_LABELS = ["S", "M", "T", "W", "T", "F", "S"];
 
 const TIME_SLOTS = [
-  "10:00 am",
   "10:30 am",
   "11:00 am",
   "11:30 am",
@@ -464,7 +463,7 @@ export default function BookCalendarSection() {
                           </span>{" "}
                           at{" "}
                           <span className="font-bold text-slate-800">
-                            {selectedTime}
+                            {selectedTime} (EST)
                           </span>
                           .
                         </motion.p>
@@ -474,7 +473,9 @@ export default function BookCalendarSection() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <h2 className="text-lg font-bold text-slate-600 mb-2.5">Provide your details:</h2>
+                  <h2 className="text-lg font-bold text-slate-600 mb-2.5">
+                    Provide your details:
+                  </h2>
                   <div className="mb-5">
                     <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
                       <User className="h-4 w-4" />
