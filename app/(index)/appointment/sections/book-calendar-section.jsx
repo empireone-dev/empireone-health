@@ -159,26 +159,87 @@ export default function BookCalendarSection() {
     setIsLoading(true);
 
     try {
-      // 1. Parse the time string (e.g., "09:00 am") into hours and minutes
+      // Selected date/time is ALWAYS interpreted as America/New_York
+      const timeZone = "America/New_York";
+
       const [timeString, modifier] = data.time.split(" ");
       let [hours, minutes] = timeString.split(":");
 
-      if (hours === "12") hours = "00";
-      if (modifier.toLowerCase() === "pm") hours = parseInt(hours, 10) + 12;
+      hours = parseInt(hours, 10);
+      minutes = parseInt(minutes, 10);
 
-      // 2. Create Start Time Date object
-      const startTime = new Date(
+      if (modifier.toLowerCase() === "pm" && hours !== 12) {
+        hours += 12;
+      }
+
+      if (modifier.toLowerCase() === "am" && hours === 12) {
+        hours = 0;
+      }
+
+      /*
+       * Convert the selected Eastern Time into UTC.
+       *
+       * Example:
+       * User selects:
+       * September 25, 2026 - 10:30 AM Eastern Time
+       *
+       * Payload becomes:
+       * 2026-09-25T14:30:00.000Z
+       *
+       * because September is EDT (UTC-4).
+       */
+
+      const getEasternTimeAsUTC = (year, month, day, hour, minute) => {
+        // Start with the selected time as if it were UTC
+        const utcGuess = new Date(Date.UTC(year, month, day, hour, minute, 0));
+
+        // Get the Eastern Time representation of that timestamp
+        const easternParts = new Intl.DateTimeFormat("en-US", {
+          timeZone,
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        }).formatToParts(utcGuess);
+
+        const parts = {};
+
+        easternParts.forEach(({ type, value }) => {
+          if (type !== "literal") {
+            parts[type] = value;
+          }
+        });
+
+        // Calculate the timezone offset
+        const easternAsUTC = Date.UTC(
+          Number(parts.year),
+          Number(parts.month) - 1,
+          Number(parts.day),
+          Number(parts.hour),
+          Number(parts.minute),
+          Number(parts.second),
+        );
+
+        const offset = easternAsUTC - utcGuess.getTime();
+
+        // Apply the Eastern Time offset
+        return new Date(utcGuess.getTime() - offset);
+      };
+
+      const startTime = getEasternTimeAsUTC(
         cursor.year,
         cursor.month,
         data.date,
-        parseInt(hours, 10),
-        parseInt(minutes, 10),
+        hours,
+        minutes,
       );
 
-      // 3. Create End Time Date object (30-minute appointment)
+      // 30-minute appointment
       const endTime = new Date(startTime.getTime() + 30 * 60 * 1000);
 
-      // 4. Prepare the payload exactly as Laravel expects it
       const payload = {
         name: data.name,
         email: data.email,
@@ -189,18 +250,22 @@ export default function BookCalendarSection() {
         company: data.company,
       };
 
-      // 5. Call your API service
       await add_booking_service(payload);
 
-      console.log("Form submitted successfully:", payload);
+      console.log("Booking submitted:", {
+        ...payload,
+        timezone: timeZone,
+      });
 
       setSubmitted(true);
 
-      // 6. Reset UI after success animation
       window.setTimeout(() => {
         setSubmitted(false);
-        reset(); // clears react-hook-form inputs
-        setCursor({ year: today.getFullYear(), month: today.getMonth() }); // resets calendar
+        reset();
+        setCursor({
+          year: today.getFullYear(),
+          month: today.getMonth(),
+        });
       }, 2500);
     } catch (error) {
       console.error("Booking failed:", error);
