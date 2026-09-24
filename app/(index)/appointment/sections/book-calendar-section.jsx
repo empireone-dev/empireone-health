@@ -409,7 +409,7 @@ export default function BookCalendarSection() {
                   </div>
                 </div>
 
-                <div className="flex flex-col overflow-y-auto max-h-[450px]">
+                <div className="flex flex-col">
                   <div className="mb-5">
                     <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
                       <User className="h-4 w-4" />

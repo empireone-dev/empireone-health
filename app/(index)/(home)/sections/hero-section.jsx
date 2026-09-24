@@ -192,7 +192,7 @@ export default function HeroSection() {
                 teams deliver smarter processes and a better experience for the
                 organizations, members and patients we serve.
               </p>
-              <div className="flex flex-col gap-4 max-w-[596px] mx-auto lg:mx-0 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:flex-nowrap lg:justify-between">
+              <div className="flex flex-col gap-4 max-w-[599px] mx-auto lg:mx-0 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:flex-nowrap lg:justify-between">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
