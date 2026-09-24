@@ -192,14 +192,13 @@ export default function HeroSection() {
                 teams deliver smarter processes and a better experience for the
                 organizations, members and patients we serve.
               </p>
-              <div className="flex gap-4 justify-between">
+              <div className="flex flex-col gap-4 max-w-[596px] mx-auto lg:mx-0 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:flex-nowrap lg:justify-between">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto mt-6 sm:mt-8"
                 >
-                  <div className="mt-8">
-                    <BookCallButtonSection />
-                  </div>
+                  <BookCallButtonSection />
                 </motion.div>
 
                 <motion.a
@@ -216,7 +215,7 @@ export default function HeroSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#0b1b68] bg-white px-7 py-3 text-sm font-semibold text-[#0b1b68] shadow-md transition-all duration-200 hover:bg-[#0b1b68] hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0b1b68] focus:ring-offset-2 mr-40"
+                  className="w-full sm:w-auto mt-0 sm:mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-[#0b1b68] bg-white px-7 py-3.5 text-sm font-semibold text-[#0b1b68] shadow-md transition-all duration-200 hover:bg-[#0b1b68] hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0b1b68] focus:ring-offset-2"
                 >
                   Build your team
                   <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
@@ -316,13 +315,13 @@ export default function HeroSection() {
               z-40
 
               grid
-              grid-cols-2
-              gap-3
+              grid-cols-4
+              gap-2
 
               rounded-2xl
               bg-white/95
 
-              px-4
+              px-3
               py-4
 
               shadow-xl
@@ -333,12 +332,12 @@ export default function HeroSection() {
 
               sm:grid-cols-4
               sm:gap-5
-              sm:-mt-12
+              sm:-mt-8
               sm:px-7
               sm:py-5
 
               lg:absolute
-              lg:bottom-8
+              lg:bottom-4
               lg:left-0
               lg:right-0
               lg:mt-0
@@ -346,7 +345,7 @@ export default function HeroSection() {
               lg:px-8
               lg:py-5
 
-              xl:bottom-10
+              xl:bottom-6
               xl:px-10
               xl:py-0.5
             "
@@ -356,9 +355,16 @@ export default function HeroSection() {
                 key={label}
                 className="
                   flex
+                  flex-col
                   items-center
-                  gap-3
-                  sm:gap-4
+                  gap-1
+                  text-center
+                  py-1
+
+                  sm:flex-row
+                  sm:gap-3
+                  sm:text-left
+                  sm:py-3
                   lg:gap-5
                 "
               >
@@ -366,14 +372,14 @@ export default function HeroSection() {
                 <span
                   className="
                     flex
-                    h-9
-                    w-9
+                    h-7
+                    w-7
                     shrink-0
                     items-center
                     justify-center
 
-                    sm:h-11
-                    sm:w-11
+                    sm:h-9
+                    sm:w-9
 
                     lg:h-13
                     lg:w-13
@@ -385,12 +391,12 @@ export default function HeroSection() {
                     width={28}
                     height={28}
                     className="
-                      h-8
-                      w-8
+                      h-6
+                      w-6
                       object-contain
 
-                      sm:h-10
-                      sm:w-10
+                      sm:h-8
+                      sm:w-8
 
                       lg:h-12
                       lg:w-12
@@ -403,7 +409,7 @@ export default function HeroSection() {
                   <span
                     className="
                       block
-                      text-xl
+                      text-base
                       font-extrabold
                       leading-none
                       text-slate-900
@@ -419,7 +425,7 @@ export default function HeroSection() {
                     className="
                       mt-1
                       block
-                      text-xs
+                      text-[10px]
                       text-purple-500
 
                       sm:text-sm
