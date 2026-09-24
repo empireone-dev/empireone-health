@@ -41,8 +41,6 @@ const MONTHS = [
 const DAY_LABELS = ["S", "M", "T", "W", "T", "F", "S"];
 
 const TIME_SLOTS = [
-  "09:00 am",
-  "09:30 am",
   "10:00 am",
   "10:30 am",
   "11:00 am",
@@ -58,6 +56,9 @@ const TIME_SLOTS = [
   "04:00 pm",
   "04:30 pm",
   "05:00 pm",
+  "05:30 pm",
+  "06:00 pm",
+  "06:30 pm",
 ];
 
 function buildCalendar(year, month) {
@@ -211,8 +212,8 @@ export default function BookCalendarSection() {
   };
 
   return (
-    <div className={`flex items-center justify-center p-2 sm:p-4 lg:p-2`}>
-      <div className="w-full max-w-[1200px]">
+    <div className={`flex items-center justify-center`}>
+      <div className="w-full max-w-[1200px] ">
         <div className="relative">
           {/* <motion.div
             aria-hidden="true"
@@ -252,7 +253,7 @@ export default function BookCalendarSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative z-10 mt-6 overflow-hidden rounded-[24px] border border-slate-200/80 bg-white shadow-[0_25px_70px_-15px_rgba(30,41,59,0.3)] sm:mt-8 sm:rounded-[32px] lg:mt-10"
+            className="relative z-10 overflow-hidden mx-1.5 rounded-[24px] border border-slate-200/80 bg-white shadow-[0_25px_70px_-15px_rgba(30,41,59,0.3)]  sm:rounded-[32px] lg:mt-4"
           >
             <div className="h-2 w-full" />
 
@@ -271,7 +272,7 @@ export default function BookCalendarSection() {
                 className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-10"
               >
                 <div>
-                  <label className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
+                  <label className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
                     <CalendarIcon className="h-4 w-4" />
                     Select date
                     {errors.date && (
@@ -407,9 +408,73 @@ export default function BookCalendarSection() {
                       </motion.div>
                     </AnimatePresence>
                   </div>
+                  <div className="mt-4">
+                    <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
+                      <Clock className="h-4 w-4" />
+                      Select time
+                      {errors.time && (
+                        <span className="ml-auto text-xs normal-case text-rose-500">
+                          Required
+                        </span>
+                      )}
+                    </label>
+                    <input
+                      type="hidden"
+                      {...register("time", { required: true })}
+                    />
+
+                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                      {TIME_SLOTS.map((slot) => {
+                        const isSelected = slot === selectedTime;
+                        return (
+                          <motion.button
+                            type="button"
+                            key={slot}
+                            onClick={() =>
+                              setValue("time", slot, { shouldValidate: true })
+                            }
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.92 }}
+                            className={`rounded-xl border py-2 text-xs font-semibold transition-colors duration-150 sm:py-2.5 sm:text-sm ${
+                              isSelected
+                                ? "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-200"
+                                : errors.time
+                                  ? "border-rose-200 bg-slate-50/70 text-slate-600 hover:border-rose-400 hover:bg-white"
+                                  : "border-slate-200 bg-slate-50/70 text-slate-600 hover:border-indigo-200 hover:bg-white"
+                            }`}
+                          >
+                            {slot}
+                          </motion.button>
+                        );
+                      })}
+                    </div>
+
+                    <AnimatePresence>
+                      {selectedDate != null && selectedTime != null && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.2 }}
+                          className="mt-4 text-sm font-medium text-slate-500"
+                        >
+                          You're booking{" "}
+                          <span className="font-bold text-slate-800">
+                            {selectedDateLabel}
+                          </span>{" "}
+                          at{" "}
+                          <span className="font-bold text-slate-800">
+                            {selectedTime}
+                          </span>
+                          .
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-lg font-bold text-slate-600 mb-2.5">Provide your details:</h2>
                   <div className="mb-5">
                     <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
                       <User className="h-4 w-4" />
@@ -482,75 +547,13 @@ export default function BookCalendarSection() {
                     <textarea
                       placeholder="Your message"
                       {...register("message", { required: false })}
-                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
+                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 h-32 sm:text-base ${
                         errors.message
                           ? "border-rose-400 focus:border-rose-400"
                           : "border-slate-200 focus:border-indigo-400"
                       }`}
                     ></textarea>
                   </div>
-                  <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
-                    <Clock className="h-4 w-4" />
-                    Select time
-                    {errors.time && (
-                      <span className="ml-auto text-xs normal-case text-rose-500">
-                        Required
-                      </span>
-                    )}
-                  </label>
-
-                  <input
-                    type="hidden"
-                    {...register("time", { required: true })}
-                  />
-
-                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                    {TIME_SLOTS.map((slot) => {
-                      const isSelected = slot === selectedTime;
-                      return (
-                        <motion.button
-                          type="button"
-                          key={slot}
-                          onClick={() =>
-                            setValue("time", slot, { shouldValidate: true })
-                          }
-                          whileHover={{ scale: 1.04 }}
-                          whileTap={{ scale: 0.92 }}
-                          className={`rounded-xl border py-2 text-xs font-semibold transition-colors duration-150 sm:py-2.5 sm:text-sm ${
-                            isSelected
-                              ? "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-200"
-                              : errors.time
-                                ? "border-rose-200 bg-slate-50/70 text-slate-600 hover:border-rose-400 hover:bg-white"
-                                : "border-slate-200 bg-slate-50/70 text-slate-600 hover:border-indigo-200 hover:bg-white"
-                          }`}
-                        >
-                          {slot}
-                        </motion.button>
-                      );
-                    })}
-                  </div>
-
-                  <AnimatePresence>
-                    {selectedDate != null && selectedTime != null && (
-                      <motion.p
-                        initial={{ opacity: 0, y: -6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -6 }}
-                        transition={{ duration: 0.2 }}
-                        className="mt-4 text-sm font-medium text-slate-500"
-                      >
-                        You're booking{" "}
-                        <span className="font-bold text-slate-800">
-                          {selectedDateLabel}
-                        </span>{" "}
-                        at{" "}
-                        <span className="font-bold text-slate-800">
-                          {selectedTime}
-                        </span>
-                        .
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
                 </div>
 
                 <div className="md:col-span-2">

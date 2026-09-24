@@ -7,7 +7,7 @@ import BookCalendarSection from "./book-calendar-section";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-16 lg:py-24">
+    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-6">
       {/* Background Image Container */}
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
