@@ -257,7 +257,7 @@ export default function BookCalendarSection() {
             <div className="h-2 w-full" />
 
             <div className="px-4 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-8">
-              <div className="mb-5 text-center sm:mb-6">
+              <div className="justify-start text-left">
                 <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl lg:text-4xl">
                   Book a strategy call{" "}
                 </h1>
@@ -272,8 +272,6 @@ export default function BookCalendarSection() {
               >
                 <div>
                   <label className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
-                    <CalendarIcon className="h-4 w-4" />
-                    Select date
                     {errors.date && (
                       <span className="ml-auto text-xs normal-case text-rose-500">
                         Required
@@ -409,8 +407,6 @@ export default function BookCalendarSection() {
                   </div>
                   <div className="mt-4">
                     <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
-                      <Clock className="h-4 w-4" />
-                      Select time
                       {errors.time && (
                         <span className="ml-auto text-xs normal-case text-rose-500">
                           Required
@@ -548,7 +544,7 @@ export default function BookCalendarSection() {
                     <textarea
                       placeholder="Your message"
                       {...register("message", { required: false })}
-                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 h-32 sm:text-base ${
+                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 h-48 sm:text-base ${
                         errors.message
                           ? "border-rose-400 focus:border-rose-400"
                           : "border-slate-200 focus:border-indigo-400"
