@@ -321,14 +321,12 @@ export default function BookCalendarSection() {
           >
             <div className="h-2 w-full" />
 
-            <div className="px-4 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-8">
-              <div className="justify-start text-left">
-                <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl lg:text-4xl">
+            <div className="px-4 py-5 sm:px-8 sm:pb-7 sm:pt-2 lg:px-10">
+              <div className="">
+                <h1 className="text-2xl justify-center text-center font-bold text-slate-900 sm:text-3xl lg:text-4xl">
                   Book a strategy call{" "}
                 </h1>
-                <p className="mt-2 text-sm text-slate-500 sm:text-base">
-                  Pick a date and time that works for you.
-                </p>
+                <hr className="my-2 border-slate-200" />
               </div>
 
               <form
@@ -336,19 +334,9 @@ export default function BookCalendarSection() {
                 className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-10"
               >
                 <div>
-                  <label className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
-                    {errors.date && (
-                      <span className="ml-auto text-xs normal-case text-rose-500">
-                        Required
-                      </span>
-                    )}
-                  </label>
-
-                  <input
-                    type="hidden"
-                    {...register("date", { required: true })}
-                  />
-
+                  <p className="justify-start text-left mt-3 mb-1.5 text-sm text-slate-500 sm:text-base">
+                    Pick a date and time that works for you:
+                  </p>
                   <div
                     className={`rounded-2xl border bg-slate-50/70 p-3 transition-colors sm:p-4 ${errors.date ? "border-rose-300" : "border-slate-100"}`}
                   >
@@ -470,19 +458,21 @@ export default function BookCalendarSection() {
                       </motion.div>
                     </AnimatePresence>
                   </div>
-                  <div className="mt-4">
-                    <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
-                      {errors.time && (
+                  <div className="mt-2">
+                    <label className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
+                      {errors.date && (
                         <span className="ml-auto text-xs normal-case text-rose-500">
-                          Required
+                          Date is required
                         </span>
                       )}
                     </label>
+
                     <input
                       type="hidden"
-                      {...register("time", { required: true })}
+                      {...register("date", { required: true })}
                     />
-
+                  </div>
+                  <div className="mt-4">
                     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                       {TIME_SLOTS.map((slot) => {
                         const isSelected = slot === selectedTime;
@@ -531,10 +521,23 @@ export default function BookCalendarSection() {
                       )}
                     </AnimatePresence>
                   </div>
+                  <div className="mb-5">
+                    <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-600">
+                      {errors.time && (
+                        <span className="ml-auto text-xs normal-case text-rose-500">
+                          Time is required
+                        </span>
+                      )}
+                    </label>
+                    <input
+                      type="hidden"
+                      {...register("time", { required: true })}
+                    />
+                  </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <h2 className="text-lg font-bold text-slate-600 mb-2.5">
+                <div className="flex flex-col gap-2 mt-2.5 ">
+                  <h2 className="text-sm text-slate-500 sm:text-base mb-2.5">
                     Provide your details:
                   </h2>
                   <div className="mb-5">
@@ -609,7 +612,7 @@ export default function BookCalendarSection() {
                     <textarea
                       placeholder="Your message"
                       {...register("message", { required: false })}
-                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 h-48 sm:text-base ${
+                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 h-56 sm:text-base ${
                         errors.message
                           ? "border-rose-400 focus:border-rose-400"
                           : "border-slate-200 focus:border-indigo-400"
@@ -618,7 +621,7 @@ export default function BookCalendarSection() {
                   </div>
                 </div>
 
-                <div className="md:col-span-2">
+                <div className="md:col-span-2 mb-4">
                   <motion.button
                     type="submit"
                     disabled={isLoading || submitted}
