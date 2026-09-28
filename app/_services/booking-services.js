@@ -69,15 +69,19 @@ function trackLeadFormSuccess() {
 //   return `EH${datePart}${randomPart}`;
 // }
 
-function createAppointmentIdGenerator(startId = 1120) {
-  let currentId = startId;
-  
-  return function() {
-    return `${currentId++}`;
-  };
-}
+// Delegates to a server-side route backed by a file-persisted counter, so the
+// sequence keeps incrementing across page loads, sessions, and restarts
+// instead of resetting like an in-memory counter would.
+async function getNextAppointmentId() {
+  const response = await fetch("/api/empireonehealth/appointment-id");
+  const result = await response.json();
 
-const getNextAppointmentId = createAppointmentIdGenerator(1120);
+  if (!response.ok || !result.appointment_id) {
+    throw new Error(result.message || "Failed to generate appointment id");
+  }
+
+  return result.appointment_id;
+}
 
 export async function add_booking_service(data) {
   try {
@@ -124,7 +128,7 @@ export async function add_booking30_min_call_service(data) {
     // 1. Create Person
     const resPerson = await pipeDrivePost("/persons", data.person);
 
-    const appointmentId = getNextAppointmentId();
+    const appointmentId = await getNextAppointmentId();
 
     // Get the person's full name
     const fullName = data.person?.name?.trim() || "Appointment Request";
@@ -229,7 +233,7 @@ export async function add_appointment_service(data) {
         : undefined,
     });
 
-    const appointmentId = getNextAppointmentId();
+    const appointmentId = await getNextAppointmentId();
 
     // 2. Create Lead
     const resLead = await pipeDrivePost("/leads", {
@@ -273,7 +277,7 @@ export async function add_consultation_service(data) {
       email: [{ value: data.email, primary: true, label: "work" }],
       phone: [{ value: data.phone, primary: true, label: "work" }],
     });
-    const appointmentId = getNextAppointmentId();
+    const appointmentId = await getNextAppointmentId();
 
     // 2. Create Organization Field, if a company name was provided
     const resOrgField = data.company_name

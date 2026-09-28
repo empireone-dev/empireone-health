@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# persisted appointment id counter (server-local state)
+/.data
+
 # next.js
 /.next/
 /out/
