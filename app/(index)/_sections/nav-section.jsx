@@ -34,7 +34,7 @@ export default function NavSection() {
           onClick={() => setIsOpen(false)}
         >
           <Image
-            src="/images/empireone-health.webp"
+            src="/images/E1HLogoV1.png"
             alt="EmpireOne Health Logo"
             width={180}
             height={44}
@@ -131,7 +131,7 @@ export default function NavSection() {
               onClick={() => setIsOpen(false)}
             >
               <Image
-                src="/images/empireone-health.webp"
+                src="/images/E1HLogoV1.png"
                 alt="EmpireOne Health Logo"
                 width={180}
                 height={44}
