@@ -335,7 +335,7 @@ export default function BookCalendarSection() {
               >
                 <div>
                   <p className="justify-start text-left mt-2 mb-1.5 text-sm text-slate-500 sm:text-base">
-                    Pick a date and time that works for you:
+                    Pick a date and time that works for you:S
                   </p>
                   <div
                     className={`rounded-2xl border bg-slate-50/70 p-3 transition-colors sm:p-4 ${errors.date ? "border-rose-300" : "border-slate-100"}`}
