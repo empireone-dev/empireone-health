@@ -9,7 +9,7 @@ export default function BookCallButtonSection() {
         href="/appointment"
          className="group flex w-full items-center justify-center gap-2 rounded-full bg-[#0f2d9e] px-7 py-3.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#0b2278] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0f2d9e] focus:ring-offset-2 focus:ring-offset-white sm:inline-flex sm:w-auto"
       >
-        <span>Book a 30 Minute Calls</span>
+        <span>Book a 30 Minute Call</span>
         <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
       </Link>
     </div>
