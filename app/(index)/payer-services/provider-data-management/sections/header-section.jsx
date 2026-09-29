@@ -42,7 +42,7 @@ export default function HeaderSection() {
               maintenance, change request routing, and structured provider data
               quality workflows with a trained payer operations team.
             </p>
-ss
+
            <BookCallButtonSection />
           </div>
 
