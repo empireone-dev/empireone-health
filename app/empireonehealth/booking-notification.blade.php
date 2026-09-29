@@ -261,7 +261,7 @@
                     </p>
                     <p>
                         <img
-                            src="https://careers.empireonecx.com/images/EmpireOneHealthLogo.png"
+                            src="https://careers.empireonecx.com/images/E1HLogoV1.png"
                             alt="EmpireOne Health Logo"
                             style="width: 155px; height: auto;">
 

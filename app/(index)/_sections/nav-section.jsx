@@ -34,12 +34,13 @@ export default function NavSection() {
           onClick={() => setIsOpen(false)}
         >
           <Image
-            src="/images/empireone-health.webp"
+            src="/images/E1HLogoV1.png"
             alt="EmpireOne Health Logo"
             width={180}
             height={44}
             preload
-            className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+            className="h-7 w-auto transition-all duration-300 sm:h-8.5 lg:h-8.5"
+            style={{ width: "auto" }}
           />
         </Link>
 
@@ -131,12 +132,13 @@ export default function NavSection() {
               onClick={() => setIsOpen(false)}
             >
               <Image
-                src="/images/empireone-health.webp"
+                src="/images/E1HLogoV1.png"
                 alt="EmpireOne Health Logo"
                 width={180}
                 height={44}
                 loading="eager"
-                className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+                className="h-7 w-auto transition-all duration-300 sm:h-7.5 lg:h-7.5"
+                style={{ width: "auto" }}
               />
             </Link>
             <button

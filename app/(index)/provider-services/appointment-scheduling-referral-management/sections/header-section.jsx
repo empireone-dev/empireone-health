@@ -43,8 +43,9 @@ export default function HeaderSection() {
               follow-up, and documentation workflows with a trained healthcare
               operations team focused on access, accuracy, and visibility.
             </p>
-
-           <BookCallButtonSection/>
+            <div className="mt-6">
+              <BookCallButtonSection />
+            </div>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}

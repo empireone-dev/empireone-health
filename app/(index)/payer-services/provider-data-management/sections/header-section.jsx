@@ -24,7 +24,10 @@ export default function HeaderSection() {
                 Home
               </a>
               <span className="text-slate-400">/</span>
-              <a href="/payer-services" className="text-[#0f2d9e] hover:underline">
+              <a
+                href="/payer-services"
+                className="text-[#0f2d9e] hover:underline"
+              >
                 Payer Services
               </a>
               <span className="text-slate-400">/</span>
@@ -42,15 +45,16 @@ export default function HeaderSection() {
               maintenance, change request routing, and structured provider data
               quality workflows with a trained payer operations team.
             </p>
-
-           <BookCallButtonSection />
+            <div className="mt-6">
+              <BookCallButtonSection />
+            </div>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}
-         {/* Right Column: Free Consultation Form Card */}
-                   <div className="w-full lg:col-span-6 xl:col-span-5">
-                    <ConsultationForm/>
-                   </div>
+          {/* Right Column: Free Consultation Form Card */}
+          <div className="w-full lg:col-span-6 xl:col-span-5">
+            <ConsultationForm />
+          </div>
         </div>
       </div>
     </div>

@@ -16,15 +16,15 @@ export default function SubFooterSection() {
               onClick={() => setIsOpen(false)}
             > */}
             <Image
-              src="/images/empireone-health.webp"
+              src="/images/E1HLogoV1.png"
               alt="EmpireOne Health Logo"
               width={180}
               height={44}
               loading="eager"
-              className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+              className="h-7 w-auto transition-all duration-300 sm:h-8 lg:h-8"
+              style={{ width: "auto" }}
             />
             {/* </Link> */}
-
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
               Your trusted healthcare partner for accessible, quality, and
               compassionate medical services. Caring for you and your
