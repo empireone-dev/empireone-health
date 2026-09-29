@@ -473,6 +473,9 @@ export default function BookCalendarSection() {
                     />
                   </div>
                   <div className="mt-4">
+                    <p className="justify-start text-left mt-2 mb-2.5 text-sm text-slate-500 sm:text-base">
+                      (Eastern Time)
+                    </p>
                     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                       {TIME_SLOTS.map((slot) => {
                         const isSelected = slot === selectedTime;
