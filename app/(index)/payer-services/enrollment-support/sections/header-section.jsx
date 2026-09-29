@@ -45,8 +45,9 @@ export default function HeaderSection() {
               documentation routing, status tracking, and exception handling
               with a trained payer operations team.
             </p>
-
-           <BookCallButtonSection/>
+            <div className="mt-6">
+              <BookCallButtonSection />
+            </div>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}

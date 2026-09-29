@@ -45,8 +45,9 @@ export default function HeaderSection() {
               status follow-up, and denial trend reporting with a trained
               healthcare operations team focused on recovery and prevention.
             </p>
-
-          <BookCallButtonSection />
+            <div className="mt-6">
+              <BookCallButtonSection />
+            </div>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}

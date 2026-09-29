@@ -45,8 +45,9 @@ export default function HeaderSection() {
               claims explanations, service request routing, and consistent
               communication with a trained payer operations team.
             </p>
-
-            <BookCallButtonSection />
+            <div className="mt-6">
+              <BookCallButtonSection />
+            </div>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}
