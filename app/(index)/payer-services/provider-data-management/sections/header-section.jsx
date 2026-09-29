@@ -46,7 +46,7 @@ export default function HeaderSection() {
               quality workflows with a trained payer operations team.
             </p>
             <div className="mt-6">
-              <BookCallButtonSection />ss
+              <BookCallButtonSection />
             </div>
           </div>
 
