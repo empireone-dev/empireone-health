@@ -40,6 +40,7 @@ export default function NavSection() {
             height={44}
             preload
             className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+            style={{ width: "auto" }}
           />
         </Link>
 
@@ -137,6 +138,7 @@ export default function NavSection() {
                 height={44}
                 loading="eager"
                 className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+                style={{ width: "auto" }}
               />
             </Link>
             <button

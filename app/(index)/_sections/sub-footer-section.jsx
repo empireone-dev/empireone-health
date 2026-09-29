@@ -22,9 +22,9 @@ export default function SubFooterSection() {
               height={44}
               loading="eager"
               className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+              style={{ width: "auto" }}
             />
             {/* </Link> */}
-
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
               Your trusted healthcare partner for accessible, quality, and
               compassionate medical services. Caring for you and your
