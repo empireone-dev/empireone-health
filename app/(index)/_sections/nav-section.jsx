@@ -39,7 +39,7 @@ export default function NavSection() {
             width={180}
             height={44}
             preload
-            className="h-7 w-auto transition-all duration-300 sm:h-7.5 lg:h-7.5"
+            className="h-7 w-auto transition-all duration-300 sm:h-8.5 lg:h-8.5"
             style={{ width: "auto" }}
           />
         </Link>

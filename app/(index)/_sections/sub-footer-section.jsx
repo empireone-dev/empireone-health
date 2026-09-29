@@ -21,7 +21,7 @@ export default function SubFooterSection() {
               width={180}
               height={44}
               loading="eager"
-              className="h-7 w-auto transition-all duration-300 sm:h-7.5 lg:h-7.5"
+              className="h-7 w-auto transition-all duration-300 sm:h-8 lg:h-8"
               style={{ width: "auto" }}
             />
             {/* </Link> */}
