@@ -493,7 +493,7 @@ export default function BookCalendarSection() {
                                   : "border-slate-200 bg-slate-50/70 text-slate-600 hover:border-indigo-200 hover:bg-white"
                             }`}
                           >
-                            {slot}
+                            {slot} ET
                           </motion.button>
                         );
                       })}
@@ -514,7 +514,7 @@ export default function BookCalendarSection() {
                           </span>{" "}
                           at{" "}
                           <span className="font-bold text-slate-800">
-                            {selectedTime} (EST)
+                            {selectedTime} (ET)
                           </span>
                           .
                         </motion.p>
