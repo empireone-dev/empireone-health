@@ -28,7 +28,7 @@ export default function SubFooterSection() {
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
               Your trusted healthcare partner for accessible, quality, and
               compassionate medical services. Caring for you and your
-              family—anytime, every step ofs the way.
+              family—anytime, every step of the way.
             </p>
 
             {/* Certification Badges */}
