@@ -17,10 +17,12 @@ export async function POST(request) {
     const buildGoal = data.looking_to_build || "N/A";
     const userMessage = data.message || "None provided";
     const contactNumber = data.phone || "None";
+    const appointment_id = data.appointmentId || "None";
 
     const description =
       "Booking EmpireOne Health - 30 Minutes Call\n" +
       "--------------------------------------------------\n" +
+      `Appointment ID: ${data.appointment_id}\n` +
       `Full Name: ${data.name}\n` +
       `Company Name: ${companyName}\n` +
       `Email: ${data.email}\n` +
