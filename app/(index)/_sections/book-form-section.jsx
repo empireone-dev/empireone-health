@@ -26,22 +26,6 @@ export default function BookFormSection({ compact = false }) {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const formatUSPhone = (value) => {
-    if (!value) return "";
-
-    const phoneNumber = value.replace(/[^\d]/g, "").slice(0, 10);
-
-    if (phoneNumber.length < 4) {
-      return phoneNumber;
-    }
-
-    if (phoneNumber.length < 7) {
-      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
-    }
-
-    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
-  };
-  
   const onSubmit = async (data) => {
     setSubmitError(null);
 
@@ -265,9 +249,6 @@ export default function BookFormSection({ compact = false }) {
               error={errors.contactNumber?.message}
               {...register("contactNumber", {
                 required: "Contact number is required",
-                onChange: (e) => {
-                  e.target.value = formatUSPhone(e.target.value);
-                },
               })}
             />
             <Controller
