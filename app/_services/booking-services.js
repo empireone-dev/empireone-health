@@ -72,15 +72,18 @@ function trackLeadFormSuccess() {
 // Delegates to a server-side route backed by a file-persisted counter, so the
 // sequence keeps incrementing across page loads, sessions, and restarts
 // instead of resetting like an in-memory counter would.
-async function getNextAppointmentId() {
-  const response = await fetch("/api/empireonehealth/appointment-id");
-  const result = await response.json();
+function generateAppointmentId() {
+  const date = new Date();
 
-  if (!response.ok || !result.appointment_id) {
-    throw new Error(result.message || "Failed to generate appointment id");
-  }
+  const datePart = [
+    String(date.getFullYear()).slice(-2),
+    String(date.getMonth() + 1).padStart(2, "0"),
+    String(date.getDate()).padStart(2, "0"),
+  ].join("");
 
-  return result.appointment_id;
+  const randomPart = Math.floor(100000 + Math.random() * 900000);
+
+  return `${datePart}${randomPart}`;
 }
 
 export async function add_booking_service(data) {
@@ -111,6 +114,7 @@ export async function add_booking_service(data) {
       content: noteLines.join("\n"),
     });
 
+    const appointmentId = await generateAppointmentId();
     // 4. Send the calendar invite via the Apps Script web app
     await sendEmpireOneHealthEmail("/api/empireonehealth/schedule", data);
 
@@ -128,7 +132,7 @@ export async function add_booking30_min_call_service(data) {
     // 1. Create Person
     const resPerson = await pipeDrivePost("/persons", data.person);
 
-    const appointmentId = await getNextAppointmentId();
+    const appointmentId = await generateAppointmentId();
 
     // Get the person's full name
     const fullName = data.person?.name?.trim() || "Appointment Request";
@@ -233,7 +237,7 @@ export async function add_appointment_service(data) {
         : undefined,
     });
 
-    const appointmentId = await getNextAppointmentId();
+    const appointmentId = await generateAppointmentId();
 
     // 2. Create Lead
     const resLead = await pipeDrivePost("/leads", {
@@ -277,7 +281,7 @@ export async function add_consultation_service(data) {
       email: [{ value: data.email, primary: true, label: "work" }],
       phone: [{ value: data.phone, primary: true, label: "work" }],
     });
-    const appointmentId = await getNextAppointmentId();
+    const appointmentId = await generateAppointmentId();
 
     // 2. Create Organization Field, if a company name was provided
     const resOrgField = data.company_name
