@@ -47,7 +47,7 @@ export default function CertificationBadges() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-9 lg:justify-start">
+    <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-9 xl:flex-nowrap xl:justify-start xl:gap-4 2xl:gap-9">
       {badgeDetails.map((badge, index) => (
         <div
           key={badge.title}
@@ -72,7 +72,7 @@ export default function CertificationBadges() {
               height={64}
               loading="lazy"
               quality={70}
-              className="h-8 w-auto opacity-95 sm:h-10 md:h-12 lg:h-17.5"
+              className="h-8 w-auto opacity-95 sm:h-10 md:h-12 lg:h-17.5 xl:h-12 2xl:h-17.5"
             />
           </button>
 

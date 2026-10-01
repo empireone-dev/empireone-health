@@ -23,11 +23,11 @@ function Reveal({ children, className = "", delay = 0, as = "div" }) {
 
 export default function WhoWeAreSection() {
   return (
-    <section className="relative flex items-center overflow-hidden py-20 sm:py-24 lg:min-h-[calc(100vh-124px)] lg:py-0">
+    <section className="relative flex items-center justify-center overflow-hidden py-20 sm:py-24 lg:min-h-[calc(100vh-124px)] lg:py-0">
       <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-teal-100/50 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-red-100/40 blur-3xl" />
 
-      <div className="relative mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-14 px-6 lg:grid-cols-2 lg:gap-24 lg:px-12">
+      <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-2 lg:gap-24 lg:px-12">
         <Reveal className="relative order-2 lg:order-1">
           <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-br from-teal-200/60 to-cyan-100/40 blur-xl" />
           <div className="group relative overflow-hidden rounded-[1.75rem] border border-white shadow-xl shadow-slate-900/5">

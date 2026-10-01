@@ -50,7 +50,7 @@ export default function Page() {
         />
         <div className="absolute inset-0 bg-linear-to-b from-white via-white/75 to-white" />
 
-        <div className="relative mx-auto w-full px-4 py-10 sm:px-6 sm:py-0 lg:px-8">
+        <div className="relative mx-auto w-full py-10 sm:py-0">
           <FoundationServicesSection />
         </div>
       </section>

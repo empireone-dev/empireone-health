@@ -49,7 +49,7 @@ export default function WhyChooseUsSection() {
   const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
   return (
     <section className="flex items-center py-10 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
-      <div className="mx-auto w-full max-w-[1700px] lg:px-10">
+      <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
         <div
           className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
         

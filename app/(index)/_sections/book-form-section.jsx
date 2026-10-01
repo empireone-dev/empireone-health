@@ -254,7 +254,7 @@ export default function BookFormSection({ compact = false }) {
           <div
             className={
               compact
-                ? "grid grid-cols-1 gap-2 md:grid-cols-2"
+                ? "grid grid-cols-1 gap-3 md:grid-cols-2"
                 : "grid grid-cols-1 md:grid-cols-2 gap-5"
             }
           >

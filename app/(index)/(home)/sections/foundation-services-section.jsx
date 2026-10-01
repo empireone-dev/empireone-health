@@ -86,7 +86,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
 export default function FoundationServicesSection() {
   return (
-    <section className="mx-auto max-w-screen-2xl px-6 py-20 sm:py-28">
+    <section className="mx-auto max-w-screen-2xl px-6 py-20 sm:py-28 lg:px-12">
       <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700">
