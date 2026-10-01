@@ -46,12 +46,12 @@ function Reveal({ children, className = "", delay = 0, as = "div" }) {
 export default function CardSection() {
   const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
   return (
-    <section className="flex items-center py-16 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
-      <div className="mx-auto w-full max-w-[1700px] lg:px-10">
+     <section className="flex items-center py-10 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
+      <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
         <div
-          className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-10 overflow-hidden sm:rounded-[32px] sm:px-8 lg:px-20 lg:py-16"
+          className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
         
-        > 
+        >
           <div className="absolute inset-0 bg-purple-50 pointer-events-none" />
 
           <div className="relative z-10 grid items-stretch gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
