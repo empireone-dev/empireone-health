@@ -31,6 +31,22 @@ export function GetInTouchModal({ isOpen, onClose }) {
     onClose();
   };
 
+  const formatUSPhone = (value) => {
+    if (!value) return "";
+
+    const phoneNumber = value.replace(/[^\d]/g, "").slice(0, 10);
+
+    if (phoneNumber.length < 4) {
+      return phoneNumber;
+    }
+
+    if (phoneNumber.length < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+  };
+
   const onSubmit = async (data) => {
     setSubmitError(null);
 
@@ -136,13 +152,16 @@ export function GetInTouchModal({ isOpen, onClose }) {
               />
 
               <Input
-                type="tel"
                 label="Phone Number *"
+                type="tel"
                 placeholder="e.g. +1 (555) 000-0000"
-                error={errors.phone}
                 {...INPUT_PROPS}
+                error={errors.phone}
                 {...register("phone", {
                   required: "Phone number is required",
+                  onChange: (e) => {
+                    e.target.value = formatUSPhone(e.target.value);
+                  },
                 })}
               />
 

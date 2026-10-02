@@ -7,7 +7,7 @@ import ContactDetailSection from "./contact-detail-section";
 export default function HeroSection() {
   return (
     <div className="relative bg-white">
-      <section className="relative w-full overflow-hidden min-h-105 sm:min-h-110 md:min-h-120 lg:min-h-130 flex items-center">
+      <section className="relative w-full overflow-hidden min-h-100  flex items-center">
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img
             src="/images/contact-background.webp"
@@ -32,10 +32,10 @@ export default function HeroSection() {
               </span>
 
               <h1 className="text-3xl font-bold leading-[1.1] tracking-wide text-[#0f172a] sm:text-4xl lg:text-[42px]">
-                Discover What is{" "}
                 <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
-                  Possible
+                  Discover{" "}
                 </span>
+                what is possible
               </h1>
 
               <p className="max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg">

@@ -60,6 +60,22 @@ const TIME_SLOTS = [
   "06:30 pm",
 ];
 
+const formatUSPhone = (value) => {
+  if (!value) return "";
+
+  const phoneNumber = value.replace(/[^\d]/g, "").slice(0, 10);
+
+  if (phoneNumber.length < 4) {
+    return phoneNumber;
+  }
+
+  if (phoneNumber.length < 7) {
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+  }
+
+  return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+};
+
 function buildCalendar(year, month) {
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -596,16 +612,19 @@ export default function BookCalendarSection() {
                       <Phone className="h-4 w-4" />
                       Phone (optional)
                     </label>
-                    <input
-                      type="text"
-                      placeholder="Ex: (123) 456-7890"
-                      {...register("phone", { required: false })}
-                      className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
-                        errors.phone
-                          ? "border-rose-400 focus:border-rose-400"
-                          : "border-slate-200 focus:border-indigo-400"
-                      }`}
-                    />
+                      <input
+                        type="text"
+                        placeholder="Ex: (123) 456-7890"
+                        {...register("phone", { required: false })}
+                        className={`w-full rounded-xl border bg-slate-50/70 px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-indigo-100 sm:px-4 sm:py-2.5 sm:text-base ${
+                          errors.phone
+                            ? "border-rose-400 focus:border-rose-400"
+                            : "border-slate-200 focus:border-indigo-400"
+                        }`}
+                        onChange={(e) => {
+                          e.target.value = formatUSPhone(e.target.value);
+                        }}
+                      />
                   </div>
                   <div className="mb-5">
                     <label className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500">
