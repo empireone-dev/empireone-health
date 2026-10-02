@@ -73,8 +73,11 @@ export default function ConsultationForm() {
               />
               <Input
                 label="Company"
+                required
                 {...INPUT_PROPS}
-                {...register("company_name")}
+                {...register("company_name", {
+                  required: "Company name is required",
+                })}
                 className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
               />
             </div>
@@ -203,7 +206,10 @@ export default function ConsultationForm() {
               />
               <label htmlFor="privacy" className="cursor-pointer">
                 By ticking this box I agree that I have read the{" "}
-                <Link href="/privacy-policy" className="underline hover:text-white">
+                <Link
+                  href="/privacy-policy"
+                  className="underline hover:text-white"
+                >
                   Privacy Policy
                 </Link>
                 .

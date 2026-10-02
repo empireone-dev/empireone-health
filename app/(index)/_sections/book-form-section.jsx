@@ -41,7 +41,7 @@ export default function BookFormSection({ compact = false }) {
 
     return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
   };
-  
+
   const onSubmit = async (data) => {
     setSubmitError(null);
 
@@ -219,10 +219,13 @@ export default function BookFormSection({ compact = false }) {
             />
 
             <Input
-              label="Company Name"
+              label="Company Name *"
               type="text"
               className={fieldClassName}
-              {...register("companyName")}
+              error={errors.companyName?.message}
+              {...register("companyName", {
+                required: "Company name is required",
+              })}
             />
 
             <Input
