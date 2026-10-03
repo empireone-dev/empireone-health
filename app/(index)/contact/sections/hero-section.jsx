@@ -24,8 +24,8 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -28 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, ease: "easeOut" }}
-              className="relative z-20 flex max-w-xl flex-col items-start space-y-7 lg:max-w-2xl"
-            >
+              className="relative z-20 flex max-w-xl flex-col items-start space-y-7 lg:max-w-2xl">
+
               <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 border border-indigo-200">
                 <Phone className="h-3.5 w-3.5" />
                 Contact
