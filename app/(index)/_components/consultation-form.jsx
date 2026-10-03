@@ -25,6 +25,22 @@ export default function ConsultationForm() {
     formState: { errors, isSubmitting },
   } = useForm();
 
+  const formatUSPhone = (value) => {
+    if (!value) return "";
+
+    const phoneNumber = value.replace(/[^\d]/g, "").slice(0, 10);
+
+    if (phoneNumber.length < 4) {
+      return phoneNumber;
+    }
+
+    if (phoneNumber.length < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+  };
+
   const onSubmit = async (data) => {
     setSubmitError(null);
     try {
@@ -73,8 +89,11 @@ export default function ConsultationForm() {
               />
               <Input
                 label="Company"
+                required
                 {...INPUT_PROPS}
-                {...register("company_name")}
+                {...register("company_name", {
+                  required: "Company name is required",
+                })}
                 className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
               />
             </div>
@@ -97,13 +116,17 @@ export default function ConsultationForm() {
                 className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
               />
               <Input
-                label="Phone"
+                label="Phone Number *"
                 type="tel"
-                required
-                error={errors.phone}
+                placeholder="e.g. +1 (555) 000-0000"
                 {...INPUT_PROPS}
-                {...register("phone", { required: "Phone is required" })}
-                className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
+                error={errors.phone}
+                {...register("phone", {
+                  required: "Phone number is required",
+                  onChange: (e) => {
+                    e.target.value = formatUSPhone(e.target.value);
+                  },
+                })}
               />
             </div>
 
@@ -203,7 +226,10 @@ export default function ConsultationForm() {
               />
               <label htmlFor="privacy" className="cursor-pointer">
                 By ticking this box I agree that I have read the{" "}
-                <Link href="/privacy-policy" className="underline hover:text-white">
+                <Link
+                  href="/privacy-policy"
+                  className="underline hover:text-white"
+                >
                   Privacy Policy
                 </Link>
                 .

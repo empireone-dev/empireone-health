@@ -6,7 +6,7 @@ import BookCallButtonSection from "@/app/(index)/_sections/book-call-button-sect
 
 export default function HeaderSection() {
   return (
-    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-20">
+    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-6">
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{

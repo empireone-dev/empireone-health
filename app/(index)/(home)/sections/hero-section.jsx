@@ -37,8 +37,7 @@ export default function HeroSection() {
         relative
         isolate
         overflow-hidden
-        lg:h-[calc(100svh-80px)]
-        lg:min-h-[600px]
+        xl:py-24
       "
     >
       {/* Background */}
@@ -64,12 +63,12 @@ export default function HeroSection() {
           max-w-[1900px]
           px-4
           py-8
-          sm:px-8
+          sm:px-6
           sm:py-10
-          lg:px-12
+          md:px-8
+          lg:px-16
           lg:py-0
-          xl:px-16
-          2xl:px-20
+          xl:px-20
         "
       >
         <div
@@ -79,10 +78,12 @@ export default function HeroSection() {
             flex-col
             gap-6
             sm:gap-8
-            lg:block
-            lg:h-full
-            lg:gap-0
-            lg:ml-6
+            xl:block
+            xl:h-155
+            xl:gap-0
+            xl:py-10
+
+            2xl:h-155
           "
         >
           {/* =================================
@@ -97,13 +98,13 @@ export default function HeroSection() {
               z-20
               w-full
 
-              lg:absolute
-              lg:left-0
-              lg:top-[43%]
-              lg:w-[58%]
-              lg:-translate-y-1/2
+              xl:absolute
+              xl:left-0
+              xl:top-[43%]
+              xl:w-[52%]
+              xl:-translate-y-1/2
 
-              xl:w-[56%]
+              2xl:w-[52%]
             "
           >
             <div
@@ -111,10 +112,12 @@ export default function HeroSection() {
                 mx-auto
                 max-w-[760px]
                 text-center
-                lg:ml-16
-                lg:mx-0
-                lg:text-left
-                xl:ml-20
+                xl:ml-16
+                xl:mx-0
+                xl:max-w-140
+                xl:text-left
+                2xl:ml-20
+                2xl:max-w-190
               "
             >
               {/* Brand */}
@@ -144,7 +147,7 @@ export default function HeroSection() {
               </div>
 
               {/* Heading */}
-              <div className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl xl:text-6xl mt-4">
+              <div className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl 2xl:text-6xl mt-4">
                 <span className="text-shadow-purple-900">
                   We Know Both Sides
                   <br />
@@ -159,7 +162,7 @@ export default function HeroSection() {
               <p
                 className="
                   mt-4
-                  max-w-[650px]
+                  max-w-[1000px]
                   text-base
                   font-semibold
                   leading-relaxed
@@ -177,7 +180,7 @@ export default function HeroSection() {
               <p
                 className="
                   mt-3
-                  max-w-[620px]
+                  max-w-[1000px]
                   text-base
                   leading-relaxed
                   text-slate-800
@@ -192,7 +195,7 @@ export default function HeroSection() {
                 teams deliver smarter processes and a better experience for the
                 organizations, members and patients we serve.
               </p>
-              <div className="flex flex-col gap-4 max-w-[599px] mx-auto lg:mx-0 sm:flex-row sm:flex-wrap lg:flex-nowrap">
+              <div className="flex flex-col gap-4 max-w-[599px] mx-auto xl:mx-0 sm:flex-row sm:flex-wrap sm:justify-center xl:flex-nowrap xl:justify-start">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -222,7 +225,7 @@ export default function HeroSection() {
                 </motion.a>
               </div>
               {/* Certifications */}
-              <div className="mt-5 sm:mt-10">
+              <div className="mt-5 sm:mt-10 xl:mt-6">
                 <CertificationBadges />
               </div>
             </div>
@@ -245,28 +248,23 @@ export default function HeroSection() {
               h-[42vh]
               w-full
               max-w-[440px]
-              mt-10
+              mt-8
 
               sm:h-[52vh]
               sm:max-w-[560px]
 
-              lg:absolute
-              lg:right-[-1%]
-              lg:top-[-7%]
-              lg:mx-0
-              lg:h-[94%]
-              lg:w-[51%]
-              lg:max-w-none
-
-              xl:right-[0%]
+              xl:absolute
+              xl:right-[2%]
               xl:top-[-7%]
-              xl:h-[96%]
-              xl:w-[50%]
+              xl:mx-0
+              xl:h-[94%]
+              xl:w-[46%]
+              xl:max-w-none
 
-              2xl:right-[1%]
+              2xl:right-[2%]
               2xl:top-[-6%]
               2xl:h-[97%]
-              2xl:w-[49%]
+              2xl:w-[46%]
             "
           >
             {/* Glow */}
@@ -302,17 +300,18 @@ export default function HeroSection() {
               "
             />
           </motion.div>
+        </div>
 
-          {/* =================================
-              STATS BAR
-          ================================= */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-            className="
+        {/* =================================
+            STATS BAR
+        ================================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+          className="
               relative
-              z-40
+              z-15
 
               grid
               grid-cols-4
@@ -336,18 +335,14 @@ export default function HeroSection() {
               sm:px-7
               sm:py-5
 
-              lg:absolute
-              lg:bottom-4
-              lg:left-0
-              lg:right-0
-              lg:mt-0
-              lg:gap-6
-              lg:px-8
-              lg:py-5
+              xl:mt-1
+              xl:gap-6
+              xl:px-8
+              xl:py-6
 
-              xl:bottom-6
-              xl:px-10
-              xl:py-0.5
+              2xl:mt-1
+              2xl:px-10
+              2xl:py-4
             "
           >
             {STATS.map(({ icon, value, label }) => (
@@ -436,8 +431,7 @@ export default function HeroSection() {
                 </span>
               </div>
             ))}
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
