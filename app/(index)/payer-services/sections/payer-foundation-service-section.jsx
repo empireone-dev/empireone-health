@@ -63,7 +63,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
 export default function PayerFoundationServiceSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-12">
+    <section className="mx-auto max-w-7xl py-16 sm:py-20">
       <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 border border-indigo-200">

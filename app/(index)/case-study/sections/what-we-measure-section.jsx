@@ -11,7 +11,7 @@ export default function WhatWeMeasureSection() {
   return (
     <div>
       <section className="w-full bg-[#f0f3ff] px-6 py-16 sm:px-12 lg:px-16 lg:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-12 lg:gap-12">
           <motion.div
             initial={
               reduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -28 }
