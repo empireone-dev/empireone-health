@@ -73,8 +73,8 @@ export default function CaseStudyPage() {
       </div>
 
       {/* Executive Summary & Business Environment (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="space-y-8 sm:space-y-10">
             {/* Executive Summary */}
             <Reveal className="space-y-2.5 sm:space-y-3">
@@ -105,8 +105,8 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Actions & Measured Outcomes (Light Blue Background) */}
-      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-12">
             {/* Left Column: Image */}
             <Reveal className="w-full lg:col-span-5">
@@ -173,8 +173,8 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Value Delivered (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <Reveal className="space-y-2.5 sm:space-y-3">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b132b] sm:text-3xl">
               Strategic Value Delivered
