@@ -116,8 +116,9 @@ export default function ConsultationForm() {
                 className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
               />
               <Input
-                label="Phone Number *"
+                label="Phone Number"
                 type="tel"
+                required
                 placeholder="e.g. +1 (555) 000-0000"
                 {...INPUT_PROPS}
                 error={errors.phone}
@@ -127,6 +128,7 @@ export default function ConsultationForm() {
                     e.target.value = formatUSPhone(e.target.value);
                   },
                 })}
+                className="rounded-full border-white/40 bg-white/10 text-xs text-white placeholder-white/80"
               />
             </div>
 

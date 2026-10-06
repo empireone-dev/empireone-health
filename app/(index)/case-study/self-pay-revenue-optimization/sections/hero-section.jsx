@@ -52,7 +52,10 @@ export default function CaseStudyPage() {
                 Home
               </Link>
               <span className="text-slate-400">/</span>
-              <Link href="/case-study" className="text-[#0f2d9e] hover:underline">
+              <Link
+                href="/case-study"
+                className="text-[#0f2d9e] hover:underline"
+              >
                 Case Studies
               </Link>
               <span className="text-slate-400">/</span>
@@ -70,8 +73,8 @@ export default function CaseStudyPage() {
       </div>
 
       {/* Executive Summary & Business Environment (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="space-y-8 sm:space-y-10">
             {/* Executive Summary */}
             <Reveal className="space-y-2.5 sm:space-y-3">
@@ -79,7 +82,10 @@ export default function CaseStudyPage() {
                 Executive Summary
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                Our revenue cycle leadership team worked with a multi-site healthcare provider to redesign its self-pay collections strategy, improving financial performance while enhancing the patient financial experience.
+                Our revenue cycle leadership team worked with a multi-site
+                healthcare provider to redesign its self-pay collections
+                strategy, improving financial performance while enhancing the
+                patient financial experience.
               </p>
             </Reveal>
 
@@ -89,7 +95,9 @@ export default function CaseStudyPage() {
                 Business Environment
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                The existing model relied heavily on high-volume outbound calling, resulting in unnecessary labor costs, inconsistent collections, and inefficient patient outreach.
+                The existing model relied heavily on high-volume outbound
+                calling, resulting in unnecessary labor costs, inconsistent
+                collections, and inefficient patient outreach.
               </p>
             </Reveal>
           </div>
@@ -97,10 +105,9 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Actions & Measured Outcomes (Light Blue Background) */}
-      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-12">
-            
             {/* Left Column: Image */}
             <Reveal className="w-full lg:col-span-5">
               <div className="relative h-56 w-full overflow-hidden rounded-xl shadow-md sm:h-72 md:h-80 lg:h-[420px]">
@@ -116,7 +123,6 @@ export default function CaseStudyPage() {
 
             {/* Right Column: Actions & Outcomes List */}
             <div className="space-y-6 sm:space-y-8 lg:col-span-7">
-              
               {/* Strategic Actions */}
               <Reveal delay={100}>
                 <h3 className="text-xl font-bold text-[#0b132b] sm:text-2xl">
@@ -161,27 +167,27 @@ export default function CaseStudyPage() {
                   ))}
                 </ul>
               </Reveal>
-
             </div>
           </div>
         </div>
       </section>
 
       {/* Strategic Value Delivered (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <Reveal className="space-y-2.5 sm:space-y-3">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b132b] sm:text-3xl">
               Strategic Value Delivered
             </h2>
             <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-              The engagement demonstrated how leadership, process design, and accountability can substantially improve revenue recovery without significant technology investment.
+              The engagement demonstrated how leadership, process design, and
+              accountability can substantially improve revenue recovery without
+              significant technology investment.
             </p>
           </Reveal>
         </div>
         <BookACallSection />
       </section>
-      
     </>
   );
 }
