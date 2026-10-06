@@ -118,7 +118,7 @@ export default function WhyChooseUsSection() {
               delay={120}
               className="relative flex justify-center lg:items-stretch lg:justify-end"
             >
-              <div className="relative min-h-[440px] w-full max-w-[650px] sm:min-h-[500px] lg:h-full">
+              <div className="relative min-h-[440px] w-full max-w-[650px] overflow-hidden rounded-[26px] sm:min-h-[500px] sm:rounded-[30px] lg:h-full">
                 <div
                   className="absolute inset-0 overflow-hidden rounded-[26px] bg-cover bg-center shadow-2xl backdrop-blur-md sm:rounded-[30px]"
                   style={{ backgroundImage: "url('/images/logo-doc.webp')" }}
@@ -159,7 +159,7 @@ export default function WhyChooseUsSection() {
                   height={600}
                   loading="lazy"
                   decoding="async"
-                  className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom sm:max-w-none"
+                  className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom lg:max-w-none"
                 />
               </div>
             </Reveal>
