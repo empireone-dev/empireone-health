@@ -126,15 +126,15 @@ export default function CaseStudyPage() {
               {/* Strategic Actions */}
               <Reveal delay={100}>
                 <h3 className="text-xl font-bold text-[#0b132b] sm:text-2xl">
-                  Strategic Actions
+                  Team Strategy
                 </h3>
                 <ul className="mt-3 space-y-2 sm:mt-4 sm:space-y-2.5">
                   {[
-                    "Built and scaled a specialized collections team based on performance milestones.",
-                    "Implemented payer-specific specialization to improve expertise and efficiency.",
-                    "Standardized contract-based underpayment validation.",
-                    "Introduced KPI-driven quality and productivity management.",
-                    "Established continuous coaching tied to financial outcomes.",
+                    "Implemented predictive payment segmentation to prioritize accounts by payment likelihood.",
+                    "Aligned communication channels with expected payment behavior.",
+                    "Reserved live representatives for high-value engagement opportunities.",
+                    "Expanded automated and digital outreach to improve operational efficiency.",
+                    "Continuously optimized workflows using operational and financial analytics.",
                   ].map((action, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 sm:gap-3">
                       <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#0f2d9e] sm:h-5 sm:w-5" />
@@ -153,10 +153,10 @@ export default function CaseStudyPage() {
                 </h3>
                 <ul className="mt-3 space-y-2 sm:mt-4 sm:space-y-2.5">
                   {[
-                    "30% increase in cash collections within one year.",
-                    "Higher recovery accuracy for underpaid claims.",
-                    "Quality performance consistently exceeded established targets.",
-                    "Maintained productivity despite operational constraints.",
+                    "15% increase in self-pay cash collections.",
+                    "Reduced outbound call volume.",
+                    "Improved workforce productivity.",
+                    "Enhanced the patient financial experience.",
                   ].map((outcome, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 sm:gap-3">
                       <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#0f2d9e] sm:h-5 sm:w-5" />
@@ -180,13 +180,14 @@ export default function CaseStudyPage() {
               Strategic Value Delivered
             </h2>
             <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-              The engagement demonstrated how leadership, process design, and
-              accountability can substantially improve revenue recovery without
-              significant technology investment.
+              The engagement demonstrated how data-driven operations,
+              disciplined execution, and cross-functional collaboration can
+              improve both financial outcomes and the patient experience without
+              increasing staffing levels.
             </p>
           </Reveal>
         </div>
-        <BookACallSection />
+        <BookACallSection title="Improve both financial outcomes and the patient experience without increasing staffing levels." />
       </section>
     </>
   );
