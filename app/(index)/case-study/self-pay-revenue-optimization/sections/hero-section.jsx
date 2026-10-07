@@ -112,7 +112,7 @@ export default function CaseStudyPage() {
             <Reveal className="w-full lg:col-span-5">
               <div className="relative h-56 w-full overflow-hidden rounded-xl shadow-md sm:h-72 md:h-80 lg:h-[420px]">
                 <Image
-                  src="/images/10.webp"
+                  src="/images/04.webp"
                   alt="Surgical Team at Work"
                   fill
                   className="object-cover"
