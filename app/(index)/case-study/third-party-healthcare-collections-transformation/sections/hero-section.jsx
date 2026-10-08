@@ -82,10 +82,10 @@ export default function CaseStudyPage() {
                 Executive Summary
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                Our revenue cycle leadership team worked with a multi-site
-                healthcare provider to redesign its self-pay collections
-                strategy, improving financial performance while enhancing the
-                patient financial experience.
+                A healthcare organization engaged our executive revenue cycle
+                leadership to improve commercial payer recoveries while creating
+                a scalable operating model focused on sustainable financial
+                performance.
               </p>
             </Reveal>
 
@@ -95,9 +95,10 @@ export default function CaseStudyPage() {
                 Business Environment
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                The existing model relied heavily on high-volume outbound
-                calling, resulting in unnecessary labor costs, inconsistent
-                collections, and inefficient patient outreach.
+                Existing client operations were limited by payer access
+                restrictions, inconsistent underpayment validation, system
+                interruptions, and a lack of standardized operational
+                discipline.
               </p>
             </Reveal>
           </div>
@@ -186,7 +187,9 @@ export default function CaseStudyPage() {
             </p>
           </Reveal>
         </div>
-        <BookACallSection />
+        <BookACallSection 
+          title="Improve revenue recovery without significant technology investment."
+        />
       </section>
     </>
   );

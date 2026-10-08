@@ -6,13 +6,12 @@ import Link from "next/link";
 
 const MotionLink = motion.create(Link);
 
-export default function BookACallSection() {
+export default function BookACallSection({ title, subtitle }) {
   const reduceMotion = useReducedMotion();
 
   return (
     <section className="p-4 sm:p-6 md:p-8">
       <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-r from-[#6366f1] via-[#5b5bd6] to-[#4f46e5] p-8 text-center text-white shadow-2xl sm:p-10 md:p-14">
-        
         {/* Background Pattern */}
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20"
@@ -38,10 +37,8 @@ export default function BookACallSection() {
           </span>
 
           <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-            Smarter Healthcare Operations.
-            <br className="hidden sm:block" />
-            <span className="sm:hidden"> </span>
-            Better Patient Experiences.
+            {title ||
+              "Smarter Healthcare Operations. Better Patient Experiences."}
           </h2>
         </motion.div>
 

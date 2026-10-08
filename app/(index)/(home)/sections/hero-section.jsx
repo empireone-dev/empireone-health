@@ -148,14 +148,16 @@ export default function HeroSection() {
 
               {/* Heading */}
               <div className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl 2xl:text-6xl mt-4">
-                <span className="text-shadow-purple-900">
-                  We Know Both Sides
-                  <br />
-                  of{" "}
-                  <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
-                    Healthcare
+                <h1>
+                  <span className="text-shadow-purple-900">
+                    We Know Both Sides
+                    <br />
+                    of{" "}
+                    <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                      Healthcare
+                    </span>
                   </span>
-                </span>
+                </h1>
               </div>
 
               {/* Subtitle */}
@@ -344,11 +346,11 @@ export default function HeroSection() {
               2xl:px-10
               2xl:py-4
             "
-          >
-            {STATS.map(({ icon, value, label }) => (
-              <div
-                key={label}
-                className="
+        >
+          {STATS.map(({ icon, value, label }) => (
+            <div
+              key={label}
+              className="
                   flex
                   flex-col
                   items-center
@@ -362,10 +364,10 @@ export default function HeroSection() {
                   sm:py-3
                   lg:gap-5
                 "
-              >
-                {/* Icon */}
-                <span
-                  className="
+            >
+              {/* Icon */}
+              <span
+                className="
                     flex
                     h-7
                     w-7
@@ -379,13 +381,13 @@ export default function HeroSection() {
                     lg:h-13
                     lg:w-13
                   "
-                >
-                  <Image
-                    src={icon}
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="
+              >
+                <Image
+                  src={icon}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="
                       h-6
                       w-6
                       object-contain
@@ -396,13 +398,13 @@ export default function HeroSection() {
                       lg:h-12
                       lg:w-12
                     "
-                  />
-                </span>
+                />
+              </span>
 
-                {/* Stats Text */}
-                <span className="min-w-0">
-                  <span
-                    className="
+              {/* Stats Text */}
+              <span className="min-w-0">
+                <span
+                  className="
                       block
                       text-base
                       font-extrabold
@@ -412,12 +414,12 @@ export default function HeroSection() {
                       sm:text-2xl
                       lg:text-[26px]
                     "
-                  >
-                    {value}
-                  </span>
+                >
+                  {value}
+                </span>
 
-                  <span
-                    className="
+                <span
+                  className="
                       mt-1
                       block
                       text-[10px]
@@ -425,12 +427,12 @@ export default function HeroSection() {
 
                       sm:text-sm
                     "
-                  >
-                    {label}
-                  </span>
+                >
+                  {label}
                 </span>
-              </div>
-            ))}
+              </span>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
