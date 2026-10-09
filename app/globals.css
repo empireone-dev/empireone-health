@@ -80,3 +80,296 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Ask Ava widget, ported from the EmpireOneCX implementation for this Next.js site. */
+.ava-chat {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 70;
+  font-family: var(--font-poppins), Arial, sans-serif;
+}
+
+.ava-chat__launcher {
+  display: flex;
+  width: 5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.ava-chat__launcher-avatar,
+.ava-chat__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 0.8rem 2rem rgba(15, 23, 42, 0.22), 0 0 0 0.35rem rgba(99, 102, 241, 0.15);
+}
+
+.ava-chat__launcher-avatar {
+  width: 4rem;
+  height: 4rem;
+  transition: transform 160ms ease;
+}
+
+.ava-chat__launcher:hover .ava-chat__launcher-avatar {
+  transform: translateY(-3px) scale(1.04);
+}
+
+.ava-chat__launcher > span:last-child {
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  background: linear-gradient(135deg, #615eff, #c448f7 60%, #f97316);
+  box-shadow: 0 0.25rem 0.7rem rgba(15, 23, 42, 0.28);
+  white-space: nowrap;
+}
+
+.ava-chat__welcome {
+  position: absolute;
+  right: 0;
+  bottom: 5.25rem;
+  display: none;
+  width: min(22rem, calc(100vw - 2rem));
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  color: white;
+  background: #11131f;
+  box-shadow: 0 1.5rem 4rem rgba(15, 23, 42, 0.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ava-chat:not(.ava-chat--open):hover .ava-chat__welcome {
+    display: block;
+  }
+}
+
+.ava-chat__welcome-head,
+.ava-chat__header {
+  display: grid;
+  grid-template-columns: 2.65rem 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.ava-chat__welcome-head {
+  grid-template-columns: 2.65rem 1fr;
+}
+
+.ava-chat__welcome strong,
+.ava-chat__header strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.ava-chat__welcome span,
+.ava-chat__header span {
+  display: block;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.7rem;
+}
+
+.ava-chat__welcome p {
+  margin: 0.8rem 0 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.ava-chat__panel {
+  position: absolute;
+  right: 0;
+  bottom: 5.25rem;
+  display: grid;
+  width: min(24rem, calc(100vw - 2rem));
+  height: min(38rem, calc(100vh - 7rem));
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.1rem;
+  color: white;
+  background: #11131f;
+  box-shadow: 0 1.5rem 4rem rgba(15, 23, 42, 0.35);
+}
+
+.ava-chat__header {
+  grid-template-columns: 2.65rem 1fr auto;
+  padding: 0.9rem 1rem;
+  background: #0b0d16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ava-chat__avatar {
+  width: 2.65rem;
+  height: 2.65rem;
+  box-shadow: none;
+}
+
+.ava-chat__avatar--mini {
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: 0 0 1.9rem;
+  align-self: flex-end;
+}
+
+.ava-chat__close {
+  border: 0;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.35rem;
+}
+
+.ava-chat__messages {
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.ava-chat__row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.ava-chat__row--user {
+  justify-content: flex-end;
+}
+
+.ava-chat__bubble {
+  max-width: 86%;
+  white-space: pre-line;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.85rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.ava-chat__bubble--bot {
+  background: #202337;
+}
+
+.ava-chat__bubble--user {
+  background: linear-gradient(135deg, #615eff, #944fe9);
+}
+
+.ava-chat__sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.ava-chat__sources a,
+.ava-chat__footer small a {
+  color: #c4b5fd;
+  text-decoration: underline;
+}
+
+.ava-chat__sources a {
+  font-size: 0.67rem;
+}
+
+.ava-chat__typing {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+.ava-chat__footer {
+  padding: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0b0d16;
+}
+
+.ava-chat__quick-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+
+.ava-chat__quick-options button,
+.ava-chat__quick-options a {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(196, 181, 253, 0.5);
+  border-radius: 999px;
+  color: #ddd6fe;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.68rem;
+  text-decoration: none;
+}
+
+.ava-chat__quick-options button:hover,
+.ava-chat__quick-options a:hover {
+  background: rgba(99, 102, 241, 0.22);
+}
+
+.ava-chat__composer {
+  display: grid;
+  grid-template-columns: 1fr 2.4rem;
+  gap: 0.4rem;
+}
+
+.ava-chat__composer textarea {
+  min-height: 2.5rem;
+  max-height: 7rem;
+  resize: vertical;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.65rem;
+  outline: none;
+  padding: 0.65rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.ava-chat__composer textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.ava-chat__composer button {
+  border: 0;
+  border-radius: 0.65rem;
+  color: white;
+  background: linear-gradient(135deg, #615eff, #c448f7);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.ava-chat__composer button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.ava-chat__footer small {
+  display: block;
+  margin-top: 0.55rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.6rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 480px) {
+  .ava-chat {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .ava-chat__panel {
+    right: -0.25rem;
+    width: calc(100vw - 1.5rem);
+  }
+}
