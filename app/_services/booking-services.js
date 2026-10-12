@@ -124,7 +124,7 @@ export async function add_booking_service(data) {
     trackLeadFormSuccess();
 
     return {
-      appointmentId,
+      appointment_id: appointmentId,
       person: resPerson.data,
       lead: resLead.data,
       note: resNote.data,
