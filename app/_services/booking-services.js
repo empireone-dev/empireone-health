@@ -116,14 +116,22 @@ export async function add_booking_service(data) {
 
     const appointmentId = await generateAppointmentId();
     // 4. Send the calendar invite via the Apps Script web app
-    await sendEmpireOneHealthEmail("/api/empireonehealth/schedule", data);
+    await sendEmpireOneHealthEmail("/api/empireonehealth/schedule", {
+      ...data,
+      appointment_id: appointmentId,
+    });
 
     trackLeadFormSuccess();
 
-    return { person: resPerson.data, lead: resLead.data, note: resNote.data };
+    return {
+      appointmentId,
+      person: resPerson.data,
+      lead: resLead.data,
+      note: resNote.data,
+    };
   } catch (error) {
     console.error("Failed to create booking:", error);
-    throw error; // Excellent practice to throw this so your React try/catch handles it
+    throw error;
   }
 }
 
