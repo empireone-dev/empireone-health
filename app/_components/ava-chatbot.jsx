@@ -189,7 +189,7 @@ export default function AvaChatbot() {
               <div className={`ava-chat__row ava-chat__row--${message.role}`} key={`${message.role}-${index}`}>
                 {message.role === "bot" && <AvaAvatar mini />}
                 <div className={`ava-chat__bubble ava-chat__bubble--${message.role}`}>
-                  <span>{message.text}</span>
+                  <span>{renderAvaText(message.text)}</span>
                   {message.sources?.length > 0 && <div className="ava-chat__sources">{message.sources.slice(0, 3).map((source) => <a href={source.url} key={source.url}>{source.title}</a>)}</div>}
                 </div>
               </div>
@@ -217,4 +217,18 @@ export default function AvaChatbot() {
 
 function AvaAvatar({ mini = false }) {
   return <span className={`ava-chat__avatar ${mini ? "ava-chat__avatar--mini" : ""}`}><Image src="/images/ask-ava-static.webp" alt="" width={mini ? 30 : 42} height={mini ? 30 : 42} /></span>;
+}
+
+function renderAvaText(text) {
+  const parts = String(text || "").split(/(\/[a-zA-Z0-9][a-zA-Z0-9/_-]*|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,})/g);
+
+  return parts.map((part, index) => {
+    if (/^\/[a-zA-Z0-9][a-zA-Z0-9/_-]*$/.test(part)) {
+      return <a href={part} key={`${part}-${index}`}>{part}</a>;
+    }
+    if (/^[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}$/.test(part)) {
+      return <a href={`mailto:${part}`} key={`${part}-${index}`}>{part}</a>;
+    }
+    return <span key={`${index}-${part}`}>{part}</span>;
+  });
 }
