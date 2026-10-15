@@ -257,19 +257,18 @@ export default function HeroSection() {
 
               xl:absolute
               xl:right-[2%]
-              xl:top-[-7%]
+              xl:bottom-6
               xl:mx-0
               xl:h-[94%]
               xl:w-[46%]
               xl:max-w-none
 
               2xl:right-[2%]
-              2xl:top-[-6%]
+              2xl:bottom-6
               2xl:h-[97%]
               2xl:w-[46%]
             "
           >
-            {/* Glow */}
             <div
               aria-hidden="true"
               className="
@@ -298,6 +297,7 @@ export default function HeroSection() {
               className="
                 object-contain
                 object-bottom
+                xl:translate-y-0
                 -translate-y-[6%]
               "
             />
@@ -337,12 +337,12 @@ export default function HeroSection() {
               sm:px-7
               sm:py-5
 
-              xl:mt-1
+              xl:-mt-10
               xl:gap-6
               xl:px-8
               xl:py-6
 
-              2xl:mt-1
+              2xl:-mt-10
               2xl:px-10
               2xl:py-4
             "

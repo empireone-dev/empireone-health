@@ -262,6 +262,12 @@ body {
   background: linear-gradient(135deg, #615eff, #944fe9);
 }
 
+.ava-chat__bubble a {
+  color: #c4b5fd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .ava-chat__sources {
   display: flex;
   flex-wrap: wrap;

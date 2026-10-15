@@ -16,6 +16,14 @@ const knowledgeBase = [
       "Healthcare BPO, or healthcare business process outsourcing, means assigning defined healthcare administrative and revenue cycle workflows to a specialized external team. Typical work can include eligibility and benefits verification, prior authorization, appointment scheduling, referral management, denial management, provider data, member services, enrollment support, and patient or self-pay collections. EmpireOne Health supports provider and payer organizations with dedicated teams, quality visibility, secure workflows, and accountable reporting.",
   },
   {
+    id: "dso-services",
+    title: "DSO administrative support inquiry",
+    url: "/provider-services",
+    keywords: ["DSO", "dental service organization", "dental organization", "dental practice", "multi-site practice"],
+    content:
+      "DSO usually means Dental Service Organization. EmpireOne Health's verified capabilities include healthcare administrative and revenue cycle workflows such as scheduling, eligibility and benefits verification, prior authorization, denial support, and collections. Some of these capabilities may be relevant to dental organizations, but the website does not confirm a dedicated DSO service program. Are you exploring support for a dental practice, a multi-site DSO, or a specific workflow?",
+  },
+  {
     id: "provider-services",
     title: "Provider services",
     url: "/provider-services",
