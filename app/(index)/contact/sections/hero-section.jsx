@@ -10,8 +10,8 @@ export default function HeroSection() {
       <section className="relative w-full overflow-hidden min-h-100  flex items-center">
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img
-            src="/images/contact-headquarters-hero.webp"
-            alt="EmpireOneCX headquarters"
+            src="/images/contact-healthcare-center-hero.png"
+            alt="EmpireOneHealth healthcare center"
             className="w-full h-full object-cover object-[65%_center] sm:object-right md:object-center"
           />
         </div>
