@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone } from "lucide-react";
+import { Building2, MapPin, Mail, Phone } from "lucide-react";
 
 export default function ContactDetailSection() {
   const locations = [
@@ -29,20 +29,25 @@ export default function ContactDetailSection() {
   ];
 
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl bg-[#615eff] p-6 text-white shadow-lg sm:p-8">
+    <div className="flex h-full w-full flex-col rounded-2xl border border-white/70 bg-linear-to-br from-[#edf4ff] to-[#dbe9ff] p-6 text-[#171a3c] shadow-[0_8px_24px_-8px_rgba(30,41,59,0.25)] sm:p-8">
       {/* Subtitle */}
-      <span className="text-xs font-bold uppercase tracking-wider text-indigo-200">
+      <h2 className="text-sm font-bold uppercase tracking-wide text-[#171a3c]">
         Contact Details
-      </span>
+      </h2>
 
       {/* Locations List */}
       <div className="mt-4 space-y-3">
         {locations.map((loc, idx) => (
-          <div key={idx} className="border-b border-indigo-400/40 pb-3 last:border-none">
+          <div key={loc.title} className="flex items-start gap-3 border-b border-indigo-200/60 pb-3 last:border-none">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/60 text-indigo-800">
+              {idx === 0 ? <Building2 aria-hidden="true" className="h-5 w-5" /> : <MapPin aria-hidden="true" className="h-5 w-5" />}
+            </span>
+            <div>
             <h3 className="text-base font-bold tracking-tight">{loc.title}</h3>
-            <p className="mt-0.5 text-sm font-normal text-indigo-100/90 leading-snug">
+            <p className="mt-1 text-sm font-normal leading-relaxed text-slate-700">
               {loc.address}
             </p>
+            </div>
           </div>
         ))}
       </div>
@@ -50,19 +55,19 @@ export default function ContactDetailSection() {
       {/* Contact Info (Email & Phone) */}
       <div className="mt-3 space-y-2 pt-1">
         <div className="flex items-center gap-3">
-          <Mail className="h-5 w-5 shrink-0 text-white" />
+          <Mail aria-hidden="true" className="h-5 w-5 shrink-0 text-indigo-700" />
           <a
             href="mailto:info@empireonehealth.com"
-            className="text-sm font-bold text-white hover:underline"
+            className="break-all text-sm font-semibold text-[#171a3c] hover:underline"
           >
             info@empireonehealth.com
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <Phone className="h-5 w-5 shrink-0 text-white" />
+          <Phone aria-hidden="true" className="h-5 w-5 shrink-0 text-indigo-700" />
           <a
             href="tel:+18332006002"
-            className="text-sm font-bold text-white hover:underline"
+            className="text-sm font-semibold text-[#171a3c] hover:underline"
           >
             +1 (833) 200-6002
           </a>

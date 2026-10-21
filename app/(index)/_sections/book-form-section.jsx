@@ -5,15 +5,19 @@ import Link from "next/link";
 import { useForm, Controller } from "react-hook-form";
 import Input from "../../_components/input";
 import Select from "../../_components/select";
+import styles from "./book-form-section.module.css";
 import {
   add_appointment_service,
   add_booking30_min_call_service,
 } from "../../_services/booking-services";
 
-const fieldClassName =
+const darkFieldClassName =
   "!rounded-full !border-white/40 !bg-white/10 !text-white placeholder:!text-white/60 focus:!ring-white/70 focus:!border-white";
 
 export default function BookFormSection({ compact = false }) {
+  const fieldClassName = compact
+    ? "rounded-full border-slate-300 bg-white/90 text-slate-900 focus:border-indigo-500 focus:ring-indigo-200"
+    : darkFieldClassName;
   const [submitError, setSubmitError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -98,7 +102,7 @@ export default function BookFormSection({ compact = false }) {
       <div
         className={
           compact
-            ? "flex h-full w-full flex-col font-sans"
+            ? `${styles.compact} flex h-full w-full flex-col font-sans`
             : "min-h-screen flex items-center justify-center p-6 font-sans"
         }
       >
@@ -108,9 +112,9 @@ export default function BookFormSection({ compact = false }) {
               ? "relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#615eff] bg-cover bg-center p-6 shadow-lg sm:p-8"
               : "bg-linear-to-br from-[#6a69f7] to-[#5150e0] w-full max-w-7xl rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl ring-1 ring-white/10 flex flex-col items-center justify-center text-center"
           }
-          style={{ backgroundImage: "url('/images/book-bg.webp')" }}
+          style={compact ? undefined : { backgroundImage: "url('/images/book-bg.webp')" }}
         >
-          <div className="absolute inset-0 bg-[#615eff]/90 pointer-events-none"></div>
+          {!compact && <div className="absolute inset-0 bg-[#615eff]/90 pointer-events-none"></div>}
           <div className="relative z-10 flex flex-col items-center gap-4 py-12">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20">
               <svg
@@ -149,7 +153,7 @@ export default function BookFormSection({ compact = false }) {
       id="book-form-section"
       className={
         compact
-          ? "flex h-full w-full flex-col font-sans"
+          ? `${styles.compact} flex h-full w-full flex-col font-sans`
           : "min-h-screen flex items-center justify-center p-6 font-sans"
       }
     >
@@ -159,11 +163,8 @@ export default function BookFormSection({ compact = false }) {
             ? "relative flex h-full w-full flex-col overflow-hidden rounded-2xl bg-[#615eff] bg-cover bg-center p-6 shadow-lg sm:p-8"
             : "bg-linear-to-br from-[#6a69f7] to-[#5150e0] w-full max-w-7xl rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl ring-1 ring-white/10 bg-cover bg-center"
         }
-        style={{ backgroundImage: "url('/images/book-bg.webp')" }}
+        style={compact ? undefined : { backgroundImage: "url('/images/book-bg.webp')" }}
       >
-        {compact && (
-          <div className="absolute inset-0 bg-[#615eff]/90 pointer-events-none"></div>
-        )}
         {!compact && (
           <>
             {/* Color overlay to keep form content readable over the background image */}
@@ -184,7 +185,7 @@ export default function BookFormSection({ compact = false }) {
               : "text-white text-3xl sm:text-4xl font-bold text-center mb-2 relative z-10"
           }
         >
-          Let's Build Your Team Now
+          Let&apos;s Build Your Team Now
         </h2>
         <p
           className={
@@ -278,6 +279,7 @@ export default function BookFormSection({ compact = false }) {
               control={control}
               render={({ field }) => (
                 <Select
+                  name="source"
                   label="Source"
                   options={[
                     { value: "google", label: "Google" },
@@ -300,6 +302,7 @@ export default function BookFormSection({ compact = false }) {
             control={control}
             render={({ field }) => (
               <Select
+                name="lookingToBuild"
                 label="What are you looking to build?"
                 options={[
                   {
@@ -336,10 +339,11 @@ export default function BookFormSection({ compact = false }) {
 
           {/* Message Textarea */}
           <div className="flex flex-col">
-            <label className="mb-1.5 text-sm font-medium text-white">
+            <label htmlFor="booking-message" className="mb-1.5 text-sm font-medium text-white">
               Message
             </label>
             <textarea
+              id="booking-message"
               rows={compact ? 3 : 5}
               placeholder="Tell us about your workflow goals. Do not include sensitive healthcare information."
               className="w-full resize-none rounded-2xl border border-white/40 bg-white/10 px-5 py-3 text-white placeholder-white/60 transition-all focus:border-white focus:ring-2 focus:ring-white/70 focus:outline-none"
@@ -394,7 +398,7 @@ export default function BookFormSection({ compact = false }) {
                   : "bg-white text-[#5c5bf4] font-bold text-lg px-12 py-3 rounded-full hover:bg-gray-100 hover:scale-[1.02] active:scale-100 transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
               }
             >
-              {isSubmitting ? "Sending..." : "Send"}
+              {isSubmitting ? "Sending..." : compact ? "Send Message" : "Send"}
             </button>
           </div>
         </form>
