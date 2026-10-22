@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}
         <CookieConsentBanner />
-        <AvaChatbot />
+        {/* <AvaChatbot /> */}
 
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
