@@ -7,7 +7,7 @@ import ContactDetailSection from "./contact-detail-section";
 export default function HeroSection() {
   return (
     <div className="relative bg-linear-to-r from-[#fff3ea] via-[#f2f7fc] to-[#edf5ff]">
-      <section className="relative flex min-h-100 w-full items-center overflow-hidden lg:min-h-112">
+      <section className="relative flex min-h-100 w-full items-center overflow-hidden lg:aspect-[2.83] lg:min-h-112">
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img
             src="/images/contact-carcar-building.webp"

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Activity, ArrowUpRight } from "lucide-react";
 import CertificationBadges from "./certification-badges";
@@ -27,6 +28,59 @@ const STATS = [
     icon: "/images/stats.webp",
     value: "15%+",
     label: "Increase in Net Revenue",
+  },
+];
+
+const SERVICE_BADGES = [
+  {
+    label: "Member Services",
+    href: "/payer-services/member-services",
+    icon: "/images/Member Services.png",
+    position: { left: "7%", top: "7.7%", width: "25.5%", height: "14%" },
+  },
+  {
+    label: "Eligibility & Benefits",
+    href: "/provider-services/benefits-verification-eligibility",
+    icon: "/images/Eligibility & Benefits.png",
+    position: { left: "68%", top: "7.7%", width: "27%", height: "14.5%" },
+  },
+  {
+    label: "Member Enrollment",
+    href: "/payer-services/enrollment-support",
+    icon: "/images/Member Enrollment.png",
+    position: { left: "0.2%", top: "33%", width: "26%", height: "14%" },
+  },
+  {
+    label: "Prior Authorization",
+    href: "/provider-services/prior-authorization-management",
+    icon: "/images/Prior Authorization.png",
+    position: { left: "74%", top: "33%", width: "25.5%", height: "14%" },
+  },
+  {
+    label: "Prior Authorization Intake",
+    href: "/provider-services/prior-authorization-management",
+    icon: "/images/Prior Authorization Intake.png",
+    position: { left: "1.8%", top: "58.5%", width: "26%", height: "14%" },
+  },
+  {
+    label: "Collections",
+    href: "/provider-services/patient-self-pay-collections",
+    icon: "/images/Collections.png",
+    position: { left: "73.5%", top: "58.5%", width: "25%", height: "14%" },
+  },
+  {
+    label: "Provider Services",
+    href: "/provider-services",
+    icon: "/images/Provider Services.png",
+    position: { left: "12.5%", top: "81.5%", width: "23.7%", height: "13.5%" },
+  },
+  {
+    label: "Claims & Denials",
+    href: "/provider-services/denial-management",
+    icon: "/images/Claims & Denials.png",
+    iconWidth: "25%",
+    labelLines: ["Claims &", "Denials"],
+    position: { left: "63.7%", top: "81.5%", width: "24.2%", height: "13.5%" },
   },
 ];
 
@@ -241,31 +295,25 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
             className="
-              pointer-events-none
               relative
               z-10
               mx-auto
               block
-              aspect-[5625/4566]
-              h-[42vh]
+              aspect-[1439/1093]
               w-full
               max-w-[440px]
               mt-8
 
-              sm:h-[52vh]
               sm:max-w-[560px]
 
               xl:absolute
               xl:right-[2%]
               xl:bottom-6
               xl:mx-0
-              xl:h-[94%]
               xl:w-[46%]
               xl:max-w-none
 
               2xl:right-[2%]
-              2xl:bottom-6
-              2xl:h-[97%]
               2xl:w-[46%]
             "
           >
@@ -284,12 +332,13 @@ export default function HeroSection() {
 
             <Image
               src="/images/hero-badge-image.webp"
-              alt="Doctor reviewing patient information"
+              alt=""
+              aria-hidden="true"
               fill
               priority
               quality={85}
               sizes="
-                (max-width: 640px) 95vw,
+                (max-width: 640px) calc(100vw - 2rem),
                 (max-width: 1024px) 65vw,
                 (max-width: 1536px) 58vw,
                 1000px
@@ -297,10 +346,75 @@ export default function HeroSection() {
               className="
                 object-contain
                 object-bottom
-                xl:translate-y-0
-                -translate-y-[6%]
+                pointer-events-none
               "
             />
+
+            {SERVICE_BADGES.map(({ label, href, icon, iconWidth, labelLines, position }) => (
+              <Link
+                key={label}
+                href={href}
+                aria-label={label}
+                style={position}
+                className="
+                  absolute
+                  z-30
+                  flex
+                  min-h-11
+                  items-center
+                  justify-start
+                  gap-[3%]
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-blue-300
+                  bg-white
+                  px-[3%]
+                  py-0
+                  text-left
+                  text-[clamp(0.625rem,2.8vw,0.75rem)]
+                  font-bold
+                  leading-tight
+                  text-[#10113e]
+                  shadow-[0_2px_5px_rgba(37,99,235,0.2)]
+                  transition
+                  duration-200
+                  hover:scale-[1.03]
+                  hover:bg-blue-50
+                  hover:shadow-lg
+                  focus-visible:z-40
+                  focus-visible:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-blue-600
+                  focus-visible:ring-offset-2
+                  sm:gap-[7%]
+                  sm:px-[5%]
+                  sm:py-1
+                  sm:text-[clamp(0.7rem,1.05vw,1rem)]
+                "
+              >
+                <Image
+                  src={icon}
+                  alt=""
+                  aria-hidden="true"
+                  width={64}
+                  height={64}
+                  style={{ width: iconWidth ?? "30%" }}
+                  className="h-[72%] w-[28%] shrink-0 object-contain sm:ml-[-2%] sm:h-[80%] sm:w-[33%]"
+                />
+                <span className="min-w-0">
+                  {labelLines ? (
+                    <>
+                      {labelLines[0]}
+                      <br />
+                      {labelLines[1]}
+                    </>
+                  ) : (
+                    label
+                  )}
+                </span>
+              </Link>
+            ))}
           </motion.div>
         </div>
 
