@@ -142,7 +142,7 @@ export default function HeroSection() {
                     sm:text-lg
                   "
                 >
-                  EmpireOne Health
+                  EmpireOne Health Test
                 </span>
               </div>
 
