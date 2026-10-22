@@ -52,7 +52,10 @@ export default function CaseStudyPage() {
                 Home
               </Link>
               <span className="text-slate-400">/</span>
-              <Link href="/case-study" className="text-[#0f2d9e] hover:underline">
+              <Link
+                href="/case-study"
+                className="text-[#0f2d9e] hover:underline"
+              >
                 Case Studies
               </Link>
               <span className="text-slate-400">/</span>
@@ -70,8 +73,8 @@ export default function CaseStudyPage() {
       </div>
 
       {/* Executive Summary & Business Environment (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="space-y-8 sm:space-y-10">
             {/* Executive Summary */}
             <Reveal className="space-y-2.5 sm:space-y-3">
@@ -79,7 +82,10 @@ export default function CaseStudyPage() {
                 Executive Summary
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                Our revenue cycle leadership team worked with a multi-site healthcare provider to redesign its self-pay collections strategy, improving financial performance while enhancing the patient financial experience.
+                Our revenue cycle leadership team worked with a multi-site
+                healthcare provider to redesign its self-pay collections
+                strategy, improving financial performance while enhancing the
+                patient financial experience.
               </p>
             </Reveal>
 
@@ -89,7 +95,9 @@ export default function CaseStudyPage() {
                 Business Environment
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                The existing model relied heavily on high-volume outbound calling, resulting in unnecessary labor costs, inconsistent collections, and inefficient patient outreach.
+                The existing model relied heavily on high-volume outbound
+                calling, resulting in unnecessary labor costs, inconsistent
+                collections, and inefficient patient outreach.
               </p>
             </Reveal>
           </div>
@@ -97,15 +105,14 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Actions & Measured Outcomes (Light Blue Background) */}
-      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-12">
-            
             {/* Left Column: Image */}
             <Reveal className="w-full lg:col-span-5">
               <div className="relative h-56 w-full overflow-hidden rounded-xl shadow-md sm:h-72 md:h-80 lg:h-[420px]">
                 <Image
-                  src="/images/10.webp"
+                  src="/images/04.webp"
                   alt="Surgical Team at Work"
                   fill
                   className="object-cover"
@@ -116,19 +123,18 @@ export default function CaseStudyPage() {
 
             {/* Right Column: Actions & Outcomes List */}
             <div className="space-y-6 sm:space-y-8 lg:col-span-7">
-              
               {/* Strategic Actions */}
               <Reveal delay={100}>
                 <h3 className="text-xl font-bold text-[#0b132b] sm:text-2xl">
-                  Strategic Actions
+                  Team Strategy
                 </h3>
                 <ul className="mt-3 space-y-2 sm:mt-4 sm:space-y-2.5">
                   {[
-                    "Built and scaled a specialized collections team based on performance milestones.",
-                    "Implemented payer-specific specialization to improve expertise and efficiency.",
-                    "Standardized contract-based underpayment validation.",
-                    "Introduced KPI-driven quality and productivity management.",
-                    "Established continuous coaching tied to financial outcomes.",
+                    "Implemented predictive payment segmentation to prioritize accounts by payment likelihood.",
+                    "Aligned communication channels with expected payment behavior.",
+                    "Reserved live representatives for high-value engagement opportunities.",
+                    "Expanded automated and digital outreach to improve operational efficiency.",
+                    "Continuously optimized workflows using operational and financial analytics.",
                   ].map((action, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 sm:gap-3">
                       <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#0f2d9e] sm:h-5 sm:w-5" />
@@ -147,10 +153,10 @@ export default function CaseStudyPage() {
                 </h3>
                 <ul className="mt-3 space-y-2 sm:mt-4 sm:space-y-2.5">
                   {[
-                    "30% increase in cash collections within one year.",
-                    "Higher recovery accuracy for underpaid claims.",
-                    "Quality performance consistently exceeded established targets.",
-                    "Maintained productivity despite operational constraints.",
+                    "15% increase in self-pay cash collections.",
+                    "Reduced outbound call volume.",
+                    "Improved workforce productivity.",
+                    "Enhanced the patient financial experience.",
                   ].map((outcome, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 sm:gap-3">
                       <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#0f2d9e] sm:h-5 sm:w-5" />
@@ -161,27 +167,28 @@ export default function CaseStudyPage() {
                   ))}
                 </ul>
               </Reveal>
-
             </div>
           </div>
         </div>
       </section>
 
       {/* Strategic Value Delivered (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <Reveal className="space-y-2.5 sm:space-y-3">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b132b] sm:text-3xl">
               Strategic Value Delivered
             </h2>
             <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-              The engagement demonstrated how leadership, process design, and accountability can substantially improve revenue recovery without significant technology investment.
+              The engagement demonstrated how data-driven operations,
+              disciplined execution, and cross-functional collaboration can
+              improve both financial outcomes and the patient experience without
+              increasing staffing levels.
             </p>
           </Reveal>
         </div>
-        <BookACallSection />
+        <BookACallSection title="Improve both financial outcomes and the patient experience without increasing staffing levels." />
       </section>
-      
     </>
   );
 }

@@ -6,7 +6,7 @@ import BookCallButtonSection from "@/app/(index)/_sections/book-call-button-sect
 
 export default function HeaderSection() {
   return (
-    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-20">
+    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-6">
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
@@ -24,7 +24,10 @@ export default function HeaderSection() {
                 Home
               </a>
               <span className="text-slate-400">/</span>
-              <a href="/provider-services" className="text-[#0f2d9e] hover:underline">
+              <a
+                href="/provider-services"
+                className="text-[#0f2d9e] hover:underline"
+              >
                 Provider Services
               </a>
               <span className="text-slate-400">/</span>
@@ -46,14 +49,16 @@ export default function HeaderSection() {
               respect.
             </p>
 
-           <BookCallButtonSection />
+            <div className="mt-6">
+              <BookCallButtonSection />
+            </div>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}
-         {/* Right Column: Free Consultation Form Card */}
-                   <div className="w-full lg:col-span-6 xl:col-span-5">
-                    <ConsultationForm />
-                   </div>
+          {/* Right Column: Free Consultation Form Card */}
+          <div className="w-full lg:col-span-6 xl:col-span-5">
+            <ConsultationForm />
+          </div>
         </div>
       </div>
     </div>

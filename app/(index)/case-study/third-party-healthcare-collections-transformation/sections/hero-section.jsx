@@ -73,8 +73,8 @@ export default function CaseStudyPage() {
       </div>
 
       {/* Executive Summary & Business Environment (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="space-y-8 sm:space-y-10">
             {/* Executive Summary */}
             <Reveal className="space-y-2.5 sm:space-y-3">
@@ -82,10 +82,10 @@ export default function CaseStudyPage() {
                 Executive Summary
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                Our revenue cycle leadership team worked with a multi-site
-                healthcare provider to redesign its self-pay collections
-                strategy, improving financial performance while enhancing the
-                patient financial experience.
+                A healthcare organization engaged our executive revenue cycle
+                leadership to improve commercial payer recoveries while creating
+                a scalable operating model focused on sustainable financial
+                performance.
               </p>
             </Reveal>
 
@@ -95,9 +95,10 @@ export default function CaseStudyPage() {
                 Business Environment
               </h2>
               <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
-                The existing model relied heavily on high-volume outbound
-                calling, resulting in unnecessary labor costs, inconsistent
-                collections, and inefficient patient outreach.
+                Existing client operations were limited by payer access
+                restrictions, inconsistent underpayment validation, system
+                interruptions, and a lack of standardized operational
+                discipline.
               </p>
             </Reveal>
           </div>
@@ -105,8 +106,8 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Actions & Measured Outcomes (Light Blue Background) */}
-      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-12">
             {/* Left Column: Image */}
             <Reveal className="w-full lg:col-span-5">
@@ -173,8 +174,8 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Value Delivered (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <Reveal className="space-y-2.5 sm:space-y-3">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b132b] sm:text-3xl">
               Strategic Value Delivered
@@ -186,7 +187,9 @@ export default function CaseStudyPage() {
             </p>
           </Reveal>
         </div>
-        <BookACallSection />
+        <BookACallSection 
+          title="Improve revenue recovery without significant technology investment."
+        />
       </section>
     </>
   );

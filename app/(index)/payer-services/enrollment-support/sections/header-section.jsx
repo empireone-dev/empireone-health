@@ -6,7 +6,7 @@ import ConsultationForm from "@/app/(index)/_components/consultation-form";
 import BookCallButtonSection from "@/app/(index)/_sections/book-call-button-section";
 export default function HeaderSection() {
   return (
-    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-20">
+    <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-6">
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
@@ -45,8 +45,9 @@ export default function HeaderSection() {
               documentation routing, status tracking, and exception handling
               with a trained payer operations team.
             </p>
-
-           <BookCallButtonSection/>
+            <div className="mt-6">
+              <BookCallButtonSection />
+            </div>
           </div>
 
           {/* Right Column: Free Consultation Form Card */}

@@ -11,10 +11,12 @@ import {
   Activity,
   HeartHandshake,
   CheckCircle,
+  Book,
 } from "lucide-react";
 import CardSection from "./sections/card-section";
 import BookACallSection from "../_sections/book-a-call-section";
 import Link from "next/link";
+import BookCallButtonSection from "../_sections/book-call-button-section";
 
 const highlights = [
   { icon: UserRoundPlus, label: "Reduce Administrative Burden" },
@@ -85,8 +87,11 @@ export default function AboutSection() {
               About Us
             </span>
 
-            <h1 className="text-3xl font-bold leading-[1.2] tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px]">
-              Healthcare operations support built for measurable outcomes.
+            <h1 className="text-3xl font-bold leading-[1.1] tracking-wide text-[#0f172a] sm:text-4xl lg:text-[42px]">
+              <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                Healthcare
+              </span>{" "}
+              operations support built for measurable outcomes.
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg">
@@ -94,13 +99,7 @@ export default function AboutSection() {
               revenue cycle execution with dedicated teams, clear QA, secure
               workflows, and accountable reporting.
             </p>
-            <Link
-              href="/appointment"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#0f2d9e] px-7 py-3.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#0b2278] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0f2d9e] focus:ring-offset-2 focus:ring-offset-white"
-            >
-              <span>Book a 30-Min Call</span>
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            <BookCallButtonSection />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 28 }}
@@ -116,8 +115,6 @@ export default function AboutSection() {
                 className="h-auto w-full rounded-2xl object-cover"
               />
             </div>
-
-            
           </motion.div>
         </div>
       </section>

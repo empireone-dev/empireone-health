@@ -138,8 +138,11 @@ export default function Page() {
               </span>
             </motion.div>
 
-            <h1 className="mb-4 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Privacy Policy
+            <h1 className="mb-4 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              Privacy {""}
+              <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+                Policy
+              </span>
             </h1>
 
             <p className="mb-8 max-w-5xl text-lg leading-relaxed text-slate-900">

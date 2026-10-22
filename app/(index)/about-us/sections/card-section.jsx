@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
 import { GetInTouchModal } from "../../_components/get-in-touch-modal";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const WHY_CHOOSE_ITEMS = [
   {
@@ -49,12 +46,12 @@ function Reveal({ children, className = "", delay = 0, as = "div" }) {
 export default function CardSection() {
   const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
   return (
-    <section className="flex items-center py-16 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
-      <div className="mx-auto w-full max-w-[1700px] lg:px-10">
+     <section className="flex items-center py-10 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
+      <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
         <div
-          className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-10 overflow-hidden sm:rounded-[32px] sm:px-8 lg:px-20 lg:py-16"
+          className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
         
-        > 
+        >
           <div className="absolute inset-0 bg-purple-50 pointer-events-none" />
 
           <div className="relative z-10 grid items-stretch gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
@@ -68,7 +65,7 @@ export default function CardSection() {
 
               <Reveal delay={140}>
                 <p
-                  className={`${spaceGrotesk.className} mt-5 max-w-xl text-xl leading-7 text-slate-700`}
+                  className={`mt-5 max-w-xl text-xl leading-7 text-slate-700`}
                 >
                   We support the operational workflows that affect cash flow,
                   patient access, member experience, and team capacity.
@@ -91,7 +88,7 @@ export default function CardSection() {
                           {item.title}
                         </h3>
                         <p
-                          className={`${spaceGrotesk.className} mt-1  leading-7 text-slate-600 sm:text-base sm:leading-7`}
+                          className={`mt-1  leading-7 text-slate-600 sm:text-base sm:leading-7`}
                         >
                           {item.desc}
                         </p>

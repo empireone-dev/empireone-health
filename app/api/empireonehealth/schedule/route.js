@@ -12,21 +12,23 @@ export async function POST(request) {
   const data = await request.json();
 
   try {
-    const companyName = data.company_name || "EmpireOne Health";
+    const companyName = data.company || "EmpireOne Health";
     const source = data.source || "N/A";
     const buildGoal = data.looking_to_build || "N/A";
     const userMessage = data.message || "None provided";
-    const contactNumber = data.contact_number || "None";
+    const contactNumber = data.phone || "None";
+    const appointment_id = data.appointment_id || "None";
 
     const description =
       "Booking EmpireOne Health - 30 Minutes Call\n" +
       "--------------------------------------------------\n" +
+      `Appointment ID: ${appointment_id}\n` +
       `Full Name: ${data.name}\n` +
       `Company Name: ${companyName}\n` +
       `Email: ${data.email}\n` +
       `Contact Number: ${contactNumber}\n` +
-      `Source: ${source}\n` +
-      `Looking to build: ${buildGoal}\n` +
+      // `Source: ${source}\n` +
+      // `Looking to build: ${buildGoal}\n` +
       "--------------------------------------------------\n" +
       `Message:\n${userMessage}\n\n` +
       "Please be ready 5 minutes before the start time.";
@@ -48,7 +50,9 @@ export async function POST(request) {
     });
 
     if (!response.ok) {
-      throw new Error(`Apps Script request failed: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Apps Script request failed: ${response.status} ${response.statusText}`,
+      );
     }
 
     const body = await response.text();
@@ -63,7 +67,10 @@ export async function POST(request) {
   } catch (error) {
     console.error("Failed to schedule booking:", error);
     return NextResponse.json(
-      { success: false, message: "Failed to schedule booking: " + error.message },
+      {
+        success: false,
+        message: "Failed to schedule booking: " + error.message,
+      },
       { status: 502 },
     );
   }

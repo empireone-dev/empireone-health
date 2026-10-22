@@ -4,11 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
 import { GetInTouchModal } from "../../_components/get-in-touch-modal";
 
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const WHY_CHOOSE_ITEMS = [
   {
@@ -52,7 +49,7 @@ export default function WhyChooseUsSection() {
   const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
   return (
     <section className="flex items-center py-10 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
-      <div className="mx-auto w-full max-w-[1700px] lg:px-10">
+      <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
         <div
           className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
         
@@ -78,7 +75,7 @@ export default function WhyChooseUsSection() {
 
               <Reveal delay={140}>
                 <p
-                  className={`${spaceGrotesk.className} mt-5 max-w-xl text-lg  text-slate-700`}
+                  className={`mt-5 max-w-xl text-lg  text-slate-700`}
                 >
                   Our dedicated teams, HIPAA-conscious approach, advanced AI
                   workflows, and strong payer-provider alignment set us apart in
@@ -106,7 +103,7 @@ export default function WhyChooseUsSection() {
                           {item.title}
                         </h3>
                         <p
-                          className={`${spaceGrotesk.className} mt-1 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7`}
+                          className={`mt-1 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7`}
                         >
                           {item.desc}
                         </p>
@@ -121,7 +118,7 @@ export default function WhyChooseUsSection() {
               delay={120}
               className="relative flex justify-center lg:items-stretch lg:justify-end"
             >
-              <div className="relative min-h-[440px] w-full max-w-[650px] sm:min-h-[500px] lg:h-full">
+              <div className="relative min-h-[440px] w-full max-w-[650px] overflow-hidden rounded-[26px] sm:min-h-[500px] sm:rounded-[30px] lg:h-full">
                 <div
                   className="absolute inset-0 overflow-hidden rounded-[26px] bg-cover bg-center shadow-2xl backdrop-blur-md sm:rounded-[30px]"
                   style={{ backgroundImage: "url('/images/logo-doc.webp')" }}
@@ -162,7 +159,7 @@ export default function WhyChooseUsSection() {
                   height={600}
                   loading="lazy"
                   decoding="async"
-                  className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom sm:max-w-none"
+                  className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom lg:max-w-none"
                 />
               </div>
             </Reveal>

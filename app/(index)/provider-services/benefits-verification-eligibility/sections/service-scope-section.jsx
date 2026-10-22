@@ -9,9 +9,7 @@ import {
   ClipboardList, 
   FileText 
 } from "lucide-react";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
 
 const TOP_CARDS = [
   {
@@ -90,7 +88,7 @@ function ServiceCard({ badge, title, desc, icon: Icon, delay = 0 }) {
 
           {/* Expanded Large Description Text */}
           <p
-            className={`${inter.className} mt-4 text-base lg:text-lg leading-relaxed text-slate-600 font-normal`}
+            className={`mt-4 text-base lg:text-lg leading-relaxed text-slate-600 font-normal`}
           >
             {desc}
           </p>
@@ -119,7 +117,7 @@ export default function ServiceScopeSection() {
               What the workflow covers.
             </h2>
             <p
-              className={`${inter.className} mt-6 text-lg lg:text-xl leading-relaxed text-slate-600 font-normal`}
+              className={`mt-6 text-lg lg:text-xl leading-relaxed text-slate-600 font-normal`}
             >
               Give your team dependable front-end support that reduces avoidable
               rework, improves documentation, and keeps eligibility work visible.

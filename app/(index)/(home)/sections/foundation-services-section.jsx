@@ -12,10 +12,7 @@ import {
   ShieldCheck,
   UserCheck,
 } from "lucide-react";
-import { Space_Grotesk } from "next/font/google";
 import Card from "../../../_components/card";
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const FOUNDATION_CARDS = [
   {
@@ -73,7 +70,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
           </div>
           <h3 className="text-base font-bold text-slate-900">{title}</h3>
           <p
-            className={`${spaceGrotesk.className} mt-2 text-xs leading-relaxed text-gray-600`}
+            className={`mt-2 text-xs leading-relaxed text-gray-600`}
           >
             {desc}
           </p>
@@ -89,7 +86,7 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
 export default function FoundationServicesSection() {
   return (
-    <section className="mx-auto max-w-screen-2xl px-6 py-20 sm:py-28">
+    <section className="mx-auto max-w-screen-2xl px-6 py-20 sm:py-28 lg:px-12">
       <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700">
@@ -97,10 +94,14 @@ export default function FoundationServicesSection() {
             Foundation Services{" "}
           </span>
           <h2 className="mt-4 text-5xl font-bold text-slate-900 ">
-            Core healthcare operations services ready for outsourcing
+            Core {""}
+            <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
+              healthcare
+            </span>{" "}
+            operations services ready for outsourcing
           </h2>
           <p
-            className={`${spaceGrotesk.className} mt-6 max-w-md text-xl leading-relaxed font-semibold text-gslate-700`}
+            className={`mt-6 max-w-md text-xl leading-relaxed font-semibold text-gslate-700`}
           >
             We streamline provider and payer workflows, ensuring a seamless
             outsourcing transition and rapid operational improvements.

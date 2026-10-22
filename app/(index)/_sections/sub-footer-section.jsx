@@ -16,15 +16,15 @@ export default function SubFooterSection() {
               onClick={() => setIsOpen(false)}
             > */}
             <Image
-              src="/images/empireone-health.webp"
+              src="/images/E1HLogoV1.png"
               alt="EmpireOne Health Logo"
               width={180}
               height={44}
-              loading="lazy"
-              className="h-7 w-auto transition-all duration-300 sm:h-9 lg:h-11"
+              loading="eager"
+              className="h-7 w-auto transition-all duration-300 sm:h-8 lg:h-8"
+              style={{ width: "auto" }}
             />
             {/* </Link> */}
-
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
               Your trusted healthcare partner for accessible, quality, and
               compassionate medical services. Caring for you and your
@@ -120,7 +120,7 @@ export default function SubFooterSection() {
           {/* Column 3: Delivery Model */}
           <div className="space-y-3">
             <h3 className="font-semibold text-slate-900">Delivery Model</h3>
-            <ul className="space-y-2 text-slate-600 text-sm">
+            <ul className="space-y-2 text-slate-600 text-xs">
               <li>
                 <a>Human-Led, AI-Assisted Delivery</a>
               </li>
@@ -136,7 +136,7 @@ export default function SubFooterSection() {
           {/* Column 4: Contact Info */}
           <div className="space-y-3">
             <h3 className="font-semibold text-slate-900">Contact Info</h3>
-            <div className="space-y-2 text-slate-600 text-sm leading-relaxed">
+            <div className="space-y-2 text-slate-600 text-xs leading-relaxed">
               <p>250 Consumers Rd suite 810, Toronto, ON M2J 4V6</p>
               <p>
                 <a

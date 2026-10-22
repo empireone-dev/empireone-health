@@ -10,15 +10,15 @@ import BookFormSection from "../_sections/book-form-section";
 
 function HeartbeatDivider() {
   return (
-    <div className="mx-auto max-w-screen-2xl px-6 py-2 lg:px-12">
+    <div className="mx-auto max-w-screen-2xl px-6 lg:px-12 pb-3">
       <svg
         viewBox="0 0 1200 60"
-        className="h-8 w-full text-teal-400 sm:h-10"
+        className="h-8 w-full text-teal-400 sm:h-20"
         fill="none"
         preserveAspectRatio="none"
       >
         <motion.path
-          d="M0 30 H430 L458 30 L474 6 L494 54 L514 10 L530 30 H1200"
+          d="M0 30 H430 L467 30 L474 0 L494 60 L504 30 L520 30 H1200"
           stroke="currentColor"
           strokeWidth="3"
           strokeLinecap="round"
@@ -50,7 +50,7 @@ export default function Page() {
         />
         <div className="absolute inset-0 bg-linear-to-b from-white via-white/75 to-white" />
 
-        <div className="relative mx-auto w-full px-4 py-10 sm:px-6 sm:py-0 lg:px-8">
+        <div className="relative mx-auto w-full py-10 sm:py-0">
           <FoundationServicesSection />
         </div>
       </section>
