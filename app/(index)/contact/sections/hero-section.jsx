@@ -10,7 +10,7 @@ export default function HeroSection() {
       <section className="relative flex min-h-100 w-full items-center overflow-hidden lg:min-h-112">
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img
-            src="/images/contact-carcar-site.webp"
+            src="/images/contact-carcar-building.webp"
             alt="EmpireOne Carcar site"
             className="w-full h-full object-cover object-[65%_center] sm:object-right md:object-center"
           />
