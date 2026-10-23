@@ -150,7 +150,7 @@ export default function HeroSection() {
               <div className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl 2xl:text-6xl mt-4">
                 <h1>
                   <span className="text-shadow-purple-900">
-                    We Know Both Side
+                    We Know Both Sides
                     <br />
                     of{" "}
                     <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
