@@ -35,52 +35,60 @@ const SERVICE_BADGES = [
   {
     label: "Member Services",
     href: "/payer-services/member-services",
-    icon: "/images/Member Services.png",
+    icon: "/images/Member Services.webp",
     position: { left: "7%", top: "7.7%", width: "25.5%", height: "14%" },
+    mobilePosition: { side: "left", row: "first" },
   },
   {
     label: "Eligibility & Benefits",
     href: "/provider-services/benefits-verification-eligibility",
-    icon: "/images/Eligibility & Benefits.png",
+    icon: "/images/Eligibility & Benefits.webp",
     position: { left: "68%", top: "7.7%", width: "27%", height: "14.5%" },
+    mobilePosition: { side: "right", row: "first" },
   },
   {
     label: "Member Enrollment",
     href: "/payer-services/enrollment-support",
-    icon: "/images/Member Enrollment.png",
+    icon: "/images/Member Enrollment.webp",
     position: { left: "0.2%", top: "33%", width: "26%", height: "14%" },
+    mobilePosition: { side: "left", row: "second" },
   },
   {
     label: "Prior Authorization",
     href: "/provider-services/prior-authorization-management",
-    icon: "/images/Prior Authorization.png",
+    icon: "/images/Prior Authorization.webp",
     position: { left: "74%", top: "33%", width: "25.5%", height: "14%" },
+    mobilePosition: { side: "right", row: "second" },
   },
   {
     label: "Prior Authorization Intake",
     href: "/provider-services/prior-authorization-management",
-    icon: "/images/Prior Authorization Intake.png",
+    icon: "/images/Prior Authorization Intake.webp",
     position: { left: "1.8%", top: "58.5%", width: "26%", height: "14%" },
+    mobilePosition: { side: "left", row: "third" },
   },
   {
     label: "Collections",
     href: "/provider-services/patient-self-pay-collections",
-    icon: "/images/Collections.png",
+    icon: "/images/Collections.webp",
     position: { left: "73.5%", top: "58.5%", width: "25%", height: "14%" },
+    mobilePosition: { side: "right", row: "third" },
   },
   {
     label: "Provider Services",
     href: "/provider-services",
-    icon: "/images/Provider Services.png",
+    icon: "/images/Provider Services.webp",
     position: { left: "12.5%", top: "81.5%", width: "23.7%", height: "13.5%" },
+    mobilePosition: { side: "left", row: "fourth" },
   },
   {
     label: "Claims & Denials",
     href: "/provider-services/denial-management",
-    icon: "/images/Claims & Denials.png",
+    icon: "/images/Claims & Denials.webp",
     iconWidth: "25%",
     labelLines: ["Claims &", "Denials"],
     position: { left: "63.7%", top: "81.5%", width: "24.2%", height: "13.5%" },
+    mobilePosition: { side: "right", row: "fourth" },
   },
 ];
 
@@ -204,7 +212,7 @@ export default function HeroSection() {
               <div className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl 2xl:text-6xl mt-4">
                 <h1>
                   <span className="text-shadow-purple-900">
-                    We Know Both Sidess
+                    We Know Both Sides
                     <br />
                     of{" "}
                     <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
@@ -331,7 +339,7 @@ export default function HeroSection() {
             />
 
             <Image
-              src="/images/hero-badge-image.webp"
+              src="/images/Smiling Nurse with Tablet and Halo.webp"
               alt=""
               aria-hidden="true"
               fill
@@ -350,13 +358,21 @@ export default function HeroSection() {
               "
             />
 
-            {SERVICE_BADGES.map(({ label, href, icon, iconWidth, labelLines, position }) => (
+            {SERVICE_BADGES.map(({ label, href, icon, iconWidth, labelLines, position, mobilePosition }) => (
               <Link
                 key={label}
                 href={href}
                 aria-label={label}
-                style={position}
+                data-mobile-side={mobilePosition.side}
+                data-mobile-row={mobilePosition.row}
+                style={{
+                  "--badge-left": position.left,
+                  "--badge-top": position.top,
+                  "--badge-width": position.width,
+                  "--badge-height": position.height,
+                }}
                 className="
+                  hero-service-badge
                   absolute
                   z-30
                   flex

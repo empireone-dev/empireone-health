@@ -379,3 +379,52 @@ body {
     width: calc(100vw - 1.5rem);
   }
 }
+
+.hero-service-badge {
+  left: var(--badge-left);
+  top: var(--badge-top);
+  width: var(--badge-width);
+  height: var(--badge-height);
+}
+
+@media (max-width: 639px) {
+  .hero-service-badge {
+    width: 34%;
+    height: auto;
+    min-height: 44px;
+    gap: 2%;
+    overflow: visible;
+    padding: 3px 2.5%;
+    font-size: clamp(0.5625rem, 2.7vw, 0.75rem);
+  }
+
+  .hero-service-badge[data-mobile-side="left"] {
+    right: auto;
+    left: 0;
+  }
+
+  .hero-service-badge[data-mobile-side="right"] {
+    right: 0;
+    left: auto;
+  }
+
+  .hero-service-badge[data-mobile-row="first"] {
+    top: 7.7%;
+  }
+
+  .hero-service-badge[data-mobile-row="second"] {
+    top: 31%;
+  }
+
+  .hero-service-badge[data-mobile-row="third"] {
+    top: 54%;
+  }
+
+  .hero-service-badge[data-mobile-row="fourth"] {
+    top: 76%;
+  }
+
+  .hero-service-badge > span {
+    overflow-wrap: anywhere;
+  }
+}
