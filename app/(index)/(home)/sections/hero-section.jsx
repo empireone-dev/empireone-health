@@ -42,7 +42,7 @@ const SERVICE_BADGES = [
   {
     label: "Eligibility & Benefits",
     href: "/provider-services/benefits-verification-eligibility",
-    icon: "/images/Eligibility & Benefits.webp",
+    icon: "/images/Eligibility-Benefits.webp",
     position: { left: "68%", top: "7.7%", width: "27%", height: "14.5%" },
     mobilePosition: { side: "right", row: "first" },
   },
@@ -84,7 +84,7 @@ const SERVICE_BADGES = [
   {
     label: "Claims & Denials",
     href: "/provider-services/denial-management",
-    icon: "/images/Claims & Denials.webp",
+    icon: "/images/Claims-Denials.webp",
     iconWidth: "25%",
     labelLines: ["Claims &", "Denials"],
     position: { left: "63.7%", top: "81.5%", width: "24.2%", height: "13.5%" },
@@ -209,11 +209,11 @@ export default function HeroSection() {
               </div>
 
               {/* Heading */}
-              <div className="text-4xl font-bold  leading-[1.2] tracking-tight text-[#0a1b39] md:text-5xl 2xl:text-6xl mt-4">
+              <div className="mt-4 text-[clamp(2rem,7vw,3rem)] font-bold leading-[1.2] tracking-tight text-[#0a1b39] sm:text-5xl 2xl:text-6xl">
                 <h1>
                   <span className="text-shadow-purple-900">
                     We Know Both Sides
-                    <br />
+                    <br className="hidden sm:block" />
                     of{" "}
                     <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
                       Healthcare
@@ -310,7 +310,7 @@ export default function HeroSection() {
               aspect-[1439/1093]
               w-full
               max-w-[440px]
-              mt-8
+              mt-0
 
               sm:max-w-[560px]
 
@@ -446,8 +446,9 @@ export default function HeroSection() {
               z-15
 
               grid
-              grid-cols-4
+              grid-cols-2
               gap-2
+              mt-4
 
               rounded-2xl
               bg-white/95
@@ -463,7 +464,6 @@ export default function HeroSection() {
 
               sm:grid-cols-4
               sm:gap-5
-              sm:-mt-8
               sm:px-7
               sm:py-5
 

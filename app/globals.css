@@ -389,13 +389,13 @@ body {
 
 @media (max-width: 639px) {
   .hero-service-badge {
-    width: 34%;
+    width: 36%;
     height: auto;
     min-height: 44px;
     gap: 2%;
     overflow: visible;
     padding: 3px 2.5%;
-    font-size: clamp(0.5625rem, 2.7vw, 0.75rem);
+    font-size: clamp(0.625rem, 2.7vw, 0.75rem);
   }
 
   .hero-service-badge[data-mobile-side="left"] {
