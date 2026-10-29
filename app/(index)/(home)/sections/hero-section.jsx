@@ -180,7 +180,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-            className="relative z-10 mx-auto mt-0 block aspect-[1439/1093] w-full max-w-[440px] sm:max-w-[560px] xl:absolute xl:bottom-6 xl:right-[2%] xl:mx-0 xl:w-[46%] xl:max-w-none 2xl:right-[2%] 2xl:w-[46%]"
+            className="relative z-10 mx-auto mt-0 block aspect-[1439/1093] w-full max-w-[440px] sm:max-w-[600px] xl:absolute xl:bottom-0 xl:right-[-6%] xl:mx-0 xl:w-[56%] xl:max-w-none 2xl:right-[-10%] 2xl:w-[58%]"
           >
             <div
               aria-hidden="true"
@@ -194,8 +194,8 @@ export default function HeroSection() {
               fill
               priority
               quality={85}
-              sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) 65vw, (max-width: 1536px) 58vw, 1000px"
-              className="pointer-events-none object-contain object-bottom"
+              sizes="(max-width: 740px) calc(100vw - 2rem), (max-width: 1024px) 70vw, (max-width: 1536px) 56vw, 58vw"
+              className="pointer-events-none object-contain object-bottom xl:object-right-bottom mt-[-3%]"
             />
 
             {/* {SERVICE_BADGES.map(({ label, href, icon, iconWidth, labelLines, position, mobilePosition }) => (
@@ -239,7 +239,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-          className="relative z-15 mt-0 grid grid-cols-2 gap-2 rounded-2xl bg-white/95 px-3 py-4 shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5 backdrop-blur-md sm:grid-cols-4 sm:gap-5 sm:px-7 sm:py-5 xl:-mt-10 xl:gap-6 xl:px-8 xl:py-6 2xl:-mt-10 2xl:px-10 2xl:py-4"
+          className="relative z-15 -mt-9 grid grid-cols-2 gap-2 rounded-2xl bg-white/95 px-3 py-4 shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5 backdrop-blur-md sm:-mt-13 sm:grid-cols-4 sm:gap-5 sm:px-7 sm:py-5 xl:-mt-14 xl:gap-6 xl:px-8 xl:py-6 2xl:-mt-16 2xl:px-10 2xl:py-4"
         >
           {STATS.map(({ icon, value, label }) => (
             <div
