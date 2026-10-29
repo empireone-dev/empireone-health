@@ -11,8 +11,8 @@ export default function ProviderHowWeWorkSection() {
 
   return (
     <div>
-      <section className="w-full bg-[#f0f3ff] px-6 py-16 sm:px-12 lg:px-16 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-12 lg:gap-12">
+      <section className="w-full bg-[#f0f3ff] py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto grid w-full max-w-screen-2xl items-center gap-8 px-6 sm:gap-10 lg:grid-cols-12 lg:gap-12 lg:px-12">
           <motion.div
             initial={
               reduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -28 }
@@ -69,10 +69,10 @@ export default function ProviderHowWeWorkSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.5, delay: i * 0.06 }}
-                  className="flex items-center gap-3"
+                  className="flex items-start gap-3"
                 >
-                  <CheckCircle className="h-4 w-4 shrink-0 stroke-[2.5] text-[#0f2d9e]" />
-                  <span className="text-sm font-bold text-[#0b132b] sm:text-base">
+                  <CheckCircle className="mt-1 h-4 w-4 shrink-0 stroke-[2.5] text-[#0f2d9e]" />
+                  <span className="text-sm font-bold leading-relaxed text-[#0b132b] sm:text-base">
                     {text}
                   </span>
                 </motion.li>

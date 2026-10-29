@@ -1,36 +1,35 @@
 "use client";
 
-import { BadgeCheck, ArrowUpRight, HeartHandshake } from "lucide-react";
+import { BadgeCheck, HeartHandshake } from "lucide-react";
 import React from "react";
 import { motion } from "motion/react";
-import Link from "next/link";
 import BookCallButtonSection from "../../_sections/book-call-button-section";
 
 export default function PayerServicesSection() {
   return (
     <div>
-      <section className="relative overflow-hidden px-8 py-16 sm:px-16 md:px-24 lg:px-28 lg:py-24">
+      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-24 mt-10 ">
         <div
           className="absolute inset-0 bg-cover"
           style={{ backgroundImage: "url('/images/bg-med.webp')" }}
         />
         <div className="absolute inset-0 bg-purple-50/50" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
+        <div className="relative z-10 mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-center gap-10 px-6 sm:gap-12 lg:grid-cols-2 lg:gap-16 lg:px-12">
           {/* Left copy */}
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="flex flex-col items-start space-y-7"
+            className="flex flex-col items-start space-y-5 sm:space-y-7"
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 border border-indigo-200  ">
               <BadgeCheck className="h-3.5 w-3.5" />
               Payer Services
             </span>
 
-            <h1 className="text-3xl font-bold leading-[1.2] tracking-tight   text-[#0f172a] sm:text-4xl lg:text-[42px]">
+            <h1 className="text-3xl font-bold leading-tight tracking-tight text-[#0f172a] sm:text-4xl lg:text-[42px]">
               <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
                 Payer
               </span>{" "}
@@ -61,7 +60,7 @@ export default function PayerServicesSection() {
               />
             </div>
 
-            <div className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:-bottom-8 sm:left-8">
+            <div className="absolute -bottom-5 left-3 flex max-w-[calc(100%-1.5rem)] items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-3 py-3 shadow-lg backdrop-blur sm:-bottom-6 sm:left-6 sm:max-w-none sm:px-4">
               <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-teal-50">
                 <HeartHandshake className="relative h-5 w-5 text-teal-600" />
               </span>

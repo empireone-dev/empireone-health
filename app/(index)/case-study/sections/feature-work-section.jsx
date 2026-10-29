@@ -59,8 +59,8 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
 export default function FeatureWorkSection() {
   return (
-    <section className="mx-auto max-w-[1600px] px-6 py-20 sm:py-28 lg:px-12">
-      <div className="mb-12 lg:mb-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
+    <section className="mx-auto w-full max-w-screen-2xl px-6 py-8 sm:py-12 lg:px-12">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start lg:gap-10">
       
         <Reveal className="lg:col-span-6 xl:col-span-5">
           <span className="inline-flex items-center gap-2.5 rounded-full bg-indigo-50 px-5 py-2 text-sm font-bold text-indigo-700 border border-indigo-200">

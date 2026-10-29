@@ -7,20 +7,20 @@ import ContactDetailSection from "./contact-detail-section";
 export default function HeroSection() {
   return (
     <div className="relative bg-linear-to-r from-[#fff3ea] via-[#f2f7fc] to-[#edf5ff]">
-      <section className="relative w-full items-center overflow-hidden lg:aspect-[2.83] lg:min-h-112">
+      <section className="relative mt-10 flex min-h-[35rem] w-full items-center overflow-hidden sm:min-h-[33.5rem] md:min-h-[34rem] lg:min-h-[39.5rem]">
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img
-            src="/images/contact-carcar-building.webp"
+            src="/images/Carcar-EmpireOne.webp"
             alt="EmpireOne Carcar site"
             className="w-full h-full object-cover object-[65%_center] sm:object-right md:object-center"
           />
         </div>
 
-        <div className="absolute inset-0 z-10 bg-linear-to-b from-white/95 via-white/85 to-white/60 sm:hidden " />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-linear-to-t from-[#f2f7fc] to-transparent" />
+        <div className="absolute inset-0 z-10 bg-linear-to-b from-white/75 via-white/40 to-transparent lg:bg-linear-to-r lg:from-white/85 lg:via-white/45 lg:to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-linear-to-t from-[#f2f7fc]/50 to-transparent" />
 
-        <div className="w-full px-6 pt-12 pb-20 sm:px-16 sm:pt-16 sm:pb-24 md:px-24 lg:px-28 lg:py-24">
-          <div className="mx-auto w-full max-w-7xl">
+        <div className="w-full py-16 lg:py-24">
+          <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
             <motion.div
               initial={{ opacity: 0, x: -28 }}
               animate={{ opacity: 1, x: 0 }}
@@ -47,12 +47,13 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+
       <section
         aria-label="Contact our team"
-        className="relative z-20 -mt-10 w-full pb-12 lg:-mt-16 lg:pb-16"
+        className="relative w-full overflow-hidden p-4"
       >
-        <div className="mx-auto w-full max-w-480 px-4 sm:px-6 lg:px-10 xl:px-14">
-          <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-stretch">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
+          <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-12">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -6,7 +6,6 @@ import WhoWeAreSection from "./sections/who-we-are-section";
 import FoundationServicesSection from "./sections/foundation-services-section";
 import WhyChooseUsSection from "./sections/why-choose-us-section";
 import HeroSection from "./sections/hero-section";
-import BookFormSection from "../_sections/book-form-section";
 
 function HeartbeatDivider() {
   return (
@@ -39,9 +38,7 @@ export default function Page() {
 
       <WhoWeAreSection />
 
-      <HeartbeatDivider />
-
-      <section className="relative min-h-[420px] overflow-hidden flex items-center sm:min-h-[500px]">
+      <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat mask-[linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]"
           style={{
@@ -50,15 +47,13 @@ export default function Page() {
         />
         <div className="absolute inset-0 bg-linear-to-b from-white via-white/75 to-white" />
 
-        <div className="relative mx-auto w-full py-10 sm:py-0">
+        <div className="relative mx-auto w-full">
           <FoundationServicesSection />
         </div>
       </section>
-      <div className=" bg-white p-6">
+      <div className=" bg-white">
         <WhyChooseUsSection />
       </div>
-
-      <BookFormSection />
     </div>
   );
 }

@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { motion } from "motion/react";
 import { PhoneCall, ShieldCheck } from "lucide-react";
 import { GetInTouchModal } from "../../_components/get-in-touch-modal";
-
+import BookFormSection from "../../_sections/book-form-section";
 
 const WHY_CHOOSE_ITEMS = [
   {
@@ -47,86 +46,83 @@ function Reveal({ children, className = "", delay = 0, as = "div" }) {
 
 export default function WhyChooseUsSection() {
   const [isGetInTouchOpen, setIsGetInTouchOpen] = useState(false);
+
   return (
-    <section className="flex items-center py-10 sm:py-20 lg:min-h-[calc(100vh-124px)] lg:py-0 mb-4">
-      <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
-        <div
-          className="relative rounded-[28px] bg-cover bg-center bg-no-repeat px-6 py-8 overflow-hidden sm:rounded-[32px] sm:px-8 sm:py-10 lg:px-20 lg:py-16"
-        
-        >
-          <div className="absolute inset-0 bg-purple-50 pointer-events-none" />
+    <section className="pt-12 sm:pt-16">
+      <div>
+        <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
+          <div className="lg:relative lg:overflow-hidden lg:rounded-[32px] lg:bg-purple-50 lg:px-20 lg:py-16">
+            <div className="relative z-10 grid items-stretch gap-10 sm:gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+              {/* Left column */}
+              <div>
+                <Reveal>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700">
+                    <ShieldCheck className="h-3.5 w-3.5" />
+                    Why Choose Us
+                  </span>
+                </Reveal>
 
-          <div className="relative z-10 grid items-stretch gap-10 sm:gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
-            <div className="max-w-2xl">
-              <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 border border-indigo-100">
-                  <ShieldCheck className="h-3.5 w-3.5" />
-                  Why Choose Us
-                </span>
-              </Reveal>
+                <Reveal delay={80}>
+                  <h2 className="mt-5 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                    Why Healthcare Teams Choose Us
+                  </h2>
+                </Reveal>
 
-              <Reveal delay={80}>
-                <h2 className="mt-5 text-3xl font-bold leading-tight text-black lg:text-5xl">
-                  Why Healthcare Teams
-                  <br />
-                  Choose Us
-                </h2>
-              </Reveal>
+                <Reveal delay={140}>
+                  <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+                    Our dedicated teams, HIPAA-conscious approach, advanced AI
+                    workflows, and strong payer-provider alignment set us apart
+                    in healthcare operations.
+                  </p>
+                </Reveal>
 
-              <Reveal delay={140}>
-                <p
-                  className={`mt-5 max-w-xl text-lg  text-slate-700`}
-                >
-                  Our dedicated teams, HIPAA-conscious approach, advanced AI
-                  workflows, and strong payer-provider alignment set us apart in
-                  healthcare operations.
-                </p>
-              </Reveal>
-
-              <div className="mt-8 space-y-4 sm:mt-10">
-                {WHY_CHOOSE_ITEMS.map((item, i) => (
-                  <Reveal key={item.title} delay={200 + i * 90}>
-                    <div className="group flex items-start gap-4 rounded-2xl p-2.5 transition-all duration-300 hover:translate-x-1.5 hover:bg-white/10 sm:gap-5 sm:p-3">
-                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md sm:h-16 sm:w-16">
-                        <img
-                          src={item.img}
-                          alt={item.title}
-                          width={44}
-                          height={44}
-                          loading="lazy"
-                          decoding="async"
-                          className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-11 sm:w-11"
-                        />
+                <div className="mt-8 space-y-2 sm:mt-10">
+                  {WHY_CHOOSE_ITEMS.map((item, i) => (
+                    <Reveal key={item.title} delay={200 + i * 90}>
+                      <div className="group flex items-start gap-4 rounded-2xl p-3 transition-all duration-300 hover:translate-x-1.5 lg:hover:bg-white/60">
+                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
+                          <img
+                            src={item.img}
+                            alt={item.title}
+                            width={44}
+                            height={44}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-base font-bold text-black sm:text-lg">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 w-full text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                            {item.desc}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-black sm:text-xl">
-                          {item.title}
-                        </h3>
-                        <p
-                          className={`mt-1 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7`}
-                        >
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </Reveal>
-                ))}
+                    </Reveal>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <Reveal
-              delay={120}
-              className="relative flex justify-center lg:items-stretch lg:justify-end"
-            >
-              <div className="relative min-h-[440px] w-full max-w-[650px] overflow-hidden rounded-[26px] sm:min-h-[500px] sm:rounded-[30px] lg:h-full">
+              {/* Right column — image card */}
+              <Reveal
+                delay={120}
+                className="flex justify-center lg:items-stretch lg:justify-end"
+              >
                 <div
-                  className="absolute inset-0 overflow-hidden rounded-[26px] bg-cover bg-center shadow-2xl backdrop-blur-md sm:rounded-[30px]"
-                  style={{ backgroundImage: "url('/images/logo-doc.webp')" }}
-                />
-                <div className="relative z-10 flex h-full min-h-[440px] flex-col rounded-[26px] p-6 text-white sm:min-h-[500px] sm:p-10 sm:rounded-[30px]">
-                  <h3 className="text-3xl font-bold sm:text-5xl">Ready?</h3>
-                  <div className="mt-6 flex items-center gap-4">
-                    <div className="flex h-14 w-14 flex-col items-center justify-center sm:h-16 sm:w-16">
+                  className="relative w-full overflow-hidden rounded-[26px] sm:rounded-[30px]"
+                  style={{ minHeight: "420px" }}
+                >
+                  <div
+                    className="absolute inset-0 rounded-[26px] bg-cover bg-center sm:rounded-[30px]"
+                    style={{ backgroundImage: "url('/images/logo-doc.webp')" }}
+                  />
+
+                  <div className="relative z-10 flex h-full min-h-[420px] flex-col rounded-[26px] p-7 text-white sm:p-10 sm:rounded-[30px]">
+                    <h3 className="text-4xl font-bold sm:text-5xl">Ready?</h3>
+
+                    <div className="mt-5 flex items-center gap-3">
                       <img
                         src="/images/hours.webp"
                         alt="24/7 Support"
@@ -134,39 +130,43 @@ export default function WhyChooseUsSection() {
                         height={48}
                         loading="lazy"
                         decoding="async"
-                        className="mb-6 h-10 w-10 object-contain sm:h-12 sm:w-12"
+                        className="h-10 w-10 object-contain sm:h-12 sm:w-12"
                       />
+                      <span className="text-3xl font-bold sm:text-4xl">
+                        24/7
+                      </span>
                     </div>
-                    <span className="mb-7 text-3xl font-bold sm:text-4xl">
-                      24/7
-                    </span>
+
+                    <button
+                      type="button"
+                      onClick={() => setIsGetInTouchOpen(true)}
+                      className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-indigo-700 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-500 hover:text-white sm:mt-8"
+                    >
+                      <PhoneCall className="h-4 w-4" />
+                      Get in Touch
+                    </button>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => setIsGetInTouchOpen(true)}
-                    className="group relative z-10 mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-indigo-700 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-500 hover:text-white sm:mt-8"
-                  >
-                    <PhoneCall className="h-4 w-4" />
-                    Get in Touch
-                  </button>
+                  <img
+                    src="/images/doctor-1.webp"
+                    alt="Doctor"
+                    width={400}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom"
+                  />
                 </div>
-
-                <img
-                  src="/images/doctor-1.webp"
-                  alt="Doctor"
-                  width={400}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-auto max-w-[55%] select-none object-contain object-bottom lg:max-w-none"
-                />
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </div>
+      <BookFormSection />
       </div>
-      <GetInTouchModal isOpen={isGetInTouchOpen} onClose={() => setIsGetInTouchOpen(false)} />
+      <GetInTouchModal
+        isOpen={isGetInTouchOpen}
+        onClose={() => setIsGetInTouchOpen(false)}
+      />
     </section>
   );
 }

@@ -292,8 +292,8 @@ export default function BookCalendarSection() {
   };
 
   return (
-    <div className={`flex items-center justify-center`}>
-      <div className="w-full max-w-[1200px] ">
+    <div className="flex w-full items-center justify-center">
+      <div className="w-full max-w-[1200px]">
         <div className="relative">
           {/* <motion.div
             aria-hidden="true"
@@ -333,7 +333,7 @@ export default function BookCalendarSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative z-10 overflow-hidden mx-1.5 rounded-[24px] border border-slate-200/80 bg-white shadow-[0_25px_70px_-15px_rgba(30,41,59,0.3)]  sm:rounded-[32px] lg:mt-4"
+            className="relative z-10 overflow-hidden rounded-[24px] border border-slate-200/80 bg-white shadow-[0_25px_70px_-15px_rgba(30,41,59,0.3)] sm:rounded-[32px] lg:mt-4"
           >
             <div className="h-2 w-full" />
 
@@ -527,7 +527,7 @@ export default function BookCalendarSection() {
                           transition={{ duration: 0.2 }}
                           className="mt-4 text-sm font-medium text-slate-500"
                         >
-                          You're booking{" "}
+                          You&apos;re booking{" "}
                           <span className="font-bold text-slate-800">
                             {selectedDateLabel}
                           </span>{" "}

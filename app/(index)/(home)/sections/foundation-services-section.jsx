@@ -61,23 +61,19 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
     <Reveal delay={delay} className="h-full">
       <Card
         href={href}
-        padding="p-6"
-        className="group flex h-full flex-col justify-between rounded-2xl! border-gray-100 hover:-translate-y-1! hover:border-teal-100! hover:shadow-xl! hover:shadow-teal-500/10! transition-all! duration-300! ease-out!"
+        padding="p-8"
+        className="group flex h-full flex-col justify-between rounded-2xl! border-gray-100 transition-all! duration-300! ease-out! hover:-translate-y-1! hover:border-teal-100! hover:shadow-xl! hover:shadow-teal-500/10!"
       >
         <div>
-          <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-all duration-300 ease-out group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white">
-            <Icon className="h-5 w-5" />
+          <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-all duration-300 ease-out group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white">
+            <Icon className="h-6 w-6" />
           </div>
-          <h3 className="text-base font-bold text-slate-900">{title}</h3>
-          <p
-            className={`mt-2 text-xs leading-relaxed text-gray-600`}
-          >
-            {desc}
-          </p>
+          <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+          <p className="mt-3 text-sm leading-relaxed text-gray-500">{desc}</p>
         </div>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-900 transition-colors duration-300 group-hover:text-teal-600">
+        <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 transition-colors duration-300 group-hover:text-teal-600">
           Learn More
-          <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />
         </span>
       </Card>
     </Reveal>
@@ -86,29 +82,28 @@ function ServiceCard({ icon: Icon, title, desc, href, delay = 0 }) {
 
 export default function FoundationServicesSection() {
   return (
-    <section className="mx-auto max-w-screen-2xl px-6 py-20 sm:py-28 lg:px-12">
-      <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
-        <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700">
+    <section className="mx-auto max-w-screen-2xl px-6 py-8 sm:py-10 lg:px-12">
+      {/* Original layout: heading left, 2 cards right */}
+      <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2 lg:items-stretch">
+        <Reveal className="flex flex-col justify-center">
+          <span className="inline-flex self-start items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700">
             <Building className="h-3.5 w-3.5" />
-            Foundation Services{" "}
+            Foundation Services
           </span>
-          <h2 className="mt-4 text-5xl font-bold text-slate-900 ">
-            Core {""}
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Core{" "}
             <span className="bg-linear-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent">
               healthcare
             </span>{" "}
             operations services ready for outsourcing
           </h2>
-          <p
-            className={`mt-6 max-w-md text-xl leading-relaxed font-semibold text-gslate-700`}
-          >
+          <p className="mt-4 max-w-md text-base font-semibold leading-relaxed text-slate-700 sm:mt-6 sm:text-lg lg:text-xl">
             We streamline provider and payer workflows, ensuring a seamless
             outsourcing transition and rapid operational improvements.
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <ServiceCard
             icon={UserCheck}
             title="Provider Services"
@@ -126,7 +121,8 @@ export default function FoundationServicesSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Bottom 4 cards — same height as top 2 */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {FOUNDATION_CARDS.map((card, i) => (
           <ServiceCard
             key={card.title}

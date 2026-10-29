@@ -66,14 +66,14 @@ const cards = [
 export default function AboutSection() {
   return (
     <div className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe]">
-      <section className="relative overflow-hidden px-8 py-16 sm:px-16 md:px-24 lg:px-28 lg:py-24">
+      <section className="relative overflow-hidden py-16 lg:py-24 mt-10">
         <div
           className="absolute inset-0 bg-cover"
           style={{ backgroundImage: "url('/images/bg-med.webp')" }}
         />
         <div className="absolute inset-0 bg-purple-50/50" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
+        <div className="relative z-10 mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-20 lg:px-12">
           {/* Left copy */}{" "}
           <motion.div
             initial={{ opacity: 0, x: -28 }}
@@ -120,7 +120,7 @@ export default function AboutSection() {
       </section>
 
       <section className="border-t border-slate-100 bg-white">
-        <div className="mx-auto max-w-7xl px-8 py-12 sm:px-16 lg:px-2">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 py-8 sm:py-10 lg:px-12">
           <div className="grid grid-cols-1 gap-y-10 divide-y divide-slate-200 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4 lg:gap-y-0 lg:divide-x lg:divide-y-0">
             {highlights.map(({ icon: Icon, label }, index) => (
               <div
@@ -140,12 +140,12 @@ export default function AboutSection() {
         </div>
       </section>
 
-      <div className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe] mt-2">
+      <div className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe]">
         <CardSection />
       </div>
 
-      <section className="w-full bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe] py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="w-full bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe] py-10 sm:py-12">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

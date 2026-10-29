@@ -5,21 +5,20 @@ import { BookOpen } from "lucide-react";
 import Link from "next/link";
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden min-h-105 sm:min-h-110 md:min-h-120 lg:min-h-130 flex items-center">
+    <section className="relative mt-10 flex min-h-105 w-full items-center overflow-hidden bg-white sm:min-h-110 md:min-h-120 lg:min-h-130">
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <img
           src="/images/case-studies.webp"
           alt="Healthcare professionals team"
-          className="w-full h-full object-cover object-[65%_center] sm:object-right md:object-center"
+          className="h-full w-full object-cover object-[65%_center] opacity-80 sm:object-right md:object-center"
         />
       </div>
 
-      {/* Mobile-only overlay for text legibility over the image */}
-      <div className="absolute inset-0 z-10 bg-linear-to-b from-white/95 via-white/85 to-white/60 sm:hidden" />
+      <div className="absolute inset-0 z-10 bg-linear-to-b from-white/70 via-white/35 to-transparent sm:hidden" />
 
       {/* 3. Hero Content Container */}
-      <div className="w-full px-8 py-16 sm:px-16 md:px-24 lg:px-28 lg:py-24">
-        <div className="mx-auto w-full max-w-7xl">
+      <div className="w-full py-16 lg:py-24">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             animate={{ opacity: 1, x: 0 }}
@@ -42,7 +41,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Description Text */}
-            <p className="max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg">
+            <p className="max-w-xl text-base leading-relaxed text-slate-700 sm:text-lg">
               Review focused examples of how EmpireOneHealth supports provider
               and payer teams with structured operations, QA visibility, and
               scalable execution.

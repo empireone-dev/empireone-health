@@ -25,7 +25,7 @@ export default function CaseStudyPage() {
   return (
     <>
       {/* Centered Header Section */}
-      <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-12 lg:py-20">
+      <div className="relative w-full overflow-hidden bg-[#eaf0ff] py-10 sm:py-14 lg:py-20 mt-16">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
@@ -33,7 +33,7 @@ export default function CaseStudyPage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function CaseStudyPage() {
             </span>
 
             {/* Breadcrumb Navigation */}
-            <nav className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-slate-700 sm:text-sm">
+            <nav className="mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-semibold text-slate-700 sm:text-sm">
               <Link href="/" className="text-[#0f2d9e] hover:underline">
                 Home
               </Link>
@@ -59,13 +59,13 @@ export default function CaseStudyPage() {
                 Case Studies
               </Link>
               <span className="text-slate-400">/</span>
-              <span className="text-[#0b132b]">
+              <span className="break-words text-[#0b132b]">
                 Third-Party Healthcare Collections Transformation
               </span>
             </nav>
 
             {/* Main Heading */}
-            <h1 className="mt-6 max-w-4xl text-3xl font-bold leading-tight tracking-tight text-[#0b132b] sm:text-4xl lg:text-5xl">
+            <h1 className="mt-5 max-w-4xl text-3xl font-bold leading-tight tracking-tight text-[#0b132b] sm:mt-6 sm:text-4xl lg:text-5xl">
               Third-Party Healthcare Collections Transformation
             </h1>
           </motion.div>
@@ -73,11 +73,11 @@ export default function CaseStudyPage() {
       </div>
 
       {/* Executive Summary & Business Environment (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
-        <div className="mx-auto max-w-7xl">
-          <div className="space-y-8 sm:space-y-10">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
+          <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 lg:gap-8">
             {/* Executive Summary */}
-            <Reveal className="space-y-2.5 sm:space-y-3">
+            <Reveal className="flex h-full flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6 lg:p-8">
               <h2 className="text-2xl font-bold tracking-tight text-[#0b132b] sm:text-3xl">
                 Executive Summary
               </h2>
@@ -90,7 +90,10 @@ export default function CaseStudyPage() {
             </Reveal>
 
             {/* Business Environment */}
-            <Reveal delay={100} className="space-y-2.5 sm:space-y-3">
+            <Reveal
+              delay={100}
+              className="flex h-full flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6 lg:p-8"
+            >
               <h2 className="text-2xl font-bold tracking-tight text-[#0b132b] sm:text-3xl">
                 Business Environment
               </h2>
@@ -106,8 +109,8 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Actions & Measured Outcomes (Light Blue Background) */}
-      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16 px-4">
-        <div className="mx-auto max-w-7xl">
+      <section className="w-full bg-[#f2f5ff] py-10 sm:py-12 lg:py-16">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-12">
             {/* Left Column: Image */}
             <Reveal className="w-full lg:col-span-5">
@@ -174,13 +177,13 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Strategic Value Delivered (White Background) */}
-      <section className="w-full bg-white py-10 sm:py-12 lg:py-16 px-4">
-        <div className="mx-auto max-w-7xl">
+      <section className="w-full bg-white py-10 sm:py-12 lg:py-16">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 lg:px-12">
           <Reveal className="space-y-2.5 sm:space-y-3">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b132b] sm:text-3xl">
               Strategic Value Delivered
             </h2>
-            <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
+            <p className="max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">
               The engagement demonstrated how leadership, process design, and
               accountability can substantially improve revenue recovery without
               significant technology investment.

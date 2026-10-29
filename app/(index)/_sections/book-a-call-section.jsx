@@ -10,8 +10,8 @@ export default function BookACallSection({ title, subtitle }) {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="p-4 sm:p-6 md:p-8">
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-r from-[#6366f1] via-[#5b5bd6] to-[#4f46e5] p-8 text-center text-white shadow-2xl sm:p-10 md:p-14">
+    <section className="mx-auto w-full max-w-screen-2xl px-6 py-4 sm:py-6 md:py-8 lg:px-12">
+      <div className="relative mx-auto flex w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-r from-[#6366f1] via-[#5b5bd6] to-[#4f46e5] p-8 text-center text-white shadow-2xl sm:p-10 md:p-14">
         {/* Background Pattern */}
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20"

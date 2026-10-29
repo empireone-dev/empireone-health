@@ -10,8 +10,8 @@ export default function PayerHowWeWorkSection() {
 
   return (
     <div>
-      <section className="w-full bg-[#f0f3ff] px-6 py-16 sm:px-12 lg:px-16 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-12 lg:gap-12">
+      <section className="w-full bg-[#f0f3ff] py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto grid w-full max-w-screen-2xl items-center gap-8 px-6 sm:gap-10 lg:grid-cols-12 lg:gap-12 lg:px-12">
           <motion.div
             initial={
               reduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -28 }
