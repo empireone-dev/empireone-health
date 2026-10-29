@@ -118,8 +118,11 @@ export default function HeroSection() {
                   <span className="text-shadow-purple-900">
                     We Know Both Sides
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <br className="hidden sm:block" />
 =======
+=======
+>>>>>>> fde946476b7afabfcbcedaf9e9dc6615255efae1
                     <br />
 >>>>>>> 2134f02ff54c9098689fb0fc8265bcfc6867e7ae
                     of{" "}
