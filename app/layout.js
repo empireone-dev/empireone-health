@@ -1,3 +1,4 @@
+
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
@@ -24,8 +25,9 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${poppins.variable} h-full antialiased`}
+      suppressHydrationWarning // <-- Move it here
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col"> {/* Removed from here */}
         {children}
         <CookieConsentBanner />
         <AvaChatbot />
